@@ -40,7 +40,7 @@ const partners = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-40 bg-background">
+    <section id="team" className="py-40 bg-white dark:bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24 max-w-4xl">
           <div className="inline-block mb-6">

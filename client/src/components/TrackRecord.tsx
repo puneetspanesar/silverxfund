@@ -45,7 +45,7 @@ export default function TrackRecord() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-muted/20 border-y border-border/30">
+    <section ref={sectionRef} className="py-32 bg-gray-50 dark:bg-muted/20 border-y border-gray-200 dark:border-border/30">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-20 max-w-3xl">
           <div className="inline-block mb-6">

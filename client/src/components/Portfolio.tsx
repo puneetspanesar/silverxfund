@@ -53,7 +53,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="py-40 bg-muted/20">
+    <section className="py-40 bg-gray-50 dark:bg-muted/20">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24 max-w-4xl">
           <div className="inline-block mb-6">

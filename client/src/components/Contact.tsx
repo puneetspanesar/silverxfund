@@ -19,7 +19,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-40 bg-background border-y border-border/30">
+    <section id="contact" className="py-40 bg-white dark:bg-background border-y border-gray-200 dark:border-border/30">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>

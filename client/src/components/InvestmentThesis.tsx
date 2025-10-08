@@ -26,7 +26,7 @@ const segments = [
 
 export default function InvestmentThesis() {
   return (
-    <section id="investment-thesis" className="py-40 relative overflow-hidden bg-background">
+    <section id="investment-thesis" className="py-40 relative overflow-hidden bg-white dark:bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24">
           <div className="inline-block mb-6">

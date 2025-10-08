@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-background">
       <div 
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ 
