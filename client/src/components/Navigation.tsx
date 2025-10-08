@@ -44,10 +44,10 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-xl font-bold tracking-tight"
+            className="font-serif text-xl font-bold tracking-tight"
             data-testid="button-logo"
           >
-            SILVERX <span className="text-accent">FUND</span>
+            SILVERX <span className="text-primary">FUND</span>
           </button>
           
           <div className="hidden lg:flex items-center gap-12">

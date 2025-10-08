@@ -30,10 +30,10 @@ export default function Hero() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">$100M Fund II • Now Raising</span>
           </div>
           
-          <h1 className="text-6xl lg:text-8xl font-bold tracking-[-0.02em] mb-8 leading-[0.95]" data-testid="text-hero-title">
+          <h1 className="font-serif text-6xl lg:text-8xl font-bold tracking-[-0.02em] mb-8 leading-[0.95]" data-testid="text-hero-title">
             Backing India's
             <br />
-            <span className="text-accent">AI-First</span> Future
+            <span className="text-primary">AI-First</span> Future
           </h1>
           
           <p className="text-xl lg:text-2xl text-foreground/80 max-w-2xl mb-12 leading-relaxed font-light" data-testid="text-hero-subtitle">

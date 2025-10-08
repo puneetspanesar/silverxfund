@@ -34,7 +34,7 @@ export default function InvestmentThesis() {
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Investment Strategy</span>
           </div>
-          <h2 className="text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl" data-testid="text-thesis-title">
+          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl" data-testid="text-thesis-title">
             High-conviction bets on India's next decade
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed" data-testid="text-thesis-subtitle">
@@ -58,7 +58,7 @@ export default function InvestmentThesis() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <h3 className="text-3xl font-bold" data-testid={`text-segment-title-${index}`}>
+                        <h3 className="font-serif text-3xl font-bold" data-testid={`text-segment-title-${index}`}>
                           {segment.title}
                         </h3>
                         <span className="text-sm text-muted-foreground">• {segment.subtitle}</span>

@@ -48,7 +48,7 @@ export default function Team() {
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Leadership</span>
           </div>
-          <h2 className="text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6" data-testid="text-team-title">
+          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6" data-testid="text-team-title">
             Operators who've built, scaled, and exited
           </h2>
           <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-team-subtitle">
@@ -78,7 +78,7 @@ export default function Team() {
               <div className="lg:w-7/12">
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="text-4xl font-bold" data-testid={`text-name-${index}`}>
+                    <h3 className="font-serif text-4xl font-bold" data-testid={`text-name-${index}`}>
                       {partner.name}
                     </h3>
                   </div>

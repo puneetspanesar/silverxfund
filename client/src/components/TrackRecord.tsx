@@ -53,7 +53,7 @@ export default function TrackRecord() {
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Track Record</span>
           </div>
-          <h2 className="text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-track-record-title">
+          <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-track-record-title">
             Proven execution since 2012
           </h2>
           <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-track-record-subtitle">
