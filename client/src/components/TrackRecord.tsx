@@ -3,18 +3,23 @@ import { useEffect, useRef, useState } from "react";
 const stats = [
   {
     value: "$5B+",
-    label: "Portfolio Value Created",
-    description: "Cumulative value from partner investments"
+    label: "Portfolio Value",
+    description: "Cumulative value created"
   },
   {
     value: "150+",
-    label: "Investments Made",
-    description: "Across two pre-seed VC funds and angel investments"
+    label: "Investments",
+    description: "Since 2012"
   },
   {
     value: "20",
-    label: "Successful Exits",
-    description: "Track record of value realization"
+    label: "Exits",
+    description: "Successful realizations"
+  },
+  {
+    value: "~30%",
+    label: "Target IRR",
+    description: "Fund performance goal"
   }
 ];
 
@@ -40,31 +45,37 @@ export default function TrackRecord() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-24 sm:py-32 bg-card border-y">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-track-record-title">
-            Proven Track Record
+    <section ref={sectionRef} className="py-32 relative">
+      <div className="absolute inset-0 bg-card border-y border-border/50" />
+      
+      <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
+        <div className="mb-20 max-w-3xl">
+          <div className="inline-block mb-6">
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Track Record</span>
+          </div>
+          <h2 className="text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-track-record-title">
+            Proven execution since 2012
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-track-record-subtitle">
-            Active in early-stage investing since 2012, backed by decades of combined experience
+          <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-track-record-subtitle">
+            Two decades of combined experience backing category-defining companies across growth stages
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
           {stats.map((stat, index) => (
             <div 
               key={index} 
-              className="text-center"
+              className="relative group"
               data-testid={`stat-${index}`}
             >
-              <div className={`text-5xl sm:text-6xl font-bold text-primary mb-3 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} data-testid={`text-stat-value-${index}`}>
+              <div className="absolute -top-4 left-0 w-12 h-1 bg-accent/30" />
+              <div className={`text-6xl lg:text-7xl font-bold tabular-nums mb-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} data-testid={`text-stat-value-${index}`}>
                 {stat.value}
               </div>
-              <div className="text-xl font-semibold mb-2" data-testid={`text-stat-label-${index}`}>
+              <div className="text-lg font-semibold mb-2" data-testid={`text-stat-label-${index}`}>
                 {stat.label}
               </div>
-              <div className="text-muted-foreground" data-testid={`text-stat-description-${index}`}>
+              <div className="text-sm text-muted-foreground" data-testid={`text-stat-description-${index}`}>
                 {stat.description}
               </div>
             </div>

@@ -1,44 +1,49 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { TrendingUp } from "lucide-react";
+import { TrendingUp, ExternalLink } from "lucide-react";
 
 const investments = [
   {
     sector: "Enterprise SaaS & AI",
-    status: "Invested",
+    status: "Active",
     moic: "60X",
-    highlight: "Recent $5M round from Dallas Venture Capital"
+    stage: "Series B",
+    highlight: "$5M recent round from Dallas Venture Capital"
   },
   {
-    sector: "Consumer-tech & AI",
+    sector: "Consumer AI",
     status: "Exited",
     moic: "22X",
-    highlight: "Recent $100M round led by SoftBank"
+    stage: "Series C",
+    highlight: "$100M round led by SoftBank"
   },
   {
-    sector: "FinTech",
+    sector: "FinTech Infrastructure",
     status: "Exited",
     moic: "2.5X",
+    stage: "Acquisition",
     highlight: "Acquired by Muthoot Finance"
   },
   {
     sector: "Deep-tech / EV",
     status: "Exited",
     moic: "10X",
-    highlight: "$4.5M from Union Square & Prime Ventures"
+    stage: "Series A",
+    highlight: "Union Square & Prime Ventures"
   },
   {
-    sector: "FinTech",
+    sector: "B2B FinTech",
     status: "Follow-on",
     moic: "75X",
-    highlight: "Y Combinator, Harvard Management & SOSV"
+    stage: "Series B",
+    highlight: "Y Combinator, Harvard Management"
   },
   {
     sector: "Enterprise SaaS",
-    status: "Majority Exited",
+    status: "Partial Exit",
     moic: "35X",
-    highlight: "Bertelsmann, Tribe Capital, Zomato, Beenext"
+    stage: "Series C",
+    highlight: "Bertelsmann, Tribe Capital, Zomato"
   }
 ];
 
@@ -48,58 +53,66 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-portfolio-title">
-            Portfolio Highlights
+    <section className="py-40 relative">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+        <div className="mb-24 max-w-4xl">
+          <div className="inline-block mb-6">
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Portfolio</span>
+          </div>
+          <h2 className="text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6" data-testid="text-portfolio-title">
+            Category-defining companies
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-portfolio-subtitle">
-            Select investments demonstrating our ability to identify and back category-defining companies
+          <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
+            Our investments demonstrate consistent ability to identify and back market leaders early
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="space-y-2">
           {investments.map((investment, index) => (
-            <Card 
+            <div 
               key={index} 
-              className="hover-elevate transition-all duration-300"
-              data-testid={`card-investment-${index}`}
+              className="group border-t border-border/50 py-8 hover:bg-card/30 transition-all duration-500 px-8 -mx-8"
+              data-testid={`investment-${index}`}
             >
-              <CardContent className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h3 className="font-semibold text-lg mb-2" data-testid={`text-sector-${index}`}>
+              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-4 mb-3">
+                    <h3 className="text-2xl font-bold" data-testid={`text-sector-${index}`}>
                       {investment.sector}
                     </h3>
-                    <Badge variant="secondary" className="mb-3" data-testid={`badge-status-${index}`}>
+                    <Badge variant="secondary" className="uppercase text-xs tracking-wider" data-testid={`badge-status-${index}`}>
                       {investment.status}
                     </Badge>
+                    <span className="text-sm text-muted-foreground">• {investment.stage}</span>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed" data-testid={`text-highlight-${index}`}>
+                    {investment.highlight}
+                  </p>
+                </div>
+                <div className="flex items-center gap-6">
                   <div className="text-right">
-                    <div className="text-3xl font-bold text-primary flex items-center gap-1" data-testid={`text-moic-${index}`}>
-                      <TrendingUp className="h-5 w-5" />
+                    <div className="text-5xl font-bold tabular-nums flex items-center gap-2 text-accent" data-testid={`text-moic-${index}`}>
+                      <TrendingUp className="h-6 w-6" />
                       {investment.moic}
                     </div>
-                    <div className="text-xs text-muted-foreground">MOIC</div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Multiple</div>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground" data-testid={`text-highlight-${index}`}>
-                  {investment.highlight}
-                </p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="mt-16 pt-16 border-t border-border/50">
           <Button 
             size="lg" 
             variant="outline"
             onClick={handleViewPortfolio}
+            className="text-base px-8 h-14 border-accent/30 hover:bg-card hover:border-accent/50"
             data-testid="button-view-portfolio"
           >
-            View Full Portfolio
+            Full Portfolio
+            <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

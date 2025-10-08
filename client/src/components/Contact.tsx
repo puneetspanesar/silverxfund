@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 
 export default function Contact() {
@@ -20,127 +19,110 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-contact-title">
-            Get In Touch
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-contact-subtitle">
-            Whether you're a founder seeking investment or an LP interested in our fund, we'd love to hear from you
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <Card>
-              <CardContent className="p-6">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium mb-2">
-                        Name
-                      </label>
-                      <Input
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="Your name"
-                        data-testid="input-name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium mb-2">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        placeholder="your@email.com"
-                        data-testid="input-email"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="organization" className="block text-sm font-medium mb-2">
-                      Organization
-                    </label>
-                    <Input
-                      id="organization"
-                      value={formData.organization}
-                      onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                      placeholder="Your company or institution"
-                      data-testid="input-organization"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell us about your inquiry..."
-                      rows={6}
-                      data-testid="input-message"
-                    />
-                  </div>
-                  
-                  <Button type="submit" size="lg" className="w-full" data-testid="button-submit">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+    <section id="contact" className="py-40 relative overflow-hidden">
+      <div className="absolute inset-0 bg-card border-y border-border/50" />
+      
+      <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+          <div>
+            <div className="inline-block mb-6">
+              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Get In Touch</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-contact-title">
+              Let's build the future together
+            </h2>
+            <p className="text-xl text-muted-foreground mb-12 font-light leading-relaxed" data-testid="text-contact-subtitle">
+              Whether you're a founder with a vision or an LP seeking extraordinary returns, we want to hear from you
+            </p>
+            
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-accent/10 rounded-lg">
+                  <Mail className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Email</div>
+                  <div className="text-lg font-medium">contact@silverxfund.com</div>
+                </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <div className="p-3 bg-accent/10 rounded-lg">
+                  <MapPin className="h-6 w-6 text-accent" />
+                </div>
+                <div>
+                  <div className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Office</div>
+                  <div className="text-lg font-medium">Hyderabad, India</div>
+                </div>
+              </div>
+            </div>
           </div>
           
-          <div className="space-y-6">
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Mail className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">contact@silverxfund.com</p>
-                  </div>
+          <div>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                    Name
+                  </label>
+                  <Input
+                    id="name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="Your name"
+                    className="h-14 bg-background border-border/50"
+                    data-testid="input-name"
+                  />
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Phone</h3>
-                    <p className="text-sm text-muted-foreground">+91 (0) 123 456 7890</p>
-                  </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    placeholder="your@email.com"
+                    className="h-14 bg-background border-border/50"
+                    data-testid="input-email"
+                  />
                 </div>
-              </CardContent>
-            </Card>
-            
-            <Card className="hover-elevate transition-all duration-300">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 rounded-lg bg-primary/10">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-1">Office</h3>
-                    <p className="text-sm text-muted-foreground">Hyderabad, India</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+              
+              <div>
+                <label htmlFor="organization" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                  Organization
+                </label>
+                <Input
+                  id="organization"
+                  value={formData.organization}
+                  onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
+                  placeholder="Your company"
+                  className="h-14 bg-background border-border/50"
+                  data-testid="input-organization"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  placeholder="Tell us about your vision..."
+                  rows={6}
+                  className="bg-background border-border/50 resize-none"
+                  data-testid="input-message"
+                />
+              </div>
+              
+              <Button type="submit" size="lg" className="w-full h-14 text-base" data-testid="button-submit">
+                Send Message
+              </Button>
+            </form>
           </div>
         </div>
       </div>
