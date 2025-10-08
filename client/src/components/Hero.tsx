@@ -1,6 +1,29 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight, Play, Brain, Rocket, Users, TrendingUp } from "lucide-react";
 import heroImage from "@assets/shutterstock_1858812901_1759928182771.jpg";
+
+const highlights = [
+  {
+    icon: Brain,
+    title: "AI-First Focus",
+    description: "Deep expertise in artificial intelligence and machine learning"
+  },
+  {
+    icon: Rocket,
+    title: "Hands-On Support",
+    description: "Active partnership from ideation to scale"
+  },
+  {
+    icon: Users,
+    title: "Founder-Friendly",
+    description: "Built by operators, for operators"
+  },
+  {
+    icon: TrendingUp,
+    title: "Proven Track Record",
+    description: "5+ unicorns in portfolio"
+  }
+];
 
 export default function Hero() {
   const handleViewThesis = () => {
@@ -63,7 +86,7 @@ export default function Hero() {
             </Button>
           </div>
 
-          <div className="flex flex-wrap gap-12 text-sm border-t border-white/30 pt-8">
+          <div className="flex flex-wrap gap-12 text-sm border-t border-white/30 pt-8 mb-20">
             <div data-testid="stat-fund-size">
               <div className="text-white/80 font-semibold mb-1 uppercase tracking-wider text-xs">Fund Size</div>
               <div className="font-serif text-3xl font-bold tabular-nums text-white">$100M</div>
@@ -77,10 +100,33 @@ export default function Hero() {
               <div className="font-serif text-3xl font-bold tabular-nums text-white">$5B+</div>
             </div>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            {highlights.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <div 
+                  key={index} 
+                  className="flex flex-col items-center text-center lg:items-start lg:text-left"
+                  data-testid={`highlight-${index}`}
+                >
+                  <div className="mb-4 p-4 rounded-full bg-white/10 backdrop-blur-sm">
+                    <Icon className="h-8 w-8 text-white" />
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-white mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-white/80 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
       
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#8d0000] to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 }

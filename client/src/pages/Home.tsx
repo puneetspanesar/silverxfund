@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import MaroonTransition from "@/components/MaroonTransition";
 import InvestmentThesis from "@/components/InvestmentThesis";
 import TrackRecord from "@/components/TrackRecord";
 import Team from "@/components/Team";
@@ -15,7 +14,6 @@ export default function Home() {
       <Navigation />
       <main>
         <Hero />
-        <MaroonTransition />
         <InvestmentThesis />
         <TrackRecord />
         <Team />
