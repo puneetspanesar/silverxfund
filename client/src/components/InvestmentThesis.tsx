@@ -1,38 +1,42 @@
-import { Sparkles, TrendingUp, Cpu } from "lucide-react";
+import { Sparkles, TrendingUp, Cpu, Target, Zap, Shield, Rocket, Users, Building2, ChevronRight, BarChart3, Network } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const segments = [
   {
     icon: Sparkles,
     title: "AI-First Infrastructure",
-    subtitle: "Foundation models to enterprise orchestration",
-    description: "We target companies building differentiated AI infrastructure—from novel architectures and specialized compute layers to enterprise orchestration platforms. Our focus is on ventures creating genuine technological moats through proprietary training methodologies, inference optimization, or domain-specific model architectures that solve previously intractable problems at scale.",
-    insights: [
-      "Proprietary data advantages creating sustainable competitive barriers",
-      "Architectural innovations enabling 10x cost or performance improvements",
-      "Enterprise adoption patterns indicating category-defining potential"
-    ]
+    subtitle: "Foundation models to enterprise platforms",
+    description: "Differentiated AI infrastructure with genuine technological moats",
+    metrics: [
+      { icon: Target, label: "Focus Areas", value: "LLMs, Inference, DevTools" },
+      { icon: Zap, label: "Performance", value: "10x improvements" },
+      { icon: Shield, label: "Moat", value: "Proprietary data" }
+    ],
+    highlights: ["Enterprise AI", "Vertical SaaS", "MLOps Platforms"]
   },
   {
     icon: TrendingUp,
     title: "Consumer Technology",
-    subtitle: "Digital-first platforms reshaping behavior",
-    description: "We invest in consumer platforms demonstrating exceptional product-market fit, network effects, and capital-efficient scaling. Our conviction centers on founders who deeply understand behavioral psychology, distribution dynamics, and the intersection of technology with evolving cultural norms—particularly in India's unique consumption landscape.",
-    insights: [
-      "Proven organic growth loops and viral coefficients exceeding 1.5x",
-      "Unit economics demonstrating clear paths to sustainable profitability",
-      "Defensible market positions through data, community, or brand equity"
-    ]
+    subtitle: "Digital platforms reshaping behavior",
+    description: "Capital-efficient scaling with exceptional product-market fit",
+    metrics: [
+      { icon: Users, label: "Growth", value: "Viral coefficient >1.5x" },
+      { icon: BarChart3, label: "Unit Economics", value: "Path to profitability" },
+      { icon: Network, label: "Defense", value: "Network effects" }
+    ],
+    highlights: ["Social Commerce", "Fintech", "Creator Economy"]
   },
   {
     icon: Cpu,
     title: "Deep Technology",
-    subtitle: "IP-protected innovation at the frontier",
-    description: "Our deep tech investments focus on ventures with substantial intellectual property portfolios addressing critical infrastructure challenges. We seek companies with technical founders solving hard problems in semiconductors, advanced materials, clean energy, and next-generation computing—where India's engineering talent can establish global technology leadership.",
-    insights: [
-      "Patent portfolios creating multi-year lead advantages in critical domains",
-      "Technical risk substantially de-risked through proof-of-concept validation",
-      "Total addressable markets exceeding $50B with structural tailwinds"
-    ]
+    subtitle: "IP-protected frontier innovation",
+    description: "Patent-backed ventures solving critical infrastructure challenges",
+    metrics: [
+      { icon: Building2, label: "Sectors", value: "Semiconductors, Clean Energy" },
+      { icon: Shield, label: "Protection", value: "Multi-year IP lead" },
+      { icon: Rocket, label: "Market Size", value: "$50B+ TAM" }
+    ],
+    highlights: ["Advanced Materials", "Quantum Computing", "Robotics"]
   }
 ];
 
@@ -52,45 +56,67 @@ export default function InvestmentThesis() {
           </p>
         </div>
         
-        <div className="space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {segments.map((segment, index) => {
             const Icon = segment.icon;
             return (
-              <div 
-                key={index} 
-                className="group relative border-t border-border/30 py-16 hover:bg-muted/10 transition-all duration-500 px-8 -mx-8"
+              <Card 
+                key={index}
+                className="group relative hover-elevate overflow-visible border-2"
                 data-testid={`segment-${index}`}
               >
-                <div className="flex flex-col gap-8">
-                  <div className="flex items-start gap-8">
-                    <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-500 border border-primary/20">
-                      <Icon className="h-10 w-10 text-primary" />
+                <CardContent className="p-8">
+                  <div className="mb-8">
+                    <div className="inline-flex p-5 bg-primary/10 rounded-xl mb-6 border-2 border-primary/20">
+                      <Icon className="h-12 w-12 text-primary" />
                     </div>
-                    <div className="flex-1">
-                      <div className="mb-2">
-                        <h3 className="font-serif text-4xl font-bold text-primary mb-2" data-testid={`text-segment-title-${index}`}>
-                          {segment.title}
-                        </h3>
-                        <span className="text-base text-muted-foreground/80 font-serif italic">{segment.subtitle}</span>
-                      </div>
-                      <p className="text-foreground text-lg max-w-4xl leading-relaxed mt-6 font-light" data-testid={`text-segment-description-${index}`}>
-                        {segment.description}
-                      </p>
-                      
-                      <div className="mt-8 space-y-3">
-                        {segment.insights.map((insight, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2.5 flex-shrink-0" />
-                            <p className="text-muted-foreground text-base leading-relaxed" data-testid={`text-insight-${index}-${idx}`}>
-                              {insight}
-                            </p>
+                    <h3 className="font-serif text-3xl font-bold text-primary mb-3" data-testid={`text-segment-title-${index}`}>
+                      {segment.title}
+                    </h3>
+                    <p className="text-muted-foreground/80 font-serif text-sm italic mb-4">
+                      {segment.subtitle}
+                    </p>
+                    <p className="text-foreground leading-relaxed" data-testid={`text-segment-description-${index}`}>
+                      {segment.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-4 mb-8 pb-8 border-b border-border/50">
+                    {segment.metrics.map((metric, idx) => {
+                      const MetricIcon = metric.icon;
+                      return (
+                        <div key={idx} className="flex items-start gap-3" data-testid={`metric-${index}-${idx}`}>
+                          <div className="p-2 bg-primary/5 rounded-lg mt-0.5">
+                            <MetricIcon className="h-4 w-4 text-primary" />
                           </div>
-                        ))}
-                      </div>
+                          <div className="flex-1">
+                            <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">
+                              {metric.label}
+                            </div>
+                            <div className="text-sm font-medium text-foreground">
+                              {metric.value}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">
+                      Key Verticals
+                    </div>
+                    <div className="space-y-2">
+                      {segment.highlights.map((highlight, idx) => (
+                        <div key={idx} className="flex items-center gap-2" data-testid={`highlight-${index}-${idx}`}>
+                          <ChevronRight className="h-3 w-3 text-primary flex-shrink-0" />
+                          <span className="text-sm text-foreground">{highlight}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
