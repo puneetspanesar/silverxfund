@@ -41,7 +41,7 @@ export default function Navigation() {
       data-testid="nav-main"
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24 lg:h-28">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="transition-all duration-300"
@@ -50,7 +50,7 @@ export default function Navigation() {
             <img 
               src={logo} 
               alt="SilverX Fund" 
-              className={`h-12 transition-all duration-300 ${
+              className={`h-20 lg:h-24 transition-all duration-300 ${
                 isScrolled ? '' : 'brightness-0 invert'
               }`}
             />
