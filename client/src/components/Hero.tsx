@@ -19,10 +19,10 @@ export default function Hero() {
         className="absolute inset-0 bg-cover bg-center scale-105"
         style={{ 
           backgroundImage: `url(${heroImage})`,
-          filter: 'brightness(0.3) saturate(0.6) blur(1px)'
+          filter: 'brightness(0.5) saturate(0.7)'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/85 to-background/70" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/50 to-background/30" />
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-8 lg:px-16 py-32 w-full">
         <div className="max-w-4xl">
