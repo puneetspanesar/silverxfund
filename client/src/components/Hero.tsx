@@ -1,27 +1,27 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Brain, Rocket, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, Cpu, Target, Network, Award } from "lucide-react";
 import heroImage from "@assets/shutterstock_1858812901_1759928182771.jpg";
 
 const highlights = [
   {
-    icon: Brain,
-    title: "AI-First Focus",
-    description: "Deep expertise in artificial intelligence and machine learning"
+    icon: Cpu,
+    title: "Deep-Tech Expertise",
+    description: "Specialized focus on AI, ML, and emerging technologies shaping the future"
   },
   {
-    icon: Rocket,
-    title: "Hands-On Support",
-    description: "Active partnership from ideation to scale"
+    icon: Target,
+    title: "Strategic Capital",
+    description: "Thesis-driven investments in category-defining companies at inflection points"
   },
   {
-    icon: Users,
-    title: "Founder-Friendly",
-    description: "Built by operators, for operators"
+    icon: Network,
+    title: "Operational Network",
+    description: "Access to global partnerships, talent networks, and go-to-market resources"
   },
   {
-    icon: TrendingUp,
-    title: "Proven Track Record",
-    description: "5+ unicorns in portfolio"
+    icon: Award,
+    title: "Exceptional Returns",
+    description: "Portfolio includes 5+ unicorns with $5B+ in aggregate value created"
   }
 ];
 
