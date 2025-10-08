@@ -19,10 +19,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-40 relative overflow-hidden">
-      <div className="absolute inset-0 bg-card border-y border-border/50" />
-      
-      <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
+    <section id="contact" className="py-40 bg-background border-y border-border/30">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <div className="inline-block mb-6">

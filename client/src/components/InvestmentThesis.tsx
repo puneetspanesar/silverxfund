@@ -26,10 +26,8 @@ const segments = [
 
 export default function InvestmentThesis() {
   return (
-    <section id="investment-thesis" className="py-40 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/30 to-background" />
-      
-      <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
+    <section id="investment-thesis" className="py-40 relative overflow-hidden bg-background">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
@@ -48,7 +46,7 @@ export default function InvestmentThesis() {
             return (
               <div 
                 key={index} 
-                className="group relative border-t border-border/50 py-12 hover:bg-card/30 transition-all duration-500 px-8 -mx-8"
+                className="group relative border-t border-border/30 py-12 hover:bg-muted/10 transition-all duration-500 px-8 -mx-8"
                 data-testid={`segment-${index}`}
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">

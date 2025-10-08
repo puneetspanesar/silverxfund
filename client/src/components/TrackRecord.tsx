@@ -45,10 +45,8 @@ export default function TrackRecord() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-32 relative">
-      <div className="absolute inset-0 bg-card border-y border-border/50" />
-      
-      <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
+    <section ref={sectionRef} className="py-32 bg-muted/20 border-y border-border/30">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-20 max-w-3xl">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Track Record</span>

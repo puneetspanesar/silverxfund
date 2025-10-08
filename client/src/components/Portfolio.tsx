@@ -53,7 +53,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section className="py-40 relative">
+    <section className="py-40 bg-muted/20">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24 max-w-4xl">
           <div className="inline-block mb-6">
@@ -71,7 +71,7 @@ export default function Portfolio() {
           {investments.map((investment, index) => (
             <div 
               key={index} 
-              className="group border-t border-border/50 py-8 hover:bg-card/30 transition-all duration-500 px-8 -mx-8"
+              className="group border-t border-border/30 py-8 hover:bg-background/50 transition-all duration-500 px-8 -mx-8"
               data-testid={`investment-${index}`}
             >
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
