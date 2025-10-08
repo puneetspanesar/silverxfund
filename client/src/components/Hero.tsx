@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
-import heroImage from "@assets/generated_images/Premium_tech_workspace_hero_a2b78c5e.png";
+import heroImage from "@assets/shutterstock_1858812901_1759928182771.jpg";
 
 export default function Hero() {
   const handleViewThesis = () => {
