@@ -11,16 +11,7 @@ const navItems = [
 ];
 
 export default function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const handleNavClick = (href: string) => {
     console.log(`Navigating to ${href}`);
@@ -33,11 +24,7 @@ export default function Navigation() {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled 
-          ? 'bg-background/80 backdrop-blur-xl border-b border-border/50' 
-          : 'bg-transparent'
-      }`}
+      className="absolute top-0 left-0 right-0 z-50 bg-transparent"
       data-testid="nav-main"
     >
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
@@ -50,9 +37,7 @@ export default function Navigation() {
             <img 
               src={logo} 
               alt="SilverX Fund" 
-              className={`h-20 lg:h-24 transition-all duration-300 ${
-                isScrolled ? '' : 'brightness-0 invert'
-              }`}
+              className="h-20 lg:h-24 brightness-0 invert"
             />
           </button>
           
@@ -61,11 +46,7 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className={`text-sm uppercase tracking-[0.1em] font-medium transition-colors ${
-                  isScrolled 
-                    ? 'text-muted-foreground hover:text-foreground' 
-                    : 'text-white/90 hover:text-white'
-                }`}
+                className="text-sm uppercase tracking-[0.1em] font-medium text-white/90 hover:text-white transition-colors"
                 data-testid={`link-${item.label.toLowerCase().replace(' ', '-')}`}
               >
                 {item.label}
@@ -78,7 +59,7 @@ export default function Navigation() {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={isScrolled ? '' : 'text-white hover:text-white'}
+              className="text-white hover:text-white"
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
