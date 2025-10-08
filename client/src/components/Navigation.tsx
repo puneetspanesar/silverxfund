@@ -44,10 +44,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="font-serif text-xl font-bold tracking-tight"
+            className={`font-serif text-xl font-bold tracking-tight transition-colors ${
+              isScrolled ? 'text-foreground' : 'text-white'
+            }`}
             data-testid="button-logo"
           >
-            SILVERX <span className="text-primary">FUND</span>
+            SILVERX <span className={isScrolled ? 'text-primary' : 'text-white'}>FUND</span>
           </button>
           
           <div className="hidden lg:flex items-center gap-12">
@@ -55,21 +57,26 @@ export default function Navigation() {
               <button
                 key={item.href}
                 onClick={() => handleNavClick(item.href)}
-                className="text-sm uppercase tracking-[0.1em] font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className={`text-sm uppercase tracking-[0.1em] font-medium transition-colors ${
+                  isScrolled 
+                    ? 'text-muted-foreground hover:text-foreground' 
+                    : 'text-white/80 hover:text-white'
+                }`}
                 data-testid={`link-${item.label.toLowerCase().replace(' ', '-')}`}
               >
                 {item.label}
               </button>
             ))}
-            <ThemeToggle />
+            <ThemeToggle className={isScrolled ? '' : 'text-white hover:text-white'} />
           </div>
           
           <div className="flex lg:hidden items-center gap-4">
-            <ThemeToggle />
+            <ThemeToggle className={isScrolled ? '' : 'text-white hover:text-white'} />
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={isScrolled ? '' : 'text-white hover:text-white'}
               data-testid="button-mobile-menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
