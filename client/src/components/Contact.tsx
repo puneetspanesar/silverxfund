@@ -26,9 +26,9 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
             <div className="inline-block mb-6">
-              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Get In Touch</span>
+              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Get In Touch</span>
             </div>
-            <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-contact-title">
+            <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-contact-title">
               Let's build the future together
             </h2>
             <p className="text-xl text-muted-foreground mb-12 font-light leading-relaxed" data-testid="text-contact-subtitle">
@@ -37,22 +37,22 @@ export default function Contact() {
             
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <Mail className="h-6 w-6 text-accent" />
+                <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Email</div>
-                  <div className="text-lg font-medium">contact@silverxfund.com</div>
+                  <div className="text-sm uppercase tracking-wider text-primary mb-1">Email</div>
+                  <div className="font-serif text-lg font-semibold text-primary">contact@silverxfund.com</div>
                 </div>
               </div>
               
               <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg">
-                  <MapPin className="h-6 w-6 text-accent" />
+                <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
+                  <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <div className="text-sm uppercase tracking-wider text-muted-foreground mb-1">Office</div>
-                  <div className="text-lg font-medium">Hyderabad, India</div>
+                  <div className="text-sm uppercase tracking-wider text-primary mb-1">Office</div>
+                  <div className="font-serif text-lg font-semibold text-primary">Hyderabad, India</div>
                 </div>
               </div>
             </div>

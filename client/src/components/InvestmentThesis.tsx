@@ -32,9 +32,9 @@ export default function InvestmentThesis() {
       <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24">
           <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Investment Strategy</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl" data-testid="text-thesis-title">
+          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-thesis-title">
             High-conviction bets on India's next decade
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-light leading-relaxed" data-testid="text-thesis-subtitle">
@@ -53,15 +53,15 @@ export default function InvestmentThesis() {
               >
                 <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
                   <div className="flex items-start gap-8 flex-1">
-                    <div className="p-4 bg-accent/10 rounded-lg group-hover:bg-accent/20 transition-colors duration-500">
-                      <Icon className="h-10 w-10 text-accent" />
+                    <div className="p-4 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors duration-500 border border-primary/20">
+                      <Icon className="h-10 w-10 text-primary" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-3">
-                        <h3 className="font-serif text-3xl font-bold" data-testid={`text-segment-title-${index}`}>
+                        <h3 className="font-serif text-3xl font-bold text-primary" data-testid={`text-segment-title-${index}`}>
                           {segment.title}
                         </h3>
-                        <span className="text-sm text-muted-foreground">• {segment.subtitle}</span>
+                        <span className="text-sm text-muted-foreground font-serif">• {segment.subtitle}</span>
                       </div>
                       <p className="text-muted-foreground text-lg max-w-2xl leading-relaxed" data-testid={`text-segment-description-${index}`}>
                         {segment.description}
@@ -69,7 +69,7 @@ export default function InvestmentThesis() {
                     </div>
                   </div>
                   <div className="text-right lg:text-right">
-                    <div className="text-2xl font-bold tabular-nums text-accent">{segment.stats}</div>
+                    <div className="font-serif text-3xl font-bold tabular-nums text-primary">{segment.stats}</div>
                   </div>
                 </div>
               </div>

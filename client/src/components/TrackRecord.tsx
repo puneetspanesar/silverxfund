@@ -51,9 +51,9 @@ export default function TrackRecord() {
       <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-20 max-w-3xl">
           <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Track Record</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Track Record</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6" data-testid="text-track-record-title">
+          <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-track-record-title">
             Proven execution since 2012
           </h2>
           <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-track-record-subtitle">
@@ -68,11 +68,11 @@ export default function TrackRecord() {
               className="relative group"
               data-testid={`stat-${index}`}
             >
-              <div className="absolute -top-4 left-0 w-12 h-1 bg-accent/30" />
-              <div className={`text-6xl lg:text-7xl font-bold tabular-nums mb-4 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} data-testid={`text-stat-value-${index}`}>
+              <div className="absolute -top-4 left-0 w-16 h-1 bg-primary/50" />
+              <div className={`font-serif text-6xl lg:text-7xl font-bold tabular-nums mb-4 text-primary transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`} data-testid={`text-stat-value-${index}`}>
                 {stat.value}
               </div>
-              <div className="text-lg font-semibold mb-2" data-testid={`text-stat-label-${index}`}>
+              <div className="font-serif text-xl font-semibold mb-2 text-primary" data-testid={`text-stat-label-${index}`}>
                 {stat.label}
               </div>
               <div className="text-sm text-muted-foreground" data-testid={`text-stat-description-${index}`}>

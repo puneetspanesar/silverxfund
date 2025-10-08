@@ -57,9 +57,9 @@ export default function Portfolio() {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24 max-w-4xl">
           <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Portfolio</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Portfolio</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6" data-testid="text-portfolio-title">
+          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-portfolio-title">
             Category-defining companies
           </h2>
           <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
@@ -77,13 +77,13 @@ export default function Portfolio() {
               <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-3">
-                    <h3 className="font-serif text-2xl font-bold" data-testid={`text-sector-${index}`}>
+                    <h3 className="font-serif text-2xl font-bold text-primary" data-testid={`text-sector-${index}`}>
                       {investment.sector}
                     </h3>
-                    <Badge variant="secondary" className="uppercase text-xs tracking-wider" data-testid={`badge-status-${index}`}>
+                    <Badge variant="secondary" className="uppercase text-xs tracking-wider bg-primary/10 text-primary border-primary/20" data-testid={`badge-status-${index}`}>
                       {investment.status}
                     </Badge>
-                    <span className="text-sm text-muted-foreground">• {investment.stage}</span>
+                    <span className="text-sm text-muted-foreground font-serif">• {investment.stage}</span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed" data-testid={`text-highlight-${index}`}>
                     {investment.highlight}
@@ -91,11 +91,11 @@ export default function Portfolio() {
                 </div>
                 <div className="flex items-center gap-6">
                   <div className="text-right">
-                    <div className="text-5xl font-bold tabular-nums flex items-center gap-2 text-accent" data-testid={`text-moic-${index}`}>
+                    <div className="font-serif text-5xl font-bold tabular-nums flex items-center gap-2 text-primary" data-testid={`text-moic-${index}`}>
                       <TrendingUp className="h-6 w-6" />
                       {investment.moic}
                     </div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground mt-1">Multiple</div>
+                    <div className="text-xs uppercase tracking-wider text-primary mt-1">Multiple</div>
                   </div>
                 </div>
               </div>
@@ -103,12 +103,12 @@ export default function Portfolio() {
           ))}
         </div>
         
-        <div className="mt-16 pt-16 border-t border-border/50">
+        <div className="mt-16 pt-16 border-t border-primary/30">
           <Button 
             size="lg" 
             variant="outline"
             onClick={handleViewPortfolio}
-            className="text-base px-8 h-14 border-accent/30 hover:bg-card hover:border-accent/50"
+            className="font-serif text-base px-8 h-14 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60"
             data-testid="button-view-portfolio"
           >
             Full Portfolio

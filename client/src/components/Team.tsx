@@ -46,9 +46,9 @@ export default function Team() {
       <div className="relative max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-24 max-w-4xl">
           <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-accent">Leadership</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Leadership</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6" data-testid="text-team-title">
+          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-team-title">
             Operators who've built, scaled, and exited
           </h2>
           <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-team-subtitle">
@@ -78,19 +78,19 @@ export default function Team() {
               <div className="lg:w-7/12">
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-serif text-4xl font-bold" data-testid={`text-name-${index}`}>
+                    <h3 className="font-serif text-4xl font-bold text-primary" data-testid={`text-name-${index}`}>
                       {partner.name}
                     </h3>
                   </div>
-                  <p className="text-lg text-muted-foreground mb-1" data-testid={`text-title-${index}`}>
+                  <p className="font-serif text-lg text-muted-foreground mb-1" data-testid={`text-title-${index}`}>
                     {partner.title}
                   </p>
-                  <p className="text-sm font-semibold text-accent uppercase tracking-wider" data-testid={`text-experience-${index}`}>
+                  <p className="text-sm font-semibold text-primary uppercase tracking-wider" data-testid={`text-experience-${index}`}>
                     {partner.experience} Experience
                   </p>
                 </div>
                 
-                <blockquote className="text-2xl font-light leading-relaxed mb-8 italic border-l-2 border-accent pl-6">
+                <blockquote className="font-serif text-2xl font-light leading-relaxed mb-8 italic border-l-4 border-primary pl-6 text-primary">
                   "{partner.quote}"
                 </blockquote>
                 
