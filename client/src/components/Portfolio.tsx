@@ -60,10 +60,10 @@ export default function Portfolio() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Portfolio</span>
           </div>
           <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-portfolio-title">
-            Category-defining companies
+            Fund I Legacy
           </h2>
           <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
-            Our investments demonstrate consistent ability to identify and back market leaders early
+            16 investments across high-potential segments with MOICs up to 75x and $5Bn+ in cumulative portfolio value created
           </p>
         </div>
         

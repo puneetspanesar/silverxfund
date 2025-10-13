@@ -12,10 +12,11 @@ const details = [
 ];
 
 const preferences = [
-  "Preference for repeat and experienced entrepreneurs",
-  "Clear pathway towards profitability as a key filter",
-  "Concentrated, high-conviction bets with depth of capital",
-  "Long-term partnership: backing companies from early stages through growth"
+  "Operator VC Model with real-world scaling experience",
+  "Deep Research Orientation for informed investment decisions",
+  "Constant monitoring of M&A patterns, founder behavior, and category evolution",
+  "Active mentoring across GTM, hiring, compliances and fund raise",
+  "Exit Strategy (4-6 Years) targeting high-growth sectors"
 ];
 
 export default function FundDetails() {
