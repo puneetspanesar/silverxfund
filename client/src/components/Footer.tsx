@@ -1,4 +1,5 @@
 import { SiLinkedin, SiX } from "react-icons/si";
+import footerLogo from "@assets/SilverX Fund Logo_1760354717741.png";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,9 +9,12 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <h3 className="font-serif text-2xl font-bold mb-4 tracking-tight">
-              SILVERX <span className="text-primary">FUND</span>
-            </h3>
+            <img 
+              src={footerLogo} 
+              alt="SilverX Fund" 
+              className="h-32 mb-6"
+              data-testid="img-footer-logo"
+            />
             <p className="text-foreground leading-relaxed max-w-md">
               AI-first venture capital backing India's next generation of category-defining deep-tech companies.
             </p>
@@ -23,6 +27,7 @@ export default function Footer() {
                 <button 
                   onClick={() => document.getElementById('investment-thesis')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-foreground hover:text-foreground transition-colors"
+                  data-testid="link-footer-thesis"
                 >
                   Investment Thesis
                 </button>
@@ -31,6 +36,7 @@ export default function Footer() {
                 <button 
                   onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-foreground hover:text-foreground transition-colors"
+                  data-testid="link-footer-team"
                 >
                   Leadership Team
                 </button>
@@ -39,6 +45,7 @@ export default function Footer() {
                 <button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-foreground hover:text-foreground transition-colors"
+                  data-testid="link-footer-contact"
                 >
                   Contact
                 </button>
@@ -53,6 +60,7 @@ export default function Footer() {
                 onClick={() => console.log('LinkedIn clicked')}
                 className="p-3 border border-border/50 rounded-lg hover:bg-card hover:border-accent/50 transition-all"
                 aria-label="LinkedIn"
+                data-testid="button-linkedin"
               >
                 <SiLinkedin className="h-5 w-5" />
               </button>
@@ -60,6 +68,7 @@ export default function Footer() {
                 onClick={() => console.log('X (Twitter) clicked')}
                 className="p-3 border border-border/50 rounded-lg hover:bg-card hover:border-accent/50 transition-all"
                 aria-label="X (Twitter)"
+                data-testid="button-twitter"
               >
                 <SiX className="h-5 w-5" />
               </button>

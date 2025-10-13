@@ -1,6 +1,6 @@
 import { Briefcase, Target, Layers, GraduationCap, Quote } from "lucide-react";
 import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
-import partner2 from "@assets/generated_images/Executive_partner_headshot_2_03392363.png";
+import dhirajPhoto from "@assets/Dhiraj_1760354703695.jpeg";
 import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
 import sanjayPhoto from "@assets/Sanjay-2-2_1760348499668.png";
 
@@ -20,7 +20,7 @@ const partners = [
     name: "Dhiraj Kumar Sinha",
     title: "Managing Partner",
     subtitle: "25+ Years of Experience across VC & Large Corporate Houses",
-    image: partner2,
+    image: dhirajPhoto,
     quote: "Sustainable innovation requires patient capital and strategic discipline",
     experience: "SucSEED Indovation, Air Costa, Max India, Vatika, PVP Group, LEPL Group",
     keyFocusAreas: "Legal, Compliance, Finance, Strategy",
