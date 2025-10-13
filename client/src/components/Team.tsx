@@ -1,4 +1,4 @@
-import { Briefcase, Target, Layers, GraduationCap } from "lucide-react";
+import { Briefcase, Target, Layers, GraduationCap, Quote } from "lucide-react";
 import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
 import partner2 from "@assets/generated_images/Executive_partner_headshot_2_03392363.png";
 import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
@@ -10,6 +10,7 @@ const partners = [
     title: "Founder & Managing Partner",
     subtitle: "22+ Years of Experience as Investor, Operator & Entrepreneur",
     image: ajayPhoto,
+    quote: "We back founders who are building the infrastructure for tomorrow's AI economy",
     experience: "Xseed Partners, T-Hub, CIE IIITH, Gray Matters Capital, Intel, AMD, Magnaquest",
     keyFocusAreas: "Strategy, Business Development, GTM, Fundraising",
     sectors: "Deep Tech, Semiconductors, GenAI, SaaS, FinTech, EdTech",
@@ -20,6 +21,7 @@ const partners = [
     title: "Managing Partner",
     subtitle: "25+ Years of Experience across VC & Large Corporate Houses",
     image: partner2,
+    quote: "Sustainable innovation requires patient capital and strategic discipline",
     experience: "SucSEED Indovation, Air Costa, Max India, Vatika, PVP Group, LEPL Group",
     keyFocusAreas: "Legal, Compliance, Finance, Strategy",
     sectors: "EV, Sustainability, Deep Tech, Mobility",
@@ -30,6 +32,7 @@ const partners = [
     title: "Partner",
     subtitle: "10+ Years of Investment & Exit Experience across Early & Mature-Stage Investments",
     image: abishekPhoto,
+    quote: "Consumer businesses win when they combine scale with sustainable unit economics",
     experience: "Nirvana Ventures (VC), Xander Private Equity (PE), JM Financial (IB), Nomura International (IB)",
     keyFocusAreas: "Growth Strategy, Fundraising, Deal Structuring",
     sectors: "D2C, Consumer Internet, Real Estate, Hospitality",
@@ -40,6 +43,7 @@ const partners = [
     title: "Partner",
     subtitle: "25+ Years of Experience in Technology & 6+ Years in Healthtech",
     image: sanjayPhoto,
+    quote: "Healthcare AI will define the next decade of enterprise transformation",
     experience: "Innovaccer (Unicorn), Oracle, Expobeds, Evolco",
     keyFocusAreas: "Product Management & Sales, GTM, Growth Strategy, Planning & Execution",
     sectors: "Healthcare, AI, Deep Tech, B2B SaaS",
@@ -71,14 +75,24 @@ export default function Team() {
               data-testid={`team-${index}`}
             >
               <div className="lg:w-1/3">
-                <div className="relative aspect-[3/4] overflow-hidden bg-muted">
+                <div className="relative aspect-[3/4] overflow-hidden bg-muted group">
                   <img 
                     src={partner.image} 
                     alt={partner.name}
                     className="w-full h-full object-cover"
                     data-testid={`img-team-${index}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Quote Overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex gap-3 items-start">
+                      <Quote className="h-6 w-6 text-white/80 flex-shrink-0 mt-1" />
+                      <p className="font-serif text-lg leading-relaxed text-white italic" data-testid={`text-quote-${index}`}>
+                        {partner.quote}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
               
