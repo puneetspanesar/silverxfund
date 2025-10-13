@@ -54,7 +54,7 @@ export default function TrackRecord() {
           <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-track-record-title">
             Proven execution since 2012
           </h2>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-track-record-subtitle">
+          <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-track-record-subtitle">
             Two decades of combined experience backing category-defining companies across growth stages
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function TrackRecord() {
               <div className="font-serif text-xl font-semibold mb-2 text-primary" data-testid={`text-stat-label-${index}`}>
                 {stat.label}
               </div>
-              <div className="text-sm text-muted-foreground" data-testid={`text-stat-description-${index}`}>
+              <div className="text-sm text-foreground" data-testid={`text-stat-description-${index}`}>
                 {stat.description}
               </div>
             </div>
