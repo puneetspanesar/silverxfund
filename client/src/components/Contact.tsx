@@ -29,7 +29,7 @@ export default function Contact() {
             <h2 className="font-serif text-5xl lg:text-6xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-contact-title">
               Let's build the future together
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 font-light leading-relaxed" data-testid="text-contact-subtitle">
+            <p className="text-xl text-foreground mb-12 font-light leading-relaxed" data-testid="text-contact-subtitle">
               Whether you're a founder with a vision or an LP seeking extraordinary returns, we want to hear from you
             </p>
             
@@ -60,7 +60,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                  <label htmlFor="name" className="block text-sm font-medium mb-3 uppercase tracking-wider text-foreground">
                     Name
                   </label>
                   <Input
@@ -73,7 +73,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                  <label htmlFor="email" className="block text-sm font-medium mb-3 uppercase tracking-wider text-foreground">
                     Email
                   </label>
                   <Input
@@ -89,7 +89,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="organization" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                <label htmlFor="organization" className="block text-sm font-medium mb-3 uppercase tracking-wider text-foreground">
                   Organization
                 </label>
                 <Input
@@ -103,7 +103,7 @@ export default function Contact() {
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-3 uppercase tracking-wider text-muted-foreground">
+                <label htmlFor="message" className="block text-sm font-medium mb-3 uppercase tracking-wider text-foreground">
                   Message
                 </label>
                 <Textarea

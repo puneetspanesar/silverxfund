@@ -11,7 +11,7 @@ export default function Footer() {
             <h3 className="font-serif text-2xl font-bold mb-4 tracking-tight">
               SILVERX <span className="text-primary">FUND</span>
             </h3>
-            <p className="text-muted-foreground leading-relaxed max-w-md">
+            <p className="text-foreground leading-relaxed max-w-md">
               AI-first venture capital backing India's next generation of category-defining deep-tech companies.
             </p>
           </div>
@@ -22,7 +22,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => document.getElementById('investment-thesis')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-foreground hover:text-foreground transition-colors"
                 >
                   Investment Thesis
                 </button>
@@ -30,7 +30,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-foreground hover:text-foreground transition-colors"
                 >
                   Leadership Team
                 </button>
@@ -38,7 +38,7 @@ export default function Footer() {
               <li>
                 <button 
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-foreground hover:text-foreground transition-colors"
                 >
                   Contact
                 </button>
@@ -68,10 +68,10 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground">
             © {currentYear} SilverX Fund. All rights reserved.
           </p>
-          <div className="flex gap-6 text-sm text-muted-foreground">
+          <div className="flex gap-6 text-sm text-foreground">
             <button className="hover:text-foreground transition-colors">Privacy Policy</button>
             <button className="hover:text-foreground transition-colors">Terms of Service</button>
           </div>

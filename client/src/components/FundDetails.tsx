@@ -26,7 +26,7 @@ export default function FundDetails() {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-details-title">
             Fund Details
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-details-subtitle">
+          <p className="text-lg text-foreground max-w-2xl mx-auto" data-testid="text-details-subtitle">
             Structured for optimal returns with a disciplined investment approach
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function FundDetails() {
                 <dl className="space-y-4">
                   {details.map((detail, index) => (
                     <div key={index} className="flex justify-between items-center py-2 border-b last:border-0" data-testid={`detail-${index}`}>
-                      <dt className="text-muted-foreground">{detail.label}</dt>
+                      <dt className="text-foreground">{detail.label}</dt>
                       <dd className="font-semibold text-right">{detail.value}</dd>
                     </div>
                   ))}
@@ -56,7 +56,7 @@ export default function FundDetails() {
                   {preferences.map((pref, index) => (
                     <li key={index} className="flex items-start gap-3" data-testid={`guideline-${index}`}>
                       <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                      <span className="text-muted-foreground">{pref}</span>
+                      <span className="text-foreground">{pref}</span>
                     </li>
                   ))}
                 </ul>

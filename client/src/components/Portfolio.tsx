@@ -62,7 +62,7 @@ export default function Portfolio() {
           <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-portfolio-title">
             Category-defining companies
           </h2>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
+          <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
             Our investments demonstrate consistent ability to identify and back market leaders early
           </p>
         </div>
@@ -83,9 +83,9 @@ export default function Portfolio() {
                     <Badge variant="secondary" className="uppercase text-xs tracking-wider bg-primary/10 text-primary border-primary/20" data-testid={`badge-status-${index}`}>
                       {investment.status}
                     </Badge>
-                    <span className="text-sm text-muted-foreground font-serif">• {investment.stage}</span>
+                    <span className="text-sm text-foreground font-serif">• {investment.stage}</span>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed" data-testid={`text-highlight-${index}`}>
+                  <p className="text-foreground leading-relaxed" data-testid={`text-highlight-${index}`}>
                     {investment.highlight}
                   </p>
                 </div>

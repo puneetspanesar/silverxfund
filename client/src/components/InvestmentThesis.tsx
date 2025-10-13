@@ -51,7 +51,7 @@ export default function InvestmentThesis() {
           <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-thesis-title">
             High-conviction bets on India's next decade
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl font-light leading-relaxed" data-testid="text-thesis-subtitle">
+          <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed" data-testid="text-thesis-subtitle">
             Our investment mandate centers on identifying inflection points where technological capabilities, market timing, and founder excellence converge. We deploy concentrated capital into ventures demonstrating the potential to define categories, not merely participate in them.
           </p>
         </div>
@@ -73,7 +73,7 @@ export default function InvestmentThesis() {
                     <h3 className="font-serif text-3xl font-bold text-primary mb-3" data-testid={`text-segment-title-${index}`}>
                       {segment.title}
                     </h3>
-                    <p className="text-muted-foreground/80 font-serif text-sm italic mb-4">
+                    <p className="text-foreground/80 font-serif text-sm italic mb-4">
                       {segment.subtitle}
                     </p>
                     <p className="text-foreground leading-relaxed" data-testid={`text-segment-description-${index}`}>
@@ -90,7 +90,7 @@ export default function InvestmentThesis() {
                             <MetricIcon className="h-4 w-4 text-primary" />
                           </div>
                           <div className="flex-1">
-                            <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-0.5">
+                            <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-0.5">
                               {metric.label}
                             </div>
                             <div className="text-sm font-medium text-foreground">
@@ -103,7 +103,7 @@ export default function InvestmentThesis() {
                   </div>
 
                   <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-3">
+                    <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-3">
                       Key Verticals
                     </div>
                     <div className="space-y-2">

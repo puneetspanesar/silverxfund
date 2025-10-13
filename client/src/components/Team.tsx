@@ -49,7 +49,7 @@ export default function Team() {
           <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-team-title">
             Operators who've built, scaled, and exited
           </h2>
-          <p className="text-xl text-muted-foreground font-light leading-relaxed" data-testid="text-team-subtitle">
+          <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-team-subtitle">
             Our partners bring decades of combined experience across venture capital, operating roles, and successful exits
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function Team() {
                       {partner.name}
                     </h3>
                   </div>
-                  <p className="font-serif text-lg text-muted-foreground mb-1" data-testid={`text-title-${index}`}>
+                  <p className="font-serif text-lg text-foreground mb-1" data-testid={`text-title-${index}`}>
                     {partner.title}
                   </p>
                   <p className="text-sm font-semibold text-primary uppercase tracking-wider" data-testid={`text-experience-${index}`}>
