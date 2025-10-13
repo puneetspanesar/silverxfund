@@ -40,57 +40,12 @@ const whatSetsUsApart = [
   }
 ];
 
-const fundLegacy = [
-  { 
-    icon: Building2, 
-    label: "Investments", 
-    value: "16",
-    description: "across high-potential segments"
-  },
-  { 
-    icon: TrendingUp, 
-    label: "Top MOIC", 
-    value: "75x",
-    description: "returns achieved"
-  },
-  { 
-    icon: BarChart3, 
-    label: "Portfolio Value", 
-    value: "$5Bn+",
-    description: "cumulative created"
-  },
-  { 
-    icon: Award, 
-    label: "Exits", 
-    value: "Byju's, Muthoot Finance",
-    description: "Netcore, Unacademy, and others"
-  },
-  { 
-    icon: Globe, 
-    label: "Investor Base", 
-    value: "Global Presence",
-    description: "India, Dubai, USA, Singapore, Europe"
-  },
-  { 
-    icon: Users, 
-    label: "LP Profile", 
-    value: "Institutional Focus",
-    description: "Family Offices, HNIs, Government Institutions"
-  },
-  { 
-    icon: Users, 
-    label: "Gender Ratio", 
-    value: "40% / 60%",
-    description: "Female / Male"
-  }
-];
-
 export default function FundDetails() {
   return (
     <section className="py-40 bg-gray-50 dark:bg-muted/20">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         {/* What Sets Us Apart */}
-        <div className="mb-32">
+        <div>
           <div className="mb-24">
             <div className="inline-block mb-6">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Differentiation</span>
@@ -143,58 +98,6 @@ export default function FundDetails() {
                 </Card>
               );
             })}
-          </div>
-        </div>
-
-        {/* Fund I Legacy - Horizontal Scroller */}
-        <div>
-          <div className="mb-16">
-            <div className="inline-block mb-6">
-              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Track Record</span>
-            </div>
-            <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-legacy-title">
-              Fund I Legacy
-            </h2>
-            <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed">
-              Our first fund delivered exceptional returns, demonstrating our ability to identify and support category-defining companies.
-            </p>
-          </div>
-
-          <div className="relative -mx-8 lg:-mx-16">
-            <div className="overflow-x-auto pb-8 px-8 lg:px-16 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <div className="flex gap-6 min-w-max">
-                {fundLegacy.map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <Card 
-                      key={index}
-                      className="group relative hover-elevate overflow-visible border-2 flex-shrink-0 w-[320px]"
-                      data-testid={`legacy-card-${index}`}
-                    >
-                      <CardContent className="p-0">
-                        <div className="bg-primary p-8 rounded-t-md">
-                          <div className="inline-flex p-4 bg-white/20 backdrop-blur-sm rounded-xl border-2 border-white/30">
-                            <Icon className="h-10 w-10 text-white" />
-                          </div>
-                        </div>
-                        <div className="p-8">
-                          <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3" data-testid={`text-legacy-label-${index}`}>
-                            {item.label}
-                          </div>
-                          <div className="font-serif text-3xl font-bold text-primary mb-4 leading-tight" data-testid={`text-legacy-value-${index}`}>
-                            {item.value}
-                          </div>
-                          <div className="text-sm text-foreground leading-relaxed" data-testid={`text-legacy-desc-${index}`}>
-                            {item.description}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  );
-                })}
-              </div>
-            </div>
-            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-gray-50 dark:from-muted/20 to-transparent pointer-events-none" />
           </div>
         </div>
       </div>
