@@ -35,9 +35,9 @@ export default function Contact() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-          <Card className="hover-elevate border-2">
+          <Card className="bg-white/5 backdrop-blur-2xl border border-white/10 transition-all duration-300 shadow-xl shadow-black/10 rounded-2xl">
             <CardContent className="p-6 flex items-center gap-4">
-              <div className="p-3 bg-primary/10 rounded-xl border border-primary/20">
+              <div className="p-3 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20">
                 <Mail className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
@@ -47,9 +47,9 @@ export default function Contact() {
             </CardContent>
           </Card>
           
-          <Card className="hover-elevate border-2">
+          <Card className="bg-white/5 backdrop-blur-2xl border border-white/10 transition-all duration-300 shadow-xl shadow-black/10 rounded-2xl">
             <CardContent className="p-6 flex items-center gap-4">
-              <div className="p-3 bg-primary/10 rounded-xl border border-primary/20">
+              <div className="p-3 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20">
                 <MapPin className="h-6 w-6 text-primary" />
               </div>
               <div className="flex-1 min-w-0">
@@ -60,7 +60,7 @@ export default function Contact() {
           </Card>
         </div>
         
-        <Card className="border-2">
+        <Card className="bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl shadow-black/10 rounded-3xl">
           <CardContent className="p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -73,7 +73,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your name"
-                    className="h-12"
+                    className="h-12 bg-white/5 backdrop-blur-xl border-white/10"
                     data-testid="input-name"
                   />
                 </div>
@@ -87,7 +87,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="your@email.com"
-                    className="h-12"
+                    className="h-12 bg-white/5 backdrop-blur-xl border-white/10"
                     data-testid="input-email"
                   />
                 </div>
@@ -102,7 +102,7 @@ export default function Contact() {
                   value={formData.organization}
                   onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                   placeholder="Your company"
-                  className="h-12"
+                  className="h-12 bg-white/5 backdrop-blur-xl border-white/10"
                   data-testid="input-organization"
                 />
               </div>
@@ -117,7 +117,7 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us about your vision..."
                   rows={6}
-                  className="resize-none"
+                  className="resize-none bg-white/5 backdrop-blur-xl border-white/10"
                   data-testid="input-message"
                 />
               </div>

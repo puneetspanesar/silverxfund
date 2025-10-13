@@ -54,7 +54,7 @@ export default function TrackRecord() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-muted/20">
+    <section ref={sectionRef} className="py-32 bg-white/5 backdrop-blur-2xl">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
           <div>
@@ -75,14 +75,14 @@ export default function TrackRecord() {
               return (
                 <div 
                   key={index} 
-                  className={`relative p-6 bg-card border-2 border-border rounded-2xl hover-elevate transition-all ${
+                  className={`relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl transition-all duration-500 shadow-xl shadow-black/10 ${
                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                   data-testid={`stat-${index}`}
                 >
                   <div className="absolute top-4 right-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
+                    <div className="p-2 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                   </div>
@@ -99,9 +99,9 @@ export default function TrackRecord() {
                     </div>
                   </div>
 
-                  <div className="mt-4 h-1 bg-muted rounded-full overflow-hidden">
+                  <div className="mt-4 h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-xl">
                     <div 
-                      className={`h-full bg-primary transition-all duration-1000 ease-out ${
+                      className={`h-full bg-gradient-to-r from-primary to-primary/50 transition-all duration-1000 ease-out ${
                         isVisible ? 'w-full' : 'w-0'
                       }`}
                       style={{ transitionDelay: `${index * 100 + 200}ms` }}

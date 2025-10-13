@@ -72,17 +72,17 @@ export default function Team() {
           {partners.map((partner, index) => (
             <Card 
               key={index}
-              className="overflow-hidden hover-elevate border-2 group"
+              className="overflow-hidden bg-white/5 backdrop-blur-2xl border border-white/10 transition-all duration-500 shadow-2xl shadow-black/10 group rounded-3xl"
               data-testid={`team-${index}`}
             >
-              <div className="relative h-80 overflow-hidden bg-muted">
+              <div className="relative h-80 overflow-hidden bg-muted/20">
                 <img 
                   src={partner.image} 
                   alt={partner.name}
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   data-testid={`img-team-${index}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent backdrop-blur-sm" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-2xl font-bold mb-1 text-foreground" data-testid={`text-name-${index}`}>
@@ -94,8 +94,8 @@ export default function Team() {
                 </div>
               </div>
 
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-start gap-3 pb-4 border-b border-border">
+              <CardContent className="p-6 space-y-4 bg-white/5 backdrop-blur-xl">
+                <div className="flex items-start gap-3 pb-4 border-b border-white/10">
                   <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
                   <p className="text-sm italic text-muted-foreground leading-relaxed" data-testid={`text-quote-${index}`}>
                     "{partner.quote}"
@@ -103,7 +103,7 @@ export default function Team() {
                 </div>
 
                 <div className="space-y-3">
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Briefcase className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
@@ -115,7 +115,7 @@ export default function Team() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Target className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
@@ -127,7 +127,7 @@ export default function Team() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Layers className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
@@ -139,7 +139,7 @@ export default function Team() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <GraduationCap className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
                       <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">

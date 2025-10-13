@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted/30 border-t border-border">
+    <footer className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
           <div className="lg:col-span-1">
@@ -22,7 +22,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <button 
                 onClick={() => console.log('LinkedIn clicked')}
-                className="p-3 bg-card border border-border rounded-lg hover-elevate transition-all"
+                className="p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl transition-all hover-elevate"
                 aria-label="LinkedIn"
                 data-testid="button-linkedin"
               >
@@ -30,7 +30,7 @@ export default function Footer() {
               </button>
               <button 
                 onClick={() => console.log('X (Twitter) clicked')}
-                className="p-3 bg-card border border-border rounded-lg hover-elevate transition-all"
+                className="p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl transition-all hover-elevate"
                 aria-label="X (Twitter)"
                 data-testid="button-twitter"
               >
@@ -98,7 +98,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {currentYear} SilverX Fund. All rights reserved.
           </p>

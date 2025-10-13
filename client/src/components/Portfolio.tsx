@@ -65,12 +65,12 @@ export default function Portfolio() {
               <AccordionItem 
                 key={index}
                 value={`item-${index}`}
-                className="border-2 border-border rounded-xl overflow-hidden bg-card"
+                className="border border-white/10 rounded-3xl overflow-hidden bg-white/5 backdrop-blur-2xl shadow-xl shadow-black/10"
                 data-testid={`value-card-${index}`}
               >
-                <AccordionTrigger className="px-6 py-6 hover:no-underline hover-elevate [&[data-state=open]]:bg-primary/5">
+                <AccordionTrigger className="px-6 py-6 hover:no-underline [&[data-state=open]]:bg-white/10 transition-all duration-300">
                   <div className="flex items-center gap-6 w-full">
-                    <div className="p-4 bg-primary/10 rounded-xl border border-primary/20">
+                    <div className="p-4 bg-primary/10 backdrop-blur-xl rounded-2xl border border-primary/20">
                       <Icon className="h-8 w-8 text-primary" />
                     </div>
                     <div className="flex-1 text-left">
@@ -82,7 +82,7 @@ export default function Portfolio() {
                   </div>
                 </AccordionTrigger>
                 <AccordionContent className="px-6 pb-6">
-                  <div className="pt-6 border-t border-border">
+                  <div className="pt-6 border-t border-white/10">
                     <p className="text-foreground leading-relaxed mb-8" data-testid={`text-value-desc-${index}`}>
                       {item.description}
                     </p>
@@ -96,8 +96,8 @@ export default function Portfolio() {
                           {item.metrics.map((metric, idx) => {
                             const MetricIcon = metric.icon;
                             return (
-                              <div key={idx} className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`metric-${index}-${idx}`}>
-                                <div className="p-2 bg-primary/10 rounded-lg">
+                              <div key={idx} className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10" data-testid={`metric-${index}-${idx}`}>
+                                <div className="p-2 bg-primary/10 backdrop-blur-xl rounded-lg border border-primary/20">
                                   <MetricIcon className="h-4 w-4 text-primary" />
                                 </div>
                                 <div className="flex-1">
@@ -120,7 +120,7 @@ export default function Portfolio() {
                         </div>
                         <div className="space-y-2">
                           {item.highlights.map((highlight, idx) => (
-                            <div key={idx} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`highlight-${index}-${idx}`}>
+                            <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10" data-testid={`highlight-${index}-${idx}`}>
                               <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
                               <span className="text-sm font-medium text-foreground">{highlight}</span>
                             </div>

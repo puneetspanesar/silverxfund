@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Left Content */}
           <div className="flex flex-col justify-center px-8 lg:px-16 py-24">
-            <Badge variant="secondary" className="w-fit mb-8 px-4 py-2 text-xs font-semibold tracking-wider border-2 border-primary/20">
+            <Badge variant="secondary" className="w-fit mb-8 px-4 py-2 text-xs font-semibold tracking-wider bg-white/5 backdrop-blur-xl border border-white/20">
               $100M FUND II • NOW RAISING
             </Badge>
             
@@ -62,7 +62,6 @@ export default function Hero() {
               <Button 
                 size="lg" 
                 onClick={handleViewThesis}
-                className="text-base"
                 data-testid="button-view-thesis"
               >
                 Investment Thesis
@@ -72,7 +71,6 @@ export default function Hero() {
                 size="lg" 
                 variant="outline" 
                 onClick={handleMeetTeam}
-                className="text-base"
                 data-testid="button-meet-team"
               >
                 <Play className="mr-2 h-4 w-4" />
@@ -80,7 +78,7 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 py-8 border-t border-border">
+            <div className="grid grid-cols-3 gap-8 py-8 border-t border-white/10">
               <div data-testid="stat-fund-size">
                 <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
                 <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
@@ -114,7 +112,7 @@ export default function Hero() {
       </div>
 
       {/* Highlights Section - Below the hero */}
-      <div className="bg-muted/30 border-t border-border">
+      <div className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((item, index) => {
@@ -122,11 +120,11 @@ export default function Hero() {
               return (
                 <div 
                   key={index} 
-                  className="group"
+                  className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 shadow-lg shadow-black/5"
                   data-testid={`highlight-${index}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 border border-primary/20 group-hover-elevate transition-all">
+                    <div className="p-3 rounded-xl bg-primary/10 backdrop-blur-xl border border-primary/20">
                       <Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div className="flex-1">

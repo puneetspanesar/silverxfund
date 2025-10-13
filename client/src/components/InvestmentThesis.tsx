@@ -70,7 +70,7 @@ export default function InvestmentThesis() {
                 <TabsTrigger 
                   key={segment.id}
                   value={segment.id}
-                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground h-auto p-6 flex flex-col items-start gap-3 border-2 border-border data-[state=active]:border-primary transition-all hover-elevate rounded-lg"
+                  className="data-[state=active]:bg-white/15 data-[state=active]:text-foreground bg-white/5 backdrop-blur-xl h-auto p-6 flex flex-col items-start gap-3 border border-white/10 data-[state=active]:border-white/30 transition-all duration-300 rounded-2xl shadow-lg shadow-black/5"
                   data-testid={`tab-${index}`}
                 >
                   <Icon className="h-8 w-8" />
@@ -92,7 +92,7 @@ export default function InvestmentThesis() {
                 className="mt-0"
                 data-testid={`segment-${index}`}
               >
-                <div className="bg-card border border-border rounded-xl p-8 lg:p-12">
+                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-black/10">
                   <div className="grid lg:grid-cols-2 gap-12">
                     <div>
                       <div className="mb-8">
@@ -112,7 +112,7 @@ export default function InvestmentThesis() {
                           Key Verticals
                         </div>
                         {segment.highlights.map((highlight, idx) => (
-                          <div key={idx} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`highlight-${index}-${idx}`}>
+                          <div key={idx} className="flex items-center gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10" data-testid={`highlight-${index}-${idx}`}>
                             <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
                             <span className="text-sm font-medium text-foreground">{highlight}</span>
                           </div>
@@ -127,8 +127,8 @@ export default function InvestmentThesis() {
                       {segment.metrics.map((metric, idx) => {
                         const MetricIcon = metric.icon;
                         return (
-                          <div key={idx} className="flex gap-4 p-4 bg-muted/30 rounded-lg border border-border" data-testid={`metric-${index}-${idx}`}>
-                            <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
+                          <div key={idx} className="flex gap-4 p-4 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-lg shadow-black/5" data-testid={`metric-${index}-${idx}`}>
+                            <div className="p-3 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20">
                               <MetricIcon className="h-6 w-6 text-primary" />
                             </div>
                             <div className="flex-1">

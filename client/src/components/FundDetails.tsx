@@ -41,7 +41,7 @@ const whatSetsUsApart = [
 
 export default function FundDetails() {
   return (
-    <section className="py-32 bg-muted/20">
+    <section className="py-32 bg-white/5 backdrop-blur-2xl">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-16 text-center max-w-3xl mx-auto">
           <div className="inline-block mb-6">
@@ -61,14 +61,14 @@ export default function FundDetails() {
             return (
               <div 
                 key={index}
-                className="group relative bg-card border border-border rounded-2xl p-8 hover-elevate transition-all"
+                className="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 transition-all duration-500 shadow-xl shadow-black/10"
                 data-testid={`apart-card-${index}`}
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full" />
-                      <div className="relative p-5 bg-primary/10 rounded-2xl border-2 border-primary/30">
+                      <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
+                      <div className="relative p-5 bg-primary/10 backdrop-blur-xl rounded-3xl border border-primary/30">
                         <Icon className="h-10 w-10 text-primary" />
                       </div>
                     </div>
@@ -79,7 +79,7 @@ export default function FundDetails() {
                       <h3 className="text-2xl font-bold text-foreground" data-testid={`text-apart-title-${index}`}>
                         {item.title}
                       </h3>
-                      <div className="px-4 py-1 bg-primary/10 rounded-full border border-primary/20">
+                      <div className="px-4 py-1 bg-primary/10 backdrop-blur-xl rounded-full border border-primary/20">
                         <span className="text-xs font-bold text-primary tabular-nums">0{index + 1}</span>
                       </div>
                     </div>
@@ -92,7 +92,7 @@ export default function FundDetails() {
                       {item.metrics.map((metric, idx) => {
                         const MetricIcon = metric.icon;
                         return (
-                          <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-muted/50 rounded-lg border border-border">
+                          <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                             <MetricIcon className="h-4 w-4 text-primary" />
                             <span className="text-sm font-medium text-foreground">{metric.value}</span>
                           </div>
