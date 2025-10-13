@@ -1,76 +1,157 @@
+import { Target, TrendingUp, Users, Award, Building2, Globe, ChevronRight, BarChart3, Shield, Rocket } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+
 const whatSetsUsApart = [
-  { text: "Operator VC Model", bold: true },
-  { text: "Founders and partners with real-world scaling experience", bold: false },
-  { text: "Deep Research Orientation", bold: true },
-  { text: "Constant monitoring of M&A patterns, founder behavior, and category evolution", bold: false },
-  { text: "Active mentoring and guidance to startups across GTM, hiring, compliances, and fund raise", bold: false },
-  { 
-    text: "Exit Strategy (4–6 Years)", 
-    bold: true,
-    subitems: [
-      "Targeting high-growth sectors",
-      "Understanding M&A appetite in those categories",
-      "Backed by a strong research and transaction team"
+  {
+    title: "Operator VC Model",
+    icon: Users,
+    description: "Founders and partners with real-world scaling experience",
+    metrics: [
+      { icon: Award, value: "Real-world operators" },
+      { icon: Rocket, value: "Scaling expertise" }
+    ]
+  },
+  {
+    title: "Deep Research Orientation",
+    icon: Target,
+    description: "Constant monitoring of M&A patterns, founder behavior, and category evolution",
+    metrics: [
+      { icon: BarChart3, value: "M&A pattern analysis" },
+      { icon: TrendingUp, value: "Category evolution tracking" }
+    ]
+  },
+  {
+    title: "Active Mentoring",
+    icon: Shield,
+    description: "Active mentoring and guidance to startups across GTM, hiring, compliances, and fund raise",
+    metrics: [
+      { icon: Users, value: "GTM & hiring support" },
+      { icon: Building2, value: "Compliance guidance" }
+    ]
+  },
+  {
+    title: "Exit Strategy (4–6 Years)",
+    icon: TrendingUp,
+    description: "Targeting high-growth sectors with strong M&A appetite backed by research and transaction teams",
+    metrics: [
+      { icon: Target, value: "High-growth sectors" },
+      { icon: Award, value: "Transaction support" }
     ]
   }
 ];
 
 const fundLegacy = [
-  "16 investments across high-potential segments",
-  "MOICs reported up to 75x",
-  "$5 Bn+ in cumulative portfolio value created",
-  "Successful exits: Byju's, Muthoot Finance, Netcore, Unacademy and others",
-  "Investor Base: India, Dubai, USA, Singapore, Europe",
-  "LP Profile: Family Offices, HNIs, Government Institutions",
-  "Gender Ratio: 40% Female, 60% Male"
+  { icon: Building2, label: "Investments", value: "16 across high-potential segments" },
+  { icon: TrendingUp, label: "Top MOIC", value: "Up to 75x returns" },
+  { icon: BarChart3, label: "Portfolio Value", value: "$5Bn+ cumulative created" },
+  { icon: Award, label: "Exits", value: "Byju's, Muthoot Finance, Netcore, Unacademy" },
+  { icon: Globe, label: "Investor Base", value: "India, Dubai, USA, Singapore, Europe" },
+  { icon: Users, label: "LP Profile", value: "Family Offices, HNIs, Government Institutions" },
+  { icon: Users, label: "Gender Ratio", value: "40% Female, 60% Male" }
 ];
 
 export default function FundDetails() {
   return (
-    <section className="py-40 bg-primary text-white">
+    <section className="py-40 bg-gray-50 dark:bg-muted/20">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
-          {/* What Sets Us Apart */}
-          <div>
-            <div className="bg-white inline-block mb-12 rounded-md">
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-primary px-8 py-4" data-testid="text-sets-apart-title">
-                What Sets Us Apart
-              </h2>
+        {/* What Sets Us Apart */}
+        <div className="mb-32">
+          <div className="mb-24">
+            <div className="inline-block mb-6">
+              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Differentiation</span>
             </div>
-            <ul className="space-y-4">
-              {whatSetsUsApart.map((item, index) => (
-                <li 
-                  key={index} 
-                  className={`leading-relaxed text-lg ${item.bold ? 'font-bold' : ''} [&>ul]:list-none [&>ul]:ml-6 [&>ul]:mt-2 [&>ul]:space-y-2 [&>ul>li]:font-normal [&>ul>li]:text-white/95 [&>ul>li]:before:content-['○'] [&>ul>li]:before:mr-3`}
-                  data-testid={`apart-item-${index}`}
-                >
-                  {item.text}
-                  {item.subitems && (
-                    <ul>
-                      {item.subitems.map((subItem, subIndex) => (
-                        <li key={subIndex}>{subItem}</li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
+            <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-sets-apart-title">
+              What Sets Us Apart
+            </h2>
+            <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed">
+              Our unique combination of operational expertise, research-driven insights, and hands-on support creates exceptional value for founders and investors alike.
+            </p>
           </div>
 
-          {/* Fund I Legacy */}
-          <div>
-            <div className="bg-white inline-block mb-12 rounded-md">
-              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-primary px-8 py-4" data-testid="text-legacy-title">
-                Fund I Legacy
-              </h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {whatSetsUsApart.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="group relative hover-elevate overflow-visible border-2"
+                  data-testid={`apart-card-${index}`}
+                >
+                  <CardContent className="p-8">
+                    <div className="flex items-start gap-6">
+                      <div className="inline-flex p-4 bg-primary/10 rounded-xl border-2 border-primary/20 flex-shrink-0">
+                        <Icon className="h-8 w-8 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="font-serif text-2xl font-bold text-primary mb-3" data-testid={`text-apart-title-${index}`}>
+                          {item.title}
+                        </h3>
+                        <p className="text-foreground leading-relaxed mb-6">
+                          {item.description}
+                        </p>
+                        <div className="space-y-3">
+                          {item.metrics.map((metric, idx) => {
+                            const MetricIcon = metric.icon;
+                            return (
+                              <div key={idx} className="flex items-center gap-3">
+                                <div className="p-1.5 bg-primary/5 rounded-lg">
+                                  <MetricIcon className="h-3.5 w-3.5 text-primary" />
+                                </div>
+                                <span className="text-sm text-foreground">{metric.value}</span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Fund I Legacy */}
+        <div>
+          <div className="mb-24">
+            <div className="inline-block mb-6">
+              <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Track Record</span>
             </div>
-            <ul className="space-y-4 [&>li]:before:content-['•'] [&>li]:before:mr-3">
-              {fundLegacy.map((item, index) => (
-                <li key={index} className="leading-relaxed text-lg" data-testid={`legacy-item-${index}`}>
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-legacy-title">
+              Fund I Legacy
+            </h2>
+            <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed">
+              Our first fund delivered exceptional returns, demonstrating our ability to identify and support category-defining companies.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {fundLegacy.map((item, index) => {
+              const Icon = item.icon;
+              return (
+                <Card 
+                  key={index}
+                  className="group relative hover-elevate overflow-visible border-2"
+                  data-testid={`legacy-card-${index}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="inline-flex p-3 bg-primary/10 rounded-xl border-2 border-primary/20 flex-shrink-0">
+                        <Icon className="h-6 w-6 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                          {item.label}
+                        </div>
+                        <div className="text-sm font-medium text-foreground leading-relaxed">
+                          {item.value}
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>
