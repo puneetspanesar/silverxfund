@@ -42,7 +42,7 @@ export default function Hero() {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Left Content */}
-          <div className="flex flex-col justify-center px-8 lg:px-16 py-24">
+          <div className="flex flex-col justify-center px-8 lg:px-16 py-12">
             <Badge variant="secondary" className="w-fit mb-8 px-4 py-2 text-xs font-semibold tracking-wider bg-white/5 backdrop-blur-xl border border-white/20">
               $100M FUND II • NOW RAISING
             </Badge>
@@ -113,7 +113,7 @@ export default function Hero() {
 
       {/* Highlights Section - Below the hero */}
       <div className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {highlights.map((item, index) => {
               const Icon = item.icon;

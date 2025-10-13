@@ -54,9 +54,9 @@ export default function TrackRecord() {
   }, [isVisible]);
 
   return (
-    <section ref={sectionRef} className="py-32 bg-white/5 backdrop-blur-2xl">
+    <section ref={sectionRef} className="py-16 bg-white/5 backdrop-blur-2xl">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
           <div>
             <div className="inline-block mb-6">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Track Record</span>

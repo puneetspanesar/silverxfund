@@ -41,9 +41,9 @@ const whatSetsUsApart = [
 
 export default function FundDetails() {
   return (
-    <section className="py-32 bg-white/5 backdrop-blur-2xl">
+    <section className="py-16 bg-white/5 backdrop-blur-2xl">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-16 text-center max-w-3xl mx-auto">
+        <div className="mb-12 text-center max-w-3xl mx-auto">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Differentiation</span>
           </div>

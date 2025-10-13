@@ -7,8 +7,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
-      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-10">
           <div className="lg:col-span-1">
             <img 
               src={footerLogo} 

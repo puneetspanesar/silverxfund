@@ -20,9 +20,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-32 bg-background">
+    <section id="contact" className="py-16 bg-background">
       <div className="max-w-[800px] mx-auto px-8 lg:px-16">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Get In Touch</span>
           </div>
