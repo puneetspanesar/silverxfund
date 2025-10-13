@@ -23,7 +23,7 @@ export default function FundDetails() {
     <section className="py-24 sm:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-details-title">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-details-title">
             Fund Details
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto" data-testid="text-details-subtitle">
@@ -33,7 +33,7 @@ export default function FundDetails() {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h3 className="text-2xl font-bold mb-6" data-testid="text-key-terms">Key Terms</h3>
+            <h3 className="font-serif text-2xl font-bold mb-6" data-testid="text-key-terms">Key Terms</h3>
             <Card>
               <CardContent className="p-6">
                 <dl className="space-y-4">
@@ -49,7 +49,7 @@ export default function FundDetails() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-6" data-testid="text-investment-guidelines">Investment Guidelines</h3>
+            <h3 className="font-serif text-2xl font-bold mb-6" data-testid="text-investment-guidelines">Investment Guidelines</h3>
             <Card>
               <CardContent className="p-6">
                 <ul className="space-y-4">
