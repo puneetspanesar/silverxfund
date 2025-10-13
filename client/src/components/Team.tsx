@@ -1,3 +1,4 @@
+import { Briefcase, Target, Layers, GraduationCap } from "lucide-react";
 import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
 import partner2 from "@assets/generated_images/Executive_partner_headshot_2_03392363.png";
 import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
@@ -95,40 +96,60 @@ export default function Team() {
                 </div>
                 
                 <div className="space-y-6">
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                      Experience
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
+                      <Briefcase className="h-5 w-5 text-primary" />
                     </div>
-                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
-                      {partner.experience}
-                    </p>
+                    <div className="flex-1">
+                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                        Experience
+                      </div>
+                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
+                        {partner.experience}
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                      Key Focus Areas
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
+                      <Target className="h-5 w-5 text-primary" />
                     </div>
-                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-focus-${index}`}>
-                      {partner.keyFocusAreas}
-                    </p>
+                    <div className="flex-1">
+                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                        Key Focus Areas
+                      </div>
+                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-focus-${index}`}>
+                        {partner.keyFocusAreas}
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                      Sectors
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
+                      <Layers className="h-5 w-5 text-primary" />
                     </div>
-                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-sectors-${index}`}>
-                      {partner.sectors}
-                    </p>
+                    <div className="flex-1">
+                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                        Sectors
+                      </div>
+                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-sectors-${index}`}>
+                        {partner.sectors}
+                      </p>
+                    </div>
                   </div>
 
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                      Education
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
+                      <GraduationCap className="h-5 w-5 text-primary" />
                     </div>
-                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-education-${index}`}>
-                      {partner.education}
-                    </p>
+                    <div className="flex-1">
+                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                        Education
+                      </div>
+                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-education-${index}`}>
+                        {partner.education}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
