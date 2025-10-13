@@ -1,14 +1,14 @@
-import partner1 from "@assets/generated_images/Executive_partner_headshot_1_dacfff20.png";
+import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
 import partner2 from "@assets/generated_images/Executive_partner_headshot_2_03392363.png";
-import partner3 from "@assets/generated_images/Executive_partner_headshot_3_ccfd838c.png";
-import partner4 from "@assets/generated_images/Executive_partner_headshot_4_57abd904.png";
+import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
+import sanjayPhoto from "@assets/Sanjay-2-2_1760348499668.png";
 
 const partners = [
   {
     name: "Ajay Jain",
     title: "Founder & Managing Partner",
     experience: "22+ Years",
-    image: partner1,
+    image: ajayPhoto,
     quote: "We back founders who are building the infrastructure for India's AI economy",
     credentials: ["ISB", "Xseed Partners", "T-Hub", "Intel"]
   },
@@ -24,7 +24,7 @@ const partners = [
     name: "Abishek Balendran",
     title: "Partner",
     experience: "10+ Years",
-    image: partner3,
+    image: abishekPhoto,
     quote: "Consumer scale with strong unit economics is our North Star",
     credentials: ["SIBM", "Nirvana Ventures", "Xander PE"]
   },
@@ -32,7 +32,7 @@ const partners = [
     name: "Sanjay Rastogi",
     title: "Partner",
     experience: "25+ Years",
-    image: partner4,
+    image: sanjayPhoto,
     quote: "Healthcare AI will define the next decade of deep tech investing",
     credentials: ["IET Lucknow", "Innovaccer", "Oracle"]
   }
