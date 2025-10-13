@@ -7,46 +7,42 @@ const partners = [
   {
     name: "Ajay Jain",
     title: "Founder & Managing Partner",
-    experience: "22+ Years",
+    subtitle: "22+ Years of Experience as Investor, Operator & Entrepreneur",
     image: ajayPhoto,
-    bio: "Pioneered India's early-stage AI and deep-tech investment ecosystem. Former Seed Lead at Xseed Ventures and Strategic Advisor at T-Hub. Previously held leadership roles at Intel Corporation, driving semiconductor innovation across emerging markets.",
-    quote: "We back founders who are building the infrastructure for India's AI economy",
-    expertise: ["AI Infrastructure", "Deep Tech", "Enterprise SaaS"],
-    credentials: ["ISB", "Xseed Partners", "T-Hub", "Intel"],
-    achievements: ["Led 40+ seed investments", "3 unicorn exits", "T-Hub Advisory Board"]
+    experience: "Xseed Partners, T-Hub, CIE IIITH, Gray Matters Capital, Intel, AMD, Magnaquest",
+    keyFocusAreas: "Strategy, Business Development, GTM, Fundraising",
+    sectors: "Deep Tech, Semiconductors, GenAI, SaaS, FinTech, EdTech",
+    education: "ISB, The University of Arizona"
   },
   {
     name: "Dhiraj Kumar Sinha",
     title: "Managing Partner",
-    experience: "25+ Years",
+    subtitle: "25+ Years of Experience across VC & Large Corporate Houses",
     image: partner2,
-    bio: "Veteran investor with deep expertise in financial services and B2B technology. Founded SucSEED Ventures and led multiple successful exits. Former Investment Director at Max India Group, specializing in growth-stage opportunities.",
-    quote: "Deep tech requires patient capital and operational excellence",
-    expertise: ["FinTech", "B2B SaaS", "Growth Stage"],
-    credentials: ["CFA", "Edinburgh", "SucSEED", "Max India"],
-    achievements: ["$2B+ portfolio value", "15 successful exits", "CFA Charter holder"]
+    experience: "SucSEED Indovation, Air Costa, Max India, Vatika, PVP Group, LEPL Group",
+    keyFocusAreas: "Legal, Compliance, Finance, Strategy",
+    sectors: "EV, Sustainability, Deep Tech, Mobility",
+    education: "Delhi University, CFA, The University of Edinburgh, ICSI"
   },
   {
     name: "Abishek Balendran",
     title: "Partner",
-    experience: "10+ Years",
+    subtitle: "10+ Years of Investment & Exit Experience across Early & Mature-Stage Investments",
     image: abishekPhoto,
-    bio: "Consumer technology specialist with proven track record in identifying category-defining platforms. Previously Principal at Nirvana Ventures and Associate at Xander Private Equity. MBA from SIBM Pune with expertise in consumer behavior and market analytics.",
-    quote: "Consumer scale with strong unit economics is our North Star",
-    expertise: ["Consumer Tech", "D2C", "Marketplaces"],
-    credentials: ["SIBM", "Nirvana Ventures", "Xander PE"],
-    achievements: ["8 portfolio companies", "2 IPO exits", "Consumer Expert"]
+    experience: "Nirvana Ventures (VC), Xander Private Equity (PE), JM Financial (IB), Nomura International (IB)",
+    keyFocusAreas: "Growth Strategy, Fundraising, Deal Structuring",
+    sectors: "D2C, Consumer Internet, Real Estate, Hospitality",
+    education: "SIBM Pune, PICT Pune"
   },
   {
     name: "Sanjay Rastogi",
     title: "Partner",
-    experience: "25+ Years",
+    subtitle: "25+ Years of Experience in Technology & 6+ Years in Healthtech",
     image: sanjayPhoto,
-    bio: "Healthcare AI pioneer and enterprise technology veteran. Former VP of Product at Innovaccer, scaling the platform to $3B valuation. Prior experience at Oracle leading enterprise solutions for healthcare sector across APAC region.",
-    quote: "Healthcare AI will define the next decade of deep tech investing",
-    expertise: ["Healthcare AI", "Enterprise Software", "Product Strategy"],
-    credentials: ["IET Lucknow", "Innovaccer", "Oracle"],
-    achievements: ["Built $3B product", "Healthcare AI Expert", "20+ patents"]
+    experience: "Innovaccer (Unicorn), Oracle, Expobeds, Evolco",
+    keyFocusAreas: "Product Management & Sales, GTM, Growth Strategy, Planning & Execution",
+    sectors: "Healthcare, AI, Deep Tech, B2B SaaS",
+    education: "B.E., IET Lucknow"
   }
 ];
 
@@ -86,67 +82,54 @@ export default function Team() {
               </div>
               
               <div className="lg:w-2/3">
-                <div className="mb-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <h3 className="font-serif text-4xl font-bold text-primary" data-testid={`text-name-${index}`}>
-                      {partner.name}
-                    </h3>
-                  </div>
-                  <p className="font-serif text-lg text-foreground mb-1" data-testid={`text-title-${index}`}>
+                <div className="mb-8">
+                  <h3 className="font-serif text-4xl font-bold text-primary mb-2" data-testid={`text-name-${index}`}>
+                    {partner.name}
+                  </h3>
+                  <p className="font-serif text-lg text-primary mb-3 uppercase tracking-wide" data-testid={`text-title-${index}`}>
                     {partner.title}
                   </p>
-                  <p className="text-sm font-semibold text-primary uppercase tracking-wider" data-testid={`text-experience-${index}`}>
-                    {partner.experience} Experience
+                  <p className="text-base text-foreground font-medium" data-testid={`text-subtitle-${index}`}>
+                    {partner.subtitle}
                   </p>
                 </div>
                 
-                <p className="text-base leading-relaxed text-foreground mb-8" data-testid={`text-bio-${index}`}>
-                  {partner.bio}
-                </p>
+                <div className="space-y-6">
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
+                      Experience
+                    </div>
+                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
+                      {partner.experience}
+                    </p>
+                  </div>
 
-                <blockquote className="font-serif text-xl font-light leading-relaxed mb-8 italic border-l-4 border-primary pl-6 text-primary">
-                  "{partner.quote}"
-                </blockquote>
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
+                      Key Focus Areas
+                    </div>
+                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-focus-${index}`}>
+                      {partner.keyFocusAreas}
+                    </p>
+                  </div>
 
-                <div className="mb-6">
-                  <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                    Expertise
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
+                      Sectors
+                    </div>
+                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-sectors-${index}`}>
+                      {partner.sectors}
+                    </p>
                   </div>
-                  <div className="flex flex-wrap gap-2">
-                    {partner.expertise.map((exp, expIndex) => (
-                      <span 
-                        key={expIndex} 
-                        className="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-sm font-medium"
-                      >
-                        {exp}
-                      </span>
-                    ))}
-                  </div>
-                </div>
 
-                <div className="mb-6">
-                  <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
-                    Key Achievements
+                  <div>
+                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3">
+                      Education
+                    </div>
+                    <p className="text-base text-foreground leading-relaxed" data-testid={`text-education-${index}`}>
+                      {partner.education}
+                    </p>
                   </div>
-                  <div className="space-y-2">
-                    {partner.achievements.map((achievement, achIndex) => (
-                      <div key={achIndex} className="flex items-start gap-2">
-                        <div className="w-1 h-1 rounded-full bg-primary mt-2 flex-shrink-0" />
-                        <span className="text-sm text-foreground">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="flex flex-wrap gap-3">
-                  {partner.credentials.map((cred, credIndex) => (
-                    <span 
-                      key={credIndex} 
-                      className="px-4 py-2 bg-card border border-border rounded-full text-sm"
-                    >
-                      {cred}
-                    </span>
-                  ))}
                 </div>
               </div>
             </div>
