@@ -1,119 +1,58 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { TrendingUp, ExternalLink } from "lucide-react";
+import { TrendingUp, Handshake, Users } from "lucide-react";
 
-const investments = [
+const valueAdditions = [
   {
-    sector: "Enterprise SaaS & AI",
-    status: "Active",
-    moic: "60X",
-    stage: "Series B",
-    highlight: "$5M recent round from Dallas Venture Capital"
+    title: "Sales / GTM",
+    icon: TrendingUp,
+    description: "First-hand support in accelerating sales and GTM strategy for portfolio companies across India and global markets"
   },
   {
-    sector: "Consumer AI",
-    status: "Exited",
-    moic: "22X",
-    stage: "Series C",
-    highlight: "$100M round led by SoftBank"
+    title: "M&A / Capital Raise",
+    icon: Handshake,
+    description: "Assisting companies with the next round of capital raises and M&A requirements. Supporting the founders in identifying and implementing commercial and strategic deals, cap tables, and ESOPs"
   },
   {
-    sector: "FinTech Infrastructure",
-    status: "Exited",
-    moic: "2.5X",
-    stage: "Acquisition",
-    highlight: "Acquired by Muthoot Finance"
-  },
-  {
-    sector: "Deep-tech / EV",
-    status: "Exited",
-    moic: "10X",
-    stage: "Series A",
-    highlight: "Union Square & Prime Ventures"
-  },
-  {
-    sector: "B2B FinTech",
-    status: "Follow-on",
-    moic: "75X",
-    stage: "Series B",
-    highlight: "Y Combinator, Harvard Management"
-  },
-  {
-    sector: "Enterprise SaaS",
-    status: "Partial Exit",
-    moic: "35X",
-    stage: "Series C",
-    highlight: "Bertelsmann, Tribe Capital, Zomato"
+    title: "HR / Operations",
+    icon: Users,
+    description: "Opening up the Partners network to help build the right teams across functions and streamline operations in early-stage companies"
   }
 ];
 
 export default function Portfolio() {
-  const handleViewPortfolio = () => {
-    console.log('View Full Portfolio clicked');
-  };
-
   return (
-    <section className="py-40 bg-gray-50 dark:bg-muted/20">
+    <section className="py-40 bg-white dark:bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-24 max-w-4xl">
-          <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Portfolio</span>
+        <div className="mb-20">
+          <div className="bg-white dark:bg-background border-2 border-primary inline-block rounded-md">
+            <h2 className="font-serif text-4xl lg:text-5xl font-bold px-8 py-4 text-primary" data-testid="text-value-title">
+              SilverX- Value More Than Capital
+            </h2>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-portfolio-title">
-            Fund I Legacy
-          </h2>
-          <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-portfolio-subtitle">
-            16 investments across high-potential segments with MOICs up to 75x and $5Bn+ in cumulative portfolio value created
-          </p>
         </div>
         
-        <div className="space-y-2">
-          {investments.map((investment, index) => (
-            <div 
-              key={index} 
-              className="group border-t border-border/30 py-8 hover:bg-background/50 transition-all duration-500 px-8 -mx-8"
-              data-testid={`investment-${index}`}
-            >
-              <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-3">
-                    <h3 className="font-serif text-2xl font-bold text-primary" data-testid={`text-sector-${index}`}>
-                      {investment.sector}
-                    </h3>
-                    <Badge variant="secondary" className="uppercase text-xs tracking-wider bg-primary/10 text-primary border-primary/20" data-testid={`badge-status-${index}`}>
-                      {investment.status}
-                    </Badge>
-                    <span className="text-sm text-foreground font-serif">• {investment.stage}</span>
-                  </div>
-                  <p className="text-foreground leading-relaxed" data-testid={`text-highlight-${index}`}>
-                    {investment.highlight}
+        <div className="space-y-0 border-t border-border">
+          {valueAdditions.map((item, index) => {
+            const IconComponent = item.icon;
+            return (
+              <div 
+                key={index} 
+                className="grid grid-cols-1 lg:grid-cols-[280px_1fr] border-b border-border"
+                data-testid={`value-card-${index}`}
+              >
+                <div className="bg-primary p-8 flex items-center gap-4">
+                  <IconComponent className="h-7 w-7 text-white flex-shrink-0" />
+                  <h3 className="font-serif text-xl font-bold text-white" data-testid={`text-value-title-${index}`}>
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="bg-muted/50 p-8 flex items-center">
+                  <p className="text-foreground leading-relaxed text-lg" data-testid={`text-value-desc-${index}`}>
+                    {item.description}
                   </p>
                 </div>
-                <div className="flex items-center gap-6">
-                  <div className="text-right">
-                    <div className="font-serif text-5xl font-bold tabular-nums flex items-center gap-2 text-primary" data-testid={`text-moic-${index}`}>
-                      <TrendingUp className="h-6 w-6" />
-                      {investment.moic}
-                    </div>
-                    <div className="text-xs uppercase tracking-wider text-primary mt-1">Multiple</div>
-                  </div>
-                </div>
               </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-16 pt-16 border-t border-primary/30">
-          <Button 
-            size="lg" 
-            variant="outline"
-            onClick={handleViewPortfolio}
-            className="font-serif text-base px-8 h-14 border-primary/40 text-primary hover:bg-primary/10 hover:border-primary/60"
-            data-testid="button-view-portfolio"
-          >
-            Full Portfolio
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </Button>
+            );
+          })}
         </div>
       </div>
     </section>

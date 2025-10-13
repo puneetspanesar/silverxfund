@@ -1,68 +1,76 @@
-import { Card, CardContent } from "@/components/ui/card";
-
-const details = [
-  { label: "Fund Size", value: "$100M (+$20M green shoe)" },
-  { label: "Target IRR", value: "~30%" },
-  { label: "Portfolio Construct", value: "~20 companies" },
-  { label: "Avg. Cheque Size", value: "$1-3M" },
-  { label: "Follow-on Reserve", value: "~60% of fund" },
-  { label: "Stake Range", value: "8-15% equity" },
-  { label: "Investment Period", value: "4 years" },
-  { label: "Fund Tenure", value: "8+1+1 years" }
+const whatSetsUsApart = [
+  { text: "Operator VC Model", bold: true },
+  { text: "Founders and partners with real-world scaling experience", bold: false },
+  { text: "Deep Research Orientation", bold: true },
+  { text: "Constant monitoring of M&A patterns, founder behavior, and category evolution", bold: false },
+  { text: "Active mentoring and guidance to startups across GTM, hiring, compliances, and fund raise", bold: false },
+  { 
+    text: "Exit Strategy (4–6 Years)", 
+    bold: true,
+    subitems: [
+      "Targeting high-growth sectors",
+      "Understanding M&A appetite in those categories",
+      "Backed by a strong research and transaction team"
+    ]
+  }
 ];
 
-const preferences = [
-  "Operator VC Model with real-world scaling experience",
-  "Deep Research Orientation for informed investment decisions",
-  "Constant monitoring of M&A patterns, founder behavior, and category evolution",
-  "Active mentoring across GTM, hiring, compliances and fund raise",
-  "Exit Strategy (4-6 Years) targeting high-growth sectors"
+const fundLegacy = [
+  "16 investments across high-potential segments",
+  "MOICs reported up to 75x",
+  "$5 Bn+ in cumulative portfolio value created",
+  "Successful exits: Byju's, Muthoot Finance, Netcore, Unacademy and others",
+  "Investor Base: India, Dubai, USA, Singapore, Europe",
+  "LP Profile: Family Offices, HNIs, Government Institutions",
+  "Gender Ratio: 40% Female, 60% Male"
 ];
 
 export default function FundDetails() {
   return (
-    <section className="py-24 sm:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-4" data-testid="text-details-title">
-            Fund Details
-          </h2>
-          <p className="text-lg text-foreground max-w-2xl mx-auto" data-testid="text-details-subtitle">
-            Structured for optimal returns with a disciplined investment approach
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section className="py-40 bg-primary text-white">
+      <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
+          {/* What Sets Us Apart */}
           <div>
-            <h3 className="font-serif text-2xl font-bold mb-6" data-testid="text-key-terms">Key Terms</h3>
-            <Card>
-              <CardContent className="p-6">
-                <dl className="space-y-4">
-                  {details.map((detail, index) => (
-                    <div key={index} className="flex justify-between items-center py-2 border-b last:border-0" data-testid={`detail-${index}`}>
-                      <dt className="text-foreground">{detail.label}</dt>
-                      <dd className="font-semibold text-right">{detail.value}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </CardContent>
-            </Card>
+            <div className="bg-white inline-block mb-12 rounded-md">
+              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-primary px-8 py-4" data-testid="text-sets-apart-title">
+                What Sets Us Apart
+              </h2>
+            </div>
+            <ul className="space-y-4">
+              {whatSetsUsApart.map((item, index) => (
+                <li 
+                  key={index} 
+                  className={`leading-relaxed text-lg ${item.bold ? 'font-bold' : ''} [&>ul]:list-none [&>ul]:ml-6 [&>ul]:mt-2 [&>ul]:space-y-2 [&>ul>li]:font-normal [&>ul>li]:text-white/95 [&>ul>li]:before:content-['○'] [&>ul>li]:before:mr-3`}
+                  data-testid={`apart-item-${index}`}
+                >
+                  {item.text}
+                  {item.subitems && (
+                    <ul>
+                      {item.subitems.map((subItem, subIndex) => (
+                        <li key={subIndex}>{subItem}</li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
           </div>
-          
+
+          {/* Fund I Legacy */}
           <div>
-            <h3 className="font-serif text-2xl font-bold mb-6" data-testid="text-investment-guidelines">Investment Guidelines</h3>
-            <Card>
-              <CardContent className="p-6">
-                <ul className="space-y-4">
-                  {preferences.map((pref, index) => (
-                    <li key={index} className="flex items-start gap-3" data-testid={`guideline-${index}`}>
-                      <div className="mt-1 h-2 w-2 rounded-full bg-primary flex-shrink-0" />
-                      <span className="text-foreground">{pref}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            <div className="bg-white inline-block mb-12 rounded-md">
+              <h2 className="font-serif text-3xl lg:text-4xl font-bold text-primary px-8 py-4" data-testid="text-legacy-title">
+                Fund I Legacy
+              </h2>
+            </div>
+            <ul className="space-y-4 [&>li]:before:content-['•'] [&>li]:before:mr-3">
+              {fundLegacy.map((item, index) => (
+                <li key={index} className="leading-relaxed text-lg" data-testid={`legacy-item-${index}`}>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
