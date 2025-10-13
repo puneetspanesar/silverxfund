@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Sparkles, TrendingUp, Cpu, Target, Zap, Shield, Rocket, Users, Building2, ChevronRight, BarChart3, Network } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const segments = [
   {
+    id: "ai-infrastructure",
     icon: Sparkles,
     title: "AI-First Infrastructure",
     subtitle: "Foundation models to enterprise platforms",
@@ -15,6 +17,7 @@ const segments = [
     highlights: ["Enterprise AI", "Vertical SaaS", "MLOps Platforms"]
   },
   {
+    id: "consumer-tech",
     icon: TrendingUp,
     title: "Consumer Technology",
     subtitle: "Digital platforms reshaping behavior",
@@ -27,6 +30,7 @@ const segments = [
     highlights: ["Social Commerce", "Fintech", "Creator Economy"]
   },
   {
+    id: "deep-tech",
     icon: Cpu,
     title: "Deep Technology",
     subtitle: "IP-protected frontier innovation",
@@ -41,85 +45,110 @@ const segments = [
 ];
 
 export default function InvestmentThesis() {
+  const [activeTab, setActiveTab] = useState(segments[0].id);
+
   return (
-    <section id="investment-thesis" className="py-40 relative overflow-hidden bg-white dark:bg-background">
+    <section id="investment-thesis" className="py-32 relative bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-24">
+        <div className="mb-16 text-center max-w-4xl mx-auto">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-thesis-title">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-thesis-title">
             High-conviction bets on India's next decade
           </h2>
-          <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed" data-testid="text-thesis-subtitle">
+          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-thesis-subtitle">
             Our investment mandate centers on identifying inflection points where technological capabilities, market timing, and founder excellence converge. We deploy concentrated capital into ventures demonstrating the potential to define categories, not merely participate in them.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <TabsList className="grid w-full grid-cols-1 lg:grid-cols-3 gap-2 mb-12 bg-transparent h-auto p-0">
+            {segments.map((segment, index) => {
+              const Icon = segment.icon;
+              return (
+                <TabsTrigger 
+                  key={segment.id}
+                  value={segment.id}
+                  className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground h-auto p-6 flex flex-col items-start gap-3 border-2 border-border data-[state=active]:border-primary transition-all hover-elevate rounded-lg"
+                  data-testid={`tab-${index}`}
+                >
+                  <Icon className="h-8 w-8" />
+                  <div className="text-left">
+                    <div className="font-semibold text-base mb-1">{segment.title}</div>
+                    <div className="text-xs opacity-80 font-normal">{segment.subtitle}</div>
+                  </div>
+                </TabsTrigger>
+              );
+            })}
+          </TabsList>
+
           {segments.map((segment, index) => {
             const Icon = segment.icon;
             return (
-              <Card 
-                key={index}
-                className="group relative hover-elevate overflow-visible border-2"
+              <TabsContent 
+                key={segment.id}
+                value={segment.id}
+                className="mt-0"
                 data-testid={`segment-${index}`}
               >
-                <CardContent className="p-8">
-                  <div className="mb-8">
-                    <div className="inline-flex p-5 bg-primary/10 rounded-xl mb-6 border-2 border-primary/20">
-                      <Icon className="h-12 w-12 text-primary" />
-                    </div>
-                    <h3 className="font-serif text-3xl font-bold text-primary mb-3" data-testid={`text-segment-title-${index}`}>
-                      {segment.title}
-                    </h3>
-                    <p className="text-foreground/80 font-serif text-sm italic mb-4">
-                      {segment.subtitle}
-                    </p>
-                    <p className="text-foreground leading-relaxed" data-testid={`text-segment-description-${index}`}>
-                      {segment.description}
-                    </p>
-                  </div>
+                <div className="bg-card border border-border rounded-xl p-8 lg:p-12">
+                  <div className="grid lg:grid-cols-2 gap-12">
+                    <div>
+                      <div className="mb-8">
+                        <h3 className="text-3xl font-bold mb-3 text-foreground" data-testid={`text-segment-title-${index}`}>
+                          {segment.title}
+                        </h3>
+                        <p className="text-muted-foreground italic mb-4">
+                          {segment.subtitle}
+                        </p>
+                        <p className="text-foreground leading-relaxed" data-testid={`text-segment-description-${index}`}>
+                          {segment.description}
+                        </p>
+                      </div>
 
-                  <div className="space-y-4 mb-8 pb-8 border-b border-border/50">
-                    {segment.metrics.map((metric, idx) => {
-                      const MetricIcon = metric.icon;
-                      return (
-                        <div key={idx} className="flex items-start gap-3" data-testid={`metric-${index}-${idx}`}>
-                          <div className="p-2 bg-primary/5 rounded-lg mt-0.5">
-                            <MetricIcon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-0.5">
-                              {metric.label}
-                            </div>
-                            <div className="text-sm font-medium text-foreground">
-                              {metric.value}
-                            </div>
-                          </div>
+                      <div className="space-y-3 mb-8">
+                        <div className="text-sm uppercase tracking-wider font-semibold text-foreground mb-4">
+                          Key Verticals
                         </div>
-                      );
-                    })}
-                  </div>
+                        {segment.highlights.map((highlight, idx) => (
+                          <div key={idx} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`highlight-${index}-${idx}`}>
+                            <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
+                            <span className="text-sm font-medium text-foreground">{highlight}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
 
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-3">
-                      Key Verticals
-                    </div>
-                    <div className="space-y-2">
-                      {segment.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center gap-2" data-testid={`highlight-${index}-${idx}`}>
-                          <ChevronRight className="h-3 w-3 text-primary flex-shrink-0" />
-                          <span className="text-sm text-foreground">{highlight}</span>
-                        </div>
-                      ))}
+                    <div className="space-y-6">
+                      <div className="text-sm uppercase tracking-wider font-semibold text-foreground mb-4">
+                        Investment Criteria
+                      </div>
+                      {segment.metrics.map((metric, idx) => {
+                        const MetricIcon = metric.icon;
+                        return (
+                          <div key={idx} className="flex gap-4 p-4 bg-muted/30 rounded-lg border border-border" data-testid={`metric-${index}-${idx}`}>
+                            <div className="p-3 bg-primary/10 rounded-lg border border-primary/20">
+                              <MetricIcon className="h-6 w-6 text-primary" />
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                                {metric.label}
+                              </div>
+                              <div className="text-base font-semibold text-foreground">
+                                {metric.value}
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </TabsContent>
             );
           })}
-        </div>
+        </Tabs>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { Briefcase, Target, Layers, GraduationCap, Quote } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
 import dhirajPhoto from "@assets/Dhiraj_1760354703695.jpeg";
 import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
@@ -53,121 +54,105 @@ const partners = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-40 bg-white dark:bg-background">
+    <section id="team" className="py-32 bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-24 max-w-4xl">
+        <div className="mb-16 text-center max-w-3xl mx-auto">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Leadership</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 text-primary" data-testid="text-team-title">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground" data-testid="text-team-title">
             Operators who've built, scaled, and exited
           </h2>
-          <p className="text-xl text-foreground font-light leading-relaxed" data-testid="text-team-subtitle">
+          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-team-subtitle">
             Our partners bring decades of combined experience across venture capital, operating roles, and successful exits
           </p>
         </div>
         
-        <div className="space-y-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {partners.map((partner, index) => (
-            <div 
-              key={index} 
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+            <Card 
+              key={index}
+              className="overflow-hidden hover-elevate border-2 group"
               data-testid={`team-${index}`}
             >
-              <div className="lg:w-1/3">
-                <div className="relative aspect-[3/4] overflow-hidden bg-muted group">
-                  <img 
-                    src={partner.image} 
-                    alt={partner.name}
-                    className="w-full h-full object-cover"
-                    data-testid={`img-team-${index}`}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  
-                  {/* Quote Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex gap-3 items-start">
-                      <Quote className="h-6 w-6 text-white/80 flex-shrink-0 mt-1" />
-                      <p className="font-serif text-lg leading-relaxed text-white italic" data-testid={`text-quote-${index}`}>
-                        {partner.quote}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="lg:w-2/3">
-                <div className="mb-8">
-                  <h3 className="font-serif text-4xl font-bold text-primary mb-2" data-testid={`text-name-${index}`}>
+              <div className="relative h-80 overflow-hidden bg-muted">
+                <img 
+                  src={partner.image} 
+                  alt={partner.name}
+                  className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                  data-testid={`img-team-${index}`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
+                
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-2xl font-bold mb-1 text-foreground" data-testid={`text-name-${index}`}>
                     {partner.name}
                   </h3>
-                  <p className="font-serif text-lg text-primary mb-3 uppercase tracking-wide" data-testid={`text-title-${index}`}>
+                  <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-2" data-testid={`text-title-${index}`}>
                     {partner.title}
                   </p>
-                  <p className="text-base text-foreground font-medium" data-testid={`text-subtitle-${index}`}>
-                    {partner.subtitle}
+                </div>
+              </div>
+
+              <CardContent className="p-6 space-y-4">
+                <div className="flex items-start gap-3 pb-4 border-b border-border">
+                  <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <p className="text-sm italic text-muted-foreground leading-relaxed" data-testid={`text-quote-${index}`}>
+                    "{partner.quote}"
                   </p>
                 </div>
-                
-                <div className="space-y-6">
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
-                      <Briefcase className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <Briefcase className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
                         Experience
                       </div>
-                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
+                      <p className="text-sm text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
                         {partner.experience}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
-                      <Target className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
-                        Key Focus Areas
+                  <div className="flex items-start gap-3">
+                    <Target className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                        Focus Areas
                       </div>
-                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-focus-${index}`}>
+                      <p className="text-sm text-foreground" data-testid={`text-focus-${index}`}>
                         {partner.keyFocusAreas}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
-                      <Layers className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                  <div className="flex items-start gap-3">
+                    <Layers className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
                         Sectors
                       </div>
-                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-sectors-${index}`}>
+                      <p className="text-sm text-foreground" data-testid={`text-sectors-${index}`}>
                         {partner.sectors}
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0 p-2 bg-primary/10 rounded-lg h-fit">
-                      <GraduationCap className="h-5 w-5 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
+                  <div className="flex items-start gap-3">
+                    <GraduationCap className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                    <div className="flex-1 min-w-0">
+                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
                         Education
                       </div>
-                      <p className="text-base text-foreground leading-relaxed" data-testid={`text-education-${index}`}>
+                      <p className="text-sm text-foreground" data-testid={`text-education-${index}`}>
                         {partner.education}
                       </p>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

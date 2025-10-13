@@ -1,5 +1,10 @@
 import { TrendingUp, Handshake, Users, Target, Rocket, Building2, ChevronRight, Lightbulb, Award } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const valueAdditions = [
   {
@@ -39,81 +44,96 @@ const valueAdditions = [
 
 export default function Portfolio() {
   return (
-    <section className="py-40 bg-white dark:bg-background">
+    <section className="py-32 bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-24">
+        <div className="mb-16 max-w-4xl">
           <div className="inline-block mb-6">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Value Creation</span>
           </div>
-          <h2 className="font-serif text-5xl lg:text-7xl font-bold tracking-[-0.02em] mb-6 leading-tight max-w-4xl text-primary" data-testid="text-value-title">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-value-title">
             SilverX- Value More Than Capital
           </h2>
-          <p className="text-xl text-foreground max-w-3xl font-light leading-relaxed" data-testid="text-value-subtitle">
+          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-value-subtitle">
             We provide hands-on support across critical business functions, leveraging decades of operational experience to accelerate growth and maximize returns for our portfolio companies.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <Accordion type="single" collapsible defaultValue="item-0" className="space-y-4">
           {valueAdditions.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Card 
+              <AccordionItem 
                 key={index}
-                className="group relative hover-elevate overflow-visible border-2"
+                value={`item-${index}`}
+                className="border-2 border-border rounded-xl overflow-hidden bg-card"
                 data-testid={`value-card-${index}`}
               >
-                <CardContent className="p-8">
-                  <div className="mb-8">
-                    <div className="inline-flex p-5 bg-primary/10 rounded-xl mb-6 border-2 border-primary/20">
-                      <Icon className="h-12 w-12 text-primary" />
+                <AccordionTrigger className="px-6 py-6 hover:no-underline hover-elevate [&[data-state=open]]:bg-primary/5">
+                  <div className="flex items-center gap-6 w-full">
+                    <div className="p-4 bg-primary/10 rounded-xl border border-primary/20">
+                      <Icon className="h-8 w-8 text-primary" />
                     </div>
-                    <h3 className="font-serif text-3xl font-bold text-primary mb-4" data-testid={`text-value-title-${index}`}>
-                      {item.title}
-                    </h3>
-                    <p className="text-foreground leading-relaxed" data-testid={`text-value-desc-${index}`}>
+                    <div className="flex-1 text-left">
+                      <h3 className="text-2xl font-bold text-foreground" data-testid={`text-value-title-${index}`}>
+                        {item.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mt-1">Click to expand details</p>
+                    </div>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-6">
+                  <div className="pt-6 border-t border-border">
+                    <p className="text-foreground leading-relaxed mb-8" data-testid={`text-value-desc-${index}`}>
                       {item.description}
                     </p>
-                  </div>
 
-                  <div className="space-y-4 mb-8 pb-8 border-b border-border/50">
-                    {item.metrics.map((metric, idx) => {
-                      const MetricIcon = metric.icon;
-                      return (
-                        <div key={idx} className="flex items-start gap-3" data-testid={`metric-${index}-${idx}`}>
-                          <div className="p-2 bg-primary/5 rounded-lg mt-0.5">
-                            <MetricIcon className="h-4 w-4 text-primary" />
-                          </div>
-                          <div className="flex-1">
-                            <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-0.5">
-                              {metric.label}
-                            </div>
-                            <div className="text-sm font-medium text-foreground">
-                              {metric.value}
-                            </div>
-                          </div>
+                    <div className="grid md:grid-cols-2 gap-8">
+                      <div>
+                        <div className="text-xs uppercase tracking-wider font-semibold text-foreground mb-4">
+                          Investment Approach
                         </div>
-                      );
-                    })}
-                  </div>
+                        <div className="space-y-3">
+                          {item.metrics.map((metric, idx) => {
+                            const MetricIcon = metric.icon;
+                            return (
+                              <div key={idx} className="flex items-start gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`metric-${index}-${idx}`}>
+                                <div className="p-2 bg-primary/10 rounded-lg">
+                                  <MetricIcon className="h-4 w-4 text-primary" />
+                                </div>
+                                <div className="flex-1">
+                                  <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                                    {metric.label}
+                                  </div>
+                                  <div className="text-sm font-semibold text-foreground">
+                                    {metric.value}
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
 
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-3">
-                      Key Services
-                    </div>
-                    <div className="space-y-2">
-                      {item.highlights.map((highlight, idx) => (
-                        <div key={idx} className="flex items-center gap-2" data-testid={`highlight-${index}-${idx}`}>
-                          <ChevronRight className="h-3 w-3 text-primary flex-shrink-0" />
-                          <span className="text-sm text-foreground">{highlight}</span>
+                      <div>
+                        <div className="text-xs uppercase tracking-wider font-semibold text-foreground mb-4">
+                          Key Services
                         </div>
-                      ))}
+                        <div className="space-y-2">
+                          {item.highlights.map((highlight, idx) => (
+                            <div key={idx} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg" data-testid={`highlight-${index}-${idx}`}>
+                              <ChevronRight className="h-4 w-4 text-primary flex-shrink-0" />
+                              <span className="text-sm font-medium text-foreground">{highlight}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </AccordionContent>
+              </AccordionItem>
             );
           })}
-        </div>
+        </Accordion>
       </div>
     </section>
   );
