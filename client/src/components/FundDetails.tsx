@@ -41,13 +41,48 @@ const whatSetsUsApart = [
 ];
 
 const fundLegacy = [
-  { icon: Building2, label: "Investments", value: "16 across high-potential segments" },
-  { icon: TrendingUp, label: "Top MOIC", value: "Up to 75x returns" },
-  { icon: BarChart3, label: "Portfolio Value", value: "$5Bn+ cumulative created" },
-  { icon: Award, label: "Exits", value: "Byju's, Muthoot Finance, Netcore, Unacademy" },
-  { icon: Globe, label: "Investor Base", value: "India, Dubai, USA, Singapore, Europe" },
-  { icon: Users, label: "LP Profile", value: "Family Offices, HNIs, Government Institutions" },
-  { icon: Users, label: "Gender Ratio", value: "40% Female, 60% Male" }
+  { 
+    icon: Building2, 
+    label: "Investments", 
+    value: "16",
+    description: "across high-potential segments"
+  },
+  { 
+    icon: TrendingUp, 
+    label: "Top MOIC", 
+    value: "75x",
+    description: "returns achieved"
+  },
+  { 
+    icon: BarChart3, 
+    label: "Portfolio Value", 
+    value: "$5Bn+",
+    description: "cumulative created"
+  },
+  { 
+    icon: Award, 
+    label: "Exits", 
+    value: "Byju's, Muthoot Finance",
+    description: "Netcore, Unacademy, and others"
+  },
+  { 
+    icon: Globe, 
+    label: "Investor Base", 
+    value: "Global Presence",
+    description: "India, Dubai, USA, Singapore, Europe"
+  },
+  { 
+    icon: Users, 
+    label: "LP Profile", 
+    value: "Institutional Focus",
+    description: "Family Offices, HNIs, Government Institutions"
+  },
+  { 
+    icon: Users, 
+    label: "Gender Ratio", 
+    value: "40% / 60%",
+    description: "Female / Male"
+  }
 ];
 
 export default function FundDetails() {
@@ -125,7 +160,7 @@ export default function FundDetails() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {fundLegacy.map((item, index) => {
               const Icon = item.icon;
               return (
@@ -134,19 +169,20 @@ export default function FundDetails() {
                   className="group relative hover-elevate overflow-visible border-2"
                   data-testid={`legacy-card-${index}`}
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className="inline-flex p-3 bg-primary/10 rounded-xl border-2 border-primary/20 flex-shrink-0">
-                        <Icon className="h-6 w-6 text-primary" />
+                  <CardContent className="p-8">
+                    <div className="mb-6">
+                      <div className="inline-flex p-4 bg-primary/10 rounded-xl border-2 border-primary/20 mb-4">
+                        <Icon className="h-8 w-8 text-primary" />
                       </div>
-                      <div className="flex-1">
-                        <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-2">
-                          {item.label}
-                        </div>
-                        <div className="text-sm font-medium text-foreground leading-relaxed">
-                          {item.value}
-                        </div>
-                      </div>
+                    </div>
+                    <div className="text-xs uppercase tracking-wider text-primary font-semibold mb-3" data-testid={`text-legacy-label-${index}`}>
+                      {item.label}
+                    </div>
+                    <div className="font-serif text-2xl font-bold text-primary mb-3 leading-tight" data-testid={`text-legacy-value-${index}`}>
+                      {item.value}
+                    </div>
+                    <div className="text-sm text-foreground leading-relaxed" data-testid={`text-legacy-desc-${index}`}>
+                      {item.description}
                     </div>
                   </CardContent>
                 </Card>
