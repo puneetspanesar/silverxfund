@@ -41,9 +41,7 @@ export default function Navigation() {
       data-testid="nav-main"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
-        <div className={`flex items-center justify-between transition-all duration-300 ${
-          isScrolled ? 'h-20' : 'h-32'
-        }`}>
+        <div className="flex items-center justify-between h-32">
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="flex items-center transition-opacity hover:opacity-80"
