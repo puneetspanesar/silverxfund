@@ -81,7 +81,7 @@ export default function TrackRecord() {
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground" data-testid="text-track-record-title">
             Proven execution since 2012
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-track-record-subtitle">
+          <p className="text-lg text-foreground leading-relaxed" data-testid="text-track-record-subtitle">
             Two decades of combined experience backing category-defining companies across growth stages
           </p>
         </div>
@@ -111,14 +111,14 @@ export default function TrackRecord() {
                   {stat.label}
                 </div>
                 
-                <div className="text-sm text-muted-foreground mb-4 leading-relaxed" data-testid={`text-stat-description-${index}`}>
+                <div className="text-sm text-foreground mb-4 leading-relaxed" data-testid={`text-stat-description-${index}`}>
                   {stat.description}
                 </div>
 
                 <div className="pt-4 border-t border-white/10">
                   <div className="flex items-baseline justify-between">
                     <span className="text-2xl font-bold text-foreground">{stat.subMetric}</span>
-                    <span className="text-xs text-muted-foreground uppercase tracking-wider">{stat.subLabel}</span>
+                    <span className="text-xs text-foreground uppercase tracking-wider">{stat.subLabel}</span>
                   </div>
                 </div>
 

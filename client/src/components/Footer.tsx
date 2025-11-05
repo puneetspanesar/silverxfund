@@ -16,7 +16,7 @@ export default function Footer() {
               className="h-24 mb-6"
               data-testid="img-footer-logo"
             />
-            <p className="text-muted-foreground leading-relaxed mb-6">
+            <p className="text-foreground leading-relaxed mb-6">
               AI-first venture capital backing India's next generation of category-defining deep-tech companies.
             </p>
             <div className="flex gap-3">
@@ -46,7 +46,7 @@ export default function Footer() {
                 <li>
                   <button 
                     onClick={() => document.getElementById('investment-thesis')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 group"
+                    className="text-foreground transition-colors flex items-center gap-2 group"
                     data-testid="link-footer-thesis"
                   >
                     <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -56,7 +56,7 @@ export default function Footer() {
                 <li>
                   <button 
                     onClick={() => document.getElementById('team')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 group"
+                    className="text-foreground transition-colors flex items-center gap-2 group"
                     data-testid="link-footer-team"
                   >
                     <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -66,7 +66,7 @@ export default function Footer() {
                 <li>
                   <button 
                     onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2 group"
+                    className="text-foreground transition-colors flex items-center gap-2 group"
                     data-testid="link-footer-contact"
                   >
                     <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -82,14 +82,14 @@ export default function Footer() {
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Email</div>
+                    <div className="text-sm text-foreground mb-1">Email</div>
                     <div className="text-sm font-medium text-foreground">contact@silverxfund.com</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <MapPin className="h-5 w-5 text-primary mt-0.5" />
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Office</div>
+                    <div className="text-sm text-foreground mb-1">Office</div>
                     <div className="text-sm font-medium text-foreground">Hyderabad, India</div>
                   </div>
                 </div>
@@ -99,12 +99,12 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-foreground">
             © {currentYear} SilverX Fund. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</button>
-            <button className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</button>
+            <button className="text-foreground transition-colors">Privacy Policy</button>
+            <button className="text-foreground transition-colors">Terms of Service</button>
           </div>
         </div>
       </div>

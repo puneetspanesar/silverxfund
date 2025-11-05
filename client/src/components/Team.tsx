@@ -59,7 +59,7 @@ export default function Team() {
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground" data-testid="text-team-title">
             Operators who've built, scaled, and exited
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-team-subtitle">
+          <p className="text-lg text-foreground leading-relaxed" data-testid="text-team-subtitle">
             Our partners bring decades of combined experience across venture capital, operating roles, and successful exits
           </p>
         </div>
@@ -95,7 +95,7 @@ export default function Team() {
                   <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Briefcase className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                      <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-1">
                         Experience
                       </div>
                       <p className="text-sm text-foreground leading-relaxed" data-testid={`text-experience-${index}`}>
@@ -107,7 +107,7 @@ export default function Team() {
                   <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Target className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                      <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-1">
                         Focus Areas
                       </div>
                       <p className="text-sm text-foreground" data-testid={`text-focus-${index}`}>
@@ -119,7 +119,7 @@ export default function Team() {
                   <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Layers className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                      <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-1">
                         Sectors
                       </div>
                       <p className="text-sm text-foreground" data-testid={`text-sectors-${index}`}>
@@ -131,7 +131,7 @@ export default function Team() {
                   <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <GraduationCap className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
                     <div className="flex-1 min-w-0">
-                      <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                      <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-1">
                         Education
                       </div>
                       <p className="text-sm text-foreground" data-testid={`text-education-${index}`}>

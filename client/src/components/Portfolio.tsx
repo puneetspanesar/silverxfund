@@ -53,7 +53,7 @@ export default function Portfolio() {
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-value-title">
             SilverX- Value More Than Capital
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed" data-testid="text-value-subtitle">
+          <p className="text-lg text-foreground leading-relaxed" data-testid="text-value-subtitle">
             We provide hands-on support across critical business functions, leveraging decades of operational experience to accelerate growth and maximize returns for our portfolio companies.
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function Portfolio() {
                       <h3 className="text-2xl font-bold text-foreground" data-testid={`text-value-title-${index}`}>
                         {item.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground mt-1">Click to expand details</p>
+                      <p className="text-sm text-foreground mt-1">Click to expand details</p>
                     </div>
                   </div>
                 </AccordionTrigger>
@@ -101,7 +101,7 @@ export default function Portfolio() {
                                   <MetricIcon className="h-4 w-4 text-primary" />
                                 </div>
                                 <div className="flex-1">
-                                  <div className="text-xs uppercase tracking-wider text-muted-foreground font-semibold mb-1">
+                                  <div className="text-xs uppercase tracking-wider text-foreground font-semibold mb-1">
                                     {metric.label}
                                   </div>
                                   <div className="text-sm font-semibold text-foreground">

@@ -1,12 +1,10 @@
-import { useState } from "react";
-import { Sparkles, TrendingUp, Cpu } from "lucide-react";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Sparkles, TrendingUp, Cpu, ChevronRight } from "lucide-react";
 
 const segments = [
   {
-    id: "ai-first",
     icon: Sparkles,
     title: "AI First",
+    description: "Foundational infrastructure enabling the AI transformation",
     highlights: [
       "Developer platforms & tooling",
       "Horizontal & Enterprise AI",
@@ -15,9 +13,9 @@ const segments = [
     ]
   },
   {
-    id: "consumer-tech",
     icon: TrendingUp,
     title: "Consumer Tech",
+    description: "Scalable platforms disrupting traditional consumer markets",
     highlights: [
       "Fintech",
       "Healthcare",
@@ -26,9 +24,9 @@ const segments = [
     ]
   },
   {
-    id: "deep-tech",
     icon: Cpu,
     title: "Deep Tech",
+    description: "Breakthrough innovations in compute and materials science",
     highlights: [
       "Advanced materials",
       "Quantum computing",
@@ -38,78 +36,60 @@ const segments = [
 ];
 
 export default function InvestmentThesis() {
-  const [activeTab, setActiveTab] = useState(segments[0].id);
-
   return (
-    <section id="investment-thesis" className="py-16 relative bg-background">
+    <section id="investment-thesis" className="py-12 relative bg-background">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-        <div className="mb-12 text-center max-w-4xl mx-auto">
-          <div className="inline-block mb-6">
+        <div className="mb-8 text-center max-w-4xl mx-auto">
+          <div className="inline-block mb-4">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
           </div>
-          <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-thesis-title">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-foreground" data-testid="text-thesis-title">
             Investment Thesis
           </h2>
+          <p className="text-base text-foreground leading-relaxed" data-testid="text-thesis-subtitle">
+            Our investment mandate centers on identifying inflection points where technological capabilities, market timing, and founder excellence converge
+          </p>
         </div>
         
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-1 lg:grid-cols-3 gap-4 mb-12 bg-transparent h-auto p-0">
-            {segments.map((segment, index) => {
-              const Icon = segment.icon;
-              return (
-                <TabsTrigger 
-                  key={segment.id}
-                  value={segment.id}
-                  className="data-[state=active]:bg-white/15 data-[state=active]:text-foreground bg-white/5 backdrop-blur-xl h-auto p-6 flex flex-col items-center gap-3 border border-white/10 data-[state=active]:border-white/30 transition-all duration-300 rounded-2xl shadow-lg shadow-black/5"
-                  data-testid={`tab-${index}`}
-                >
-                  <Icon className="h-10 w-10" />
-                  <div className="text-center">
-                    <div className="font-semibold text-lg">{segment.title}</div>
-                  </div>
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-
+        <div className="space-y-6">
           {segments.map((segment, index) => {
             const Icon = segment.icon;
             return (
-              <TabsContent 
-                key={segment.id}
-                value={segment.id}
-                className="mt-0"
+              <div 
+                key={index} 
+                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 shadow-lg shadow-black/5 hover:border-white/20 transition-all duration-300"
                 data-testid={`segment-${index}`}
               >
-                <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 lg:p-12 shadow-2xl shadow-black/10">
-                  <div className="max-w-3xl mx-auto">
-                    <div className="flex items-center justify-center gap-4 mb-8">
-                      <div className="w-16 h-16 bg-primary/10 backdrop-blur-xl rounded-2xl border border-primary/20 flex items-center justify-center">
-                        <Icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="text-3xl font-bold text-foreground" data-testid={`text-segment-title-${index}`}>
+                <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                  <div className="flex items-start gap-4 lg:w-1/3">
+                    <div className="w-12 h-12 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 flex items-center justify-center flex-shrink-0">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-foreground mb-1" data-testid={`text-segment-title-${index}`}>
                         {segment.title}
                       </h3>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {segment.highlights.map((highlight, idx) => (
-                        <div 
-                          key={idx} 
-                          className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10" 
-                          data-testid={`highlight-${index}-${idx}`}
-                        >
-                          <div className="w-2 h-2 rounded-full bg-primary flex-shrink-0" />
-                          <span className="text-base font-medium text-foreground">{highlight}</span>
-                        </div>
-                      ))}
+                      <p className="text-sm text-foreground/80">{segment.description}</p>
                     </div>
                   </div>
+
+                  <div className="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {segment.highlights.map((highlight, idx) => (
+                      <div 
+                        key={idx} 
+                        className="flex items-center gap-2 group" 
+                        data-testid={`highlight-${index}-${idx}`}
+                      >
+                        <ChevronRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
+                        <span className="text-sm font-medium text-foreground">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </TabsContent>
+              </div>
             );
           })}
-        </Tabs>
+        </div>
       </div>
     </section>
   );

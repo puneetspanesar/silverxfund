@@ -43,7 +43,7 @@ export default function Hero() {
               <span className="text-primary">AI-First</span> Future
             </h1>
             
-            <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg" data-testid="text-hero-subtitle">
+            <p className="text-lg lg:text-xl text-foreground mb-8 leading-relaxed max-w-lg" data-testid="text-hero-subtitle">
               Early stage venture capital firm looking to back category defining founders
             </p>
             
@@ -70,26 +70,26 @@ export default function Hero() {
             <div className="py-8 border-t border-white/10 space-y-8">
               <div className="grid grid-cols-3 gap-8">
                 <div data-testid="stat-fund-size">
-                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
+                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
                   <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
                 </div>
                 <div data-testid="stat-stage">
-                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage Focus</div>
+                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage Focus</div>
                   <div className="text-2xl font-bold text-primary">Seed+ to A/B</div>
                 </div>
                 <div data-testid="stat-portfolio">
-                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio Value</div>
+                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio Value</div>
                   <div className="text-3xl font-bold tabular-nums text-primary">$5B+</div>
                 </div>
               </div>
 
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:divide-x md:divide-white/20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:divide-x md:divide-primary/30">
                 {highlights.map((item, index) => {
                   const Icon = item.icon;
                   return (
@@ -101,7 +101,7 @@ export default function Hero() {
                         <h3 className="text-base font-semibold mb-1 text-foreground">
                           {item.title}
                         </h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <p className="text-sm text-foreground leading-relaxed">
                           {item.description}
                         </p>
                       </div>
