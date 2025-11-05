@@ -47,10 +47,10 @@ export default function Portfolio() {
                   <div className="w-16 h-16 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 flex items-center justify-center mb-4">
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2" data-testid={`text-value-title-${index}`}>
+                  <h3 className="text-lg font-bold text-primary mb-3" data-testid={`text-value-title-${index}`}>
                     {item.title}
                   </h3>
-                  <p className="text-sm text-foreground/80" data-testid={`text-value-desc-${index}`}>{item.description}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed" data-testid={`text-value-desc-${index}`}>{item.description}</p>
                 </div>
               </div>
             );
