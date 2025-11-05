@@ -4,29 +4,20 @@ const valueAdditions = [
   {
     title: "Sales / GTM",
     icon: TrendingUp,
-    points: [
-      { headline: "Strategy Acceleration", description: "First-hand support in accelerating sales and GTM strategy" },
-      { headline: "Market Expansion", description: "Growth across India and global markets" },
-      { headline: "Revenue Optimization", description: "Data-driven approach to maximize revenue" }
-    ]
+    subheadline: "Strategy Acceleration",
+    description: "First-hand support in accelerating sales and GTM strategy for portfolio companies across India and global markets"
   },
   {
     title: "M&A / Capital Raise",
     icon: Handshake,
-    points: [
-      { headline: "Capital Raises", description: "Supporting next round of fundraising and M&A requirements" },
-      { headline: "Strategic Deals", description: "Identifying and implementing commercial partnerships" },
-      { headline: "Cap Tables & ESOPs", description: "Expert guidance on equity structure and employee ownership" }
-    ]
+    subheadline: "Capital & Strategic Deals",
+    description: "Assisting companies with the next round of capital raises and M&A requirements. Supporting founders in identifying and implementing commercial and strategic deals, cap tables, and ESOPs"
   },
   {
     title: "HR / Operations",
     icon: Users,
-    points: [
-      { headline: "Team Building", description: "Access to Partners network for key hires" },
-      { headline: "Cross-Functional Support", description: "Building the right teams across all functions" },
-      { headline: "Operations Excellence", description: "Streamlining operations in early-stage companies" }
-    ]
+    subheadline: "Team Building & Excellence",
+    description: "Opening up the Partners network to help build the right teams across functions and streamline operations in early-stage companies"
   }
 ];
 
@@ -59,22 +50,15 @@ export default function Portfolio() {
                   <div className="w-16 h-16 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 flex items-center justify-center mb-4">
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-6" data-testid={`text-value-title-${index}`}>
+                  <h3 className="text-xl font-bold text-foreground mb-2" data-testid={`text-value-title-${index}`}>
                     {item.title}
                   </h3>
-                  
-                  <div className="space-y-4 w-full">
-                    {item.points.map((point, idx) => (
-                      <div key={idx} className="text-left">
-                        <h4 className="text-sm font-bold text-primary mb-1" data-testid={`text-value-subhead-${index}-${idx}`}>
-                          {point.headline}
-                        </h4>
-                        <p className="text-xs text-foreground/70 leading-relaxed" data-testid={`text-value-subdesc-${index}-${idx}`}>
-                          {point.description}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  <h4 className="text-base font-semibold text-primary mb-3" data-testid={`text-value-subhead-${index}`}>
+                    {item.subheadline}
+                  </h4>
+                  <p className="text-sm text-foreground/80 leading-relaxed" data-testid={`text-value-desc-${index}`}>
+                    {item.description}
+                  </p>
                 </div>
               </div>
             );
