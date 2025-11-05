@@ -6,8 +6,7 @@ import logo from "@assets/SilverX Fund Logo_1759929335279.png";
 const navItems = [
   { label: "Investment Thesis", href: "#investment-thesis" },
   { label: "Team", href: "#team" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Contact", href: "#contact" }
+  { label: "Portfolio", href: "#portfolio" }
 ];
 
 export default function Navigation() {
