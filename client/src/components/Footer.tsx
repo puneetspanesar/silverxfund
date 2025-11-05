@@ -1,4 +1,4 @@
-import { SiLinkedin, SiX } from "react-icons/si";
+import { SiLinkedin, SiX, SiFacebook, SiInstagram } from "react-icons/si";
 import { Mail, MapPin, ArrowRight } from "lucide-react";
 import footerLogo from "@assets/SilverX Fund Logo_1760354717741.png";
 
@@ -17,7 +17,7 @@ export default function Footer() {
               data-testid="img-footer-logo"
             />
             <p className="text-foreground leading-relaxed mb-6">
-              AI-first venture capital backing India's next generation of category-defining deep-tech companies.
+              Early stage venture capital firm looking to back category defining founders
             </p>
             <div className="flex gap-3">
               <button 
@@ -36,12 +36,31 @@ export default function Footer() {
               >
                 <SiX className="h-5 w-5 text-foreground" />
               </button>
+              <a 
+                href="https://www.facebook.com/silverxfund/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl transition-all hover-elevate"
+                aria-label="Facebook"
+                data-testid="button-facebook"
+              >
+                <SiFacebook className="h-5 w-5 text-foreground" />
+              </a>
+              <a 
+                href="https://www.instagram.com/silverxfund/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl transition-all hover-elevate"
+                aria-label="Instagram"
+                data-testid="button-instagram"
+              >
+                <SiInstagram className="h-5 w-5 text-foreground" />
+              </a>
             </div>
           </div>
           
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-wider text-foreground">Quick Links</h4>
               <ul className="space-y-3">
                 <li>
                   <button 
@@ -77,13 +96,12 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="font-bold mb-6 text-sm uppercase tracking-wider text-foreground">Contact Info</h4>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Mail className="h-5 w-5 text-primary mt-0.5" />
                   <div>
                     <div className="text-sm text-foreground mb-1">Email</div>
-                    <div className="text-sm font-medium text-foreground">contact@silverxfund.com</div>
+                    <div className="text-sm font-medium text-foreground">info@silverx.vc</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
