@@ -33,7 +33,9 @@ export default function Navigation() {
 
   return (
     <nav 
-      className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-border shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${
+        isScrolled ? 'border-b border-border shadow-sm' : ''
+      }`}
       data-testid="nav-main"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
