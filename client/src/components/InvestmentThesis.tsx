@@ -1,37 +1,20 @@
-import { Sparkles, ShoppingCart, Cpu, ChevronRight } from "lucide-react";
+import { Sparkles, ShoppingCart, Cpu } from "lucide-react";
 
 const segments = [
   {
     icon: Sparkles,
     title: "AI First",
-    description: "Foundational infrastructure enabling the AI transformation",
-    highlights: [
-      "Developer platforms & tooling",
-      "Horizontal & Enterprise AI",
-      "Vertical AI",
-      "Consumer AI applications"
-    ]
+    description: "Foundational infrastructure enabling the AI transformation"
   },
   {
     icon: ShoppingCart,
     title: "Consumer Tech",
-    description: "Scalable platforms disrupting traditional consumer markets",
-    highlights: [
-      "Fintech",
-      "Healthcare",
-      "Consumer",
-      "Commerce"
-    ]
+    description: "Scalable platforms disrupting traditional consumer markets"
   },
   {
     icon: Cpu,
     title: "Deep Tech",
-    description: "Breakthrough innovations in compute and materials science",
-    highlights: [
-      "Advanced materials",
-      "Quantum computing",
-      "Robotics"
-    ]
+    description: "Breakthrough innovations in compute and materials science"
   }
 ];
 
@@ -60,27 +43,14 @@ export default function InvestmentThesis() {
                 className="p-8 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300"
                 data-testid={`segment-${index}`}
               >
-                <div className="flex flex-col items-center text-center mb-6">
+                <div className="flex flex-col items-center text-center">
                   <div className="w-16 h-16 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 flex items-center justify-center mb-4">
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-2" data-testid={`text-segment-title-${index}`}>
                     {segment.title}
                   </h3>
-                  <p className="text-sm text-foreground/80 mb-6">{segment.description}</p>
-                </div>
-
-                <div className="space-y-3">
-                  {segment.highlights.map((highlight, idx) => (
-                    <div 
-                      key={idx} 
-                      className="flex items-center gap-2 group justify-center" 
-                      data-testid={`highlight-${index}-${idx}`}
-                    >
-                      <ChevronRight className="h-4 w-4 text-primary flex-shrink-0 group-hover:translate-x-1 transition-transform" />
-                      <span className="text-sm font-medium text-foreground">{highlight}</span>
-                    </div>
-                  ))}
+                  <p className="text-sm text-foreground/80">{segment.description}</p>
                 </div>
               </div>
             );

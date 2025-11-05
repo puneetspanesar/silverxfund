@@ -64,7 +64,7 @@ export default function Team() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {partners.map((partner, index) => (
             <Card 
               key={index}
@@ -78,7 +78,7 @@ export default function Team() {
                   className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   data-testid={`img-team-${index}`}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent backdrop-blur-sm" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />
                 
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h3 className="text-2xl font-bold mb-1 text-foreground" data-testid={`text-name-${index}`}>
