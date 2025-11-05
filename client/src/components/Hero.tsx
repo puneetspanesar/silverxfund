@@ -28,7 +28,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen bg-background pt-20">
+    <section className="relative min-h-screen bg-white pt-20">
       <div className="max-w-[1400px] mx-auto">
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Left Content */}
