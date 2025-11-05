@@ -4,31 +4,22 @@ const whatSetsUsApart = [
   {
     title: "Well-Rounded Team",
     icon: Users,
-    points: [
-      "Experienced investors with a track record of strong picks",
-      "Operating experience across growth and scale-up stages"
-    ]
+    description: "Experienced investors with a track record of strong picks and operating experience across growth and scale-up stages"
   },
   {
     title: "Strong Deal Sourcing",
     icon: Target,
-    points: [
-      "Proprietary network of partners"
-    ]
+    description: "Proprietary network of partners for identifying high-potential investment opportunities"
   },
   {
-    title: "Portfolio Management & Support",
+    title: "Portfolio Management",
     icon: Handshake,
-    points: [
-      "Active, hands-on mentoring and guidance - true 'smart money'"
-    ]
+    description: "Active, hands-on mentoring and guidance - true 'smart money' for our portfolio companies"
   },
   {
     title: "Clear Eye on Exits",
     icon: Eye,
-    points: [
-      "Leveraging technology to understand exit probabilities"
-    ]
+    description: "Leveraging technology to understand exit probabilities and maximize returns"
   }
 ];
 
@@ -45,36 +36,23 @@ export default function FundDetails() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-0 divide-y md:divide-y-0 md:divide-x divide-border/20">
           {whatSetsUsApart.map((item, index) => {
             const Icon = item.icon;
             return (
               <div 
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 transition-all duration-500 shadow-xl shadow-black/10"
+                className="p-8 bg-white/5 backdrop-blur-xl hover:bg-white/10 transition-all duration-300"
                 data-testid={`apart-card-${index}`}
               >
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="w-14 h-14 bg-primary/10 backdrop-blur-xl rounded-2xl border border-primary/30 flex items-center justify-center">
-                      <Icon className="h-7 w-7 text-primary" />
-                    </div>
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 flex items-center justify-center mb-4">
+                    <Icon className="h-8 w-8 text-primary" />
                   </div>
-
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-xl font-bold text-foreground mb-4" data-testid={`text-apart-title-${index}`}>
-                      {item.title}
-                    </h3>
-                    
-                    <ul className="space-y-2">
-                      {item.points.map((point, idx) => (
-                        <li key={idx} className="text-sm text-foreground leading-relaxed flex items-start gap-2">
-                          <span className="text-primary mt-1.5">•</span>
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2" data-testid={`text-apart-title-${index}`}>
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-foreground/80" data-testid={`text-apart-desc-${index}`}>{item.description}</p>
                 </div>
               </div>
             );
