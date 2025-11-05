@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin } from "lucide-react";
-import { SiFacebook, SiInstagram } from "react-icons/si";
 import { useState } from "react";
 
 export default function Contact() {
@@ -54,27 +53,6 @@ export default function Contact() {
               <div className="text-base font-semibold text-foreground">Hyderabad, India</div>
             </div>
           </div>
-        </div>
-
-        <div className="flex justify-center gap-4 mb-12">
-          <a 
-            href="https://www.facebook.com/silverxfund/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-3 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 hover-elevate active-elevate-2 transition-all"
-            data-testid="link-facebook"
-          >
-            <SiFacebook className="h-6 w-6 text-primary" />
-          </a>
-          <a 
-            href="https://www.instagram.com/silverxfund/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="p-3 bg-primary/10 backdrop-blur-xl rounded-xl border border-primary/20 hover-elevate active-elevate-2 transition-all"
-            data-testid="link-instagram"
-          >
-            <SiInstagram className="h-6 w-6 text-primary" />
-          </a>
         </div>
         
         <div className="border border-border/20 rounded-xl p-8 bg-white/50 backdrop-blur-xl">
