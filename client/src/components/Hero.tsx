@@ -61,7 +61,9 @@ export default function Hero() {
                 </div>
                 <div data-testid="stat-stage">
                   <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage</div>
-                  <div className="text-2xl font-bold text-primary">Seed to Series A</div>
+                  <div className="text-2xl font-bold text-primary">
+                    Seed to<br />Series A
+                  </div>
                 </div>
                 <div data-testid="stat-portfolio">
                   <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio</div>
