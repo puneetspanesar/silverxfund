@@ -89,11 +89,11 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:divide-x md:divide-white/20">
                 {highlights.map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <div key={index} className="flex items-start gap-4" data-testid={`highlight-${index}`}>
+                    <div key={index} className={`flex items-start gap-4 ${index > 0 ? 'md:pl-8' : ''}`} data-testid={`highlight-${index}`}>
                       <div className="p-2 rounded-lg bg-primary/10">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
