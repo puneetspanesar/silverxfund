@@ -33,10 +33,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Left Content */}
           <div className="flex flex-col justify-center px-8 lg:px-16 py-12">
-            <Badge variant="secondary" className="w-fit mb-8 px-4 py-2 text-xs font-semibold tracking-wider bg-white/5 backdrop-blur-xl border border-white/20">
-              $100M FUND II • NOW RAISING
-            </Badge>
-            
             <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight" data-testid="text-hero-title">
               Backing India's
               <br />
@@ -53,17 +49,7 @@ export default function Hero() {
                 onClick={handleViewThesis}
                 data-testid="button-view-thesis"
               >
-                Investment Thesis
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                onClick={handleMeetTeam}
-                data-testid="button-meet-team"
-              >
-                <Play className="mr-2 h-4 w-4" />
-                Watch Story
+                About Us
               </Button>
             </div>
 
