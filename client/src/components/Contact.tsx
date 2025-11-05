@@ -40,7 +40,7 @@ export default function Contact() {
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-xs uppercase tracking-wider text-foreground/60 mb-1">Email</div>
-              <div className="text-base font-semibold text-foreground truncate">contact@silverxfund.com</div>
+              <div className="text-base font-semibold text-foreground truncate">info@silverx.vc</div>
             </div>
           </div>
           
