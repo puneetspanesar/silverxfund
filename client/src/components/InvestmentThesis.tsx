@@ -26,10 +26,10 @@ export default function InvestmentThesis() {
           <div className="inline-block mb-4">
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-4 leading-tight text-foreground" data-testid="text-thesis-title">
+          <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-thesis-title">
             Investment Thesis
           </h2>
-          <p className="text-base text-foreground leading-relaxed" data-testid="text-thesis-subtitle">
+          <p className="text-lg text-foreground leading-relaxed" data-testid="text-thesis-subtitle">
             Backing exceptional founders at the intersection of technology and market opportunity
           </p>
         </div>
