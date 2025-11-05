@@ -75,7 +75,7 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4 md:divide-x md:divide-primary/30">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 md:divide-x md:divide-primary/30">
                 {highlights.map((item, index) => {
                   const Icon = item.icon;
                   return (
