@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { TrendingUp, DollarSign, Target, Award, ArrowUpRight, Users, Building2, Rocket } from "lucide-react";
+import { TrendingUp, DollarSign, Briefcase, Trophy, ArrowUpRight, Users, Building2, Rocket } from "lucide-react";
 
 const stats = [
   {
@@ -13,7 +13,7 @@ const stats = [
     bgColor: "bg-primary/5"
   },
   {
-    icon: Target,
+    icon: Briefcase,
     value: "150+",
     label: "Investments",
     description: "Strategic bets in category-defining startups",
@@ -23,7 +23,7 @@ const stats = [
     bgColor: "bg-primary/5"
   },
   {
-    icon: Award,
+    icon: Trophy,
     value: "20",
     label: "Successful Exits",
     description: "IPOs, acquisitions & strategic partnerships",
@@ -92,7 +92,7 @@ export default function TrackRecord() {
             return (
               <div 
                 key={index} 
-                className={`relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-500 shadow-xl shadow-black/10 hover:shadow-2xl hover:border-white/20 group ${
+                className={`relative p-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-500 hover:border-white/20 group ${
                   isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
