@@ -4,17 +4,17 @@ const segments = [
   {
     icon: Sparkles,
     title: "AI First",
-    description: "Foundational infrastructure enabling the AI transformation"
+    description: "Infrastructure powering the AI era"
   },
   {
     icon: ShoppingCart,
     title: "Consumer Tech",
-    description: "Scalable platforms disrupting traditional consumer markets"
+    description: "Platforms reimagining consumer experiences"
   },
   {
     icon: Cpu,
     title: "Deep Tech",
-    description: "Breakthrough innovations in compute and materials science"
+    description: "Innovations in compute and materials"
   }
 ];
 
@@ -30,7 +30,7 @@ export default function InvestmentThesis() {
             Investment Thesis
           </h2>
           <p className="text-base text-foreground leading-relaxed" data-testid="text-thesis-subtitle">
-            Our investment mandate centers on identifying inflection points where technological capabilities, market timing, and founder excellence converge
+            Backing exceptional founders at the intersection of technology and market opportunity
           </p>
         </div>
         

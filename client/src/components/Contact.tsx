@@ -24,10 +24,10 @@ export default function Contact() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Get In Touch</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-foreground" data-testid="text-contact-title">
-            Let's build the future together
+            Let's build together
           </h2>
           <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto" data-testid="text-contact-subtitle">
-            Whether you're a founder with a vision or an LP seeking extraordinary returns, we want to hear from you
+            For founders and investors seeking exceptional returns
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function Contact() {
               id="message"
               value={formData.message}
               onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-              placeholder="Tell us about your vision..."
+              placeholder="Tell us about your vision"
               rows={5}
               className="w-full pb-3 text-lg bg-transparent border-b-2 border-border/20 focus:border-primary outline-none resize-none transition-colors placeholder:text-foreground/40"
               data-testid="input-message"

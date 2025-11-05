@@ -6,13 +6,13 @@ import heroImage from "@assets/shutterstock_1858812901_1759928182771.jpg";
 const highlights = [
   {
     icon: Cpu,
-    title: "Deep-tech Domain Expertise",
-    description: "Specialized focus on AI, ML, and emerging technologies shaping the next decade of India's story"
+    title: "AI & Deep Tech",
+    description: "Focused expertise in artificial intelligence and emerging technologies"
   },
   {
     icon: Award,
-    title: "Exceptional Returns",
-    description: "Track record of delivering value - ~5 unicorns with $5B+ in aggregate value created"
+    title: "Proven Track Record",
+    description: "5 unicorns backed with strong returns across our portfolio"
   }
 ];
 
@@ -40,7 +40,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg lg:text-xl text-foreground mb-8 leading-relaxed max-w-lg" data-testid="text-hero-subtitle">
-              Early stage venture capital firm looking to back category defining founders
+              Early stage venture capital backing category defining founders
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -60,11 +60,11 @@ export default function Hero() {
                   <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
                 </div>
                 <div data-testid="stat-stage">
-                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage Focus</div>
-                  <div className="text-2xl font-bold text-primary">Seed+ to A/B</div>
+                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage</div>
+                  <div className="text-2xl font-bold text-primary">Seed to Series A</div>
                 </div>
                 <div data-testid="stat-portfolio">
-                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio Value</div>
+                  <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio</div>
                   <div className="text-3xl font-bold tabular-nums text-primary">$5B+</div>
                 </div>
               </div>

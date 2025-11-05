@@ -4,20 +4,20 @@ const valueAdditions = [
   {
     title: "Sales / GTM",
     icon: TrendingUp,
-    subheadline: "Strategy Acceleration",
-    description: "First-hand support in accelerating sales and GTM strategy for portfolio companies across India and global markets"
+    subheadline: "Market Strategy",
+    description: "Accelerating go-to-market across India and global markets"
   },
   {
     title: "M&A / Capital Raise",
     icon: Handshake,
-    subheadline: "Capital & Strategic Deals",
-    description: "Assisting companies with the next round of capital raises and M&A requirements. Supporting founders in identifying and implementing commercial and strategic deals, cap tables, and ESOPs"
+    subheadline: "Strategic Capital",
+    description: "Supporting fundraising, strategic deals, and equity structuring"
   },
   {
     title: "HR / Operations",
     icon: Users,
-    subheadline: "Team Building & Excellence",
-    description: "Opening up the Partners network to help build the right teams across functions and streamline operations in early-stage companies"
+    subheadline: "Team Building",
+    description: "Connecting founders with key talent across functions"
   }
 ];
 
@@ -30,10 +30,10 @@ export default function Portfolio() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Value Creation</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-value-title">
-            SilverX- Value More Than Capital
+            Beyond Capital
           </h2>
           <p className="text-lg text-foreground leading-relaxed" data-testid="text-value-subtitle">
-            We provide hands-on support across critical business functions, leveraging decades of operational experience to accelerate growth and maximize returns for our portfolio companies.
+            Hands-on support across critical business functions
           </p>
         </div>
         

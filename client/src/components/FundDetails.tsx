@@ -2,24 +2,24 @@ import { Target, Users, Handshake, Eye } from "lucide-react";
 
 const whatSetsUsApart = [
   {
-    title: "Well-Rounded Team",
+    title: "Experienced Team",
     icon: Users,
-    description: "Experienced investors with a track record of strong picks and operating experience across growth and scale-up stages"
+    description: "Proven investors with operational expertise"
   },
   {
-    title: "Strong Deal Sourcing",
+    title: "Deal Sourcing",
     icon: Target,
-    description: "Proprietary network of partners for identifying high-potential investment opportunities"
+    description: "Proprietary network for superior deal flow"
   },
   {
-    title: "Portfolio Management",
+    title: "Active Support",
     icon: Handshake,
-    description: "Active, hands-on mentoring and guidance - true 'smart money' for our portfolio companies"
+    description: "Hands-on guidance throughout the journey"
   },
   {
-    title: "Clear Eye on Exits",
+    title: "Exit Focus",
     icon: Eye,
-    description: "Leveraging technology to understand exit probabilities and maximize returns"
+    description: "Data-driven approach to maximizing returns"
   }
 ];
 
@@ -29,7 +29,7 @@ export default function FundDetails() {
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-12 text-center max-w-3xl mx-auto">
           <div className="inline-block mb-6">
-            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Differentiation</span>
+            <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Our Approach</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-sets-apart-title">
             What Sets Us Apart

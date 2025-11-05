@@ -19,7 +19,7 @@ const stats = [
   {
     icon: Trophy,
     value: "20",
-    label: "Successful Exits",
+    label: "Exits",
     subMetric: "5",
     subLabel: "Unicorns"
   },
@@ -28,7 +28,7 @@ const stats = [
     value: "~30%",
     label: "Target IRR",
     subMetric: "12+",
-    subLabel: "Years Track Record"
+    subLabel: "Years Experience"
   }
 ];
 
@@ -63,9 +63,6 @@ export default function TrackRecord() {
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-white" data-testid="text-track-record-title">
             Proven execution since 2012
           </h2>
-          <p className="text-lg text-white/90 leading-relaxed" data-testid="text-track-record-subtitle">
-            Two decades of combined experience backing category-defining companies across growth stages
-          </p>
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-0 divide-x divide-y lg:divide-y-0 divide-white/20">
