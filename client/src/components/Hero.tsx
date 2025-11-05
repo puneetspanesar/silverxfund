@@ -67,18 +67,47 @@ export default function Hero() {
               </Button>
             </div>
 
-            <div className="grid grid-cols-3 gap-8 py-8 border-t border-white/10">
-              <div data-testid="stat-fund-size">
-                <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
-                <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
+            <div className="py-8 border-t border-white/10 space-y-8">
+              <div className="grid grid-cols-3 gap-8">
+                <div data-testid="stat-fund-size">
+                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
+                  <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
+                </div>
+                <div data-testid="stat-stage">
+                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage Focus</div>
+                  <div className="text-2xl font-bold text-primary">Seed+ to A/B</div>
+                </div>
+                <div data-testid="stat-portfolio">
+                  <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio Value</div>
+                  <div className="text-3xl font-bold tabular-nums text-primary">$5B+</div>
+                </div>
               </div>
-              <div data-testid="stat-stage">
-                <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage Focus</div>
-                <div className="text-2xl font-bold text-primary">Seed+ to A/B</div>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+                </div>
               </div>
-              <div data-testid="stat-portfolio">
-                <div className="text-muted-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Portfolio Value</div>
-                <div className="text-3xl font-bold tabular-nums text-primary">$5B+</div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
+                {highlights.map((item, index) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={index} className="flex items-start gap-4" data-testid={`highlight-${index}`}>
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <Icon className="h-5 w-5 text-primary" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-base font-semibold mb-1 text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -96,38 +125,6 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent lg:via-background/20" />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Highlights Section - Below the hero */}
-      <div className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {highlights.map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <div 
-                  key={index} 
-                  className="group bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 shadow-lg shadow-black/5"
-                  data-testid={`highlight-${index}`}
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-xl bg-primary/10 backdrop-blur-xl border border-primary/20">
-                      <Icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-base font-semibold mb-1 text-foreground">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </div>
