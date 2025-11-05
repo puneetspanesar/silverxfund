@@ -44,7 +44,7 @@ const valueAdditions = [
 
 export default function Portfolio() {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-white">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-12 max-w-4xl">
           <div className="inline-block mb-6">

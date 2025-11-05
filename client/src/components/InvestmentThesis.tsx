@@ -37,7 +37,7 @@ const segments = [
 
 export default function InvestmentThesis() {
   return (
-    <section id="investment-thesis" className="py-12 relative bg-background">
+    <section id="investment-thesis" className="py-12 relative bg-white">
       <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
         <div className="mb-8 text-center max-w-4xl mx-auto">
           <div className="inline-block mb-4">
