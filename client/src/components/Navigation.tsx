@@ -78,7 +78,7 @@ export default function Navigation() {
               >
                 <ArrowUp className="h-5 w-5 text-white flex-shrink-0" />
                 <span className="overflow-hidden max-w-0 group-hover:max-w-xs transition-all duration-300 text-white font-medium text-sm whitespace-nowrap group-hover:ml-2">
-                  Explore
+                  Pitch
                 </span>
               </button>
             </div>
