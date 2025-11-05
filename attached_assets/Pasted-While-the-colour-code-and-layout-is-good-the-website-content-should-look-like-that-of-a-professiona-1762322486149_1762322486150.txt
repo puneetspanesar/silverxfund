@@ -1,0 +1,55 @@
+While the colour code and layout is good, the website content should look like that of a professional fund. Its not an advisory shop or an amazon seller marketing its services and solutions. It should exemplify attributes such as crisp, to the point, attractive, unique, avoid too much information, exclusive access. 
+
+Pls avoid the below:-
+
+1. Jargonistic words
+2. Redundancy and repetitiveness of words, certain numbers , values etc.
+3. Extra information - too much detailing!!! Just keep few words under each heading/sub heading
+4. Unnecessary quotes
+5. it shouldn't look that the strategy, focus - is all over the space and focussed on everything out there!!
+
+Changes from my end:-
+
+
+1. Cover page:- 
+
+Change "Deep-tech venture capital for category-defining companies. Seed+ to Series A/B investments with $5B+ portfolio value created" to "Early stage venture capital firm looking to back category defining founders"
+
+Deep-tech Domain expertise - Specialized focus on AI, ML, and emerging technologies shaping the next decade of India 's story
+Exceptional returns track record of delivering value - ~5 unicorns with $5B+ in aggregate value created
+
+2. Leadership:-
+Remove the quote from each profile.
+
+Ajay Jain - 
+focus areas: Sales/GTM, deal structuring, PM, fund raising
+Segments: AI/ML, Edtech, Fintech, B2B Saas & Deeptech
+Abishek Balendran - 
+focus areas: Deal sourcing, PM, investment management, Fund raising
+segments: Consumer-tech, HEalthcare, AI/ML, Deeptech, Real estate/hospitality
+Dhiraj Sinha - 
+focus areas: M&A/Exits, Fund Ops & Management, Fund raising
+segments: Edtech, EV, Mobility, Sustainability, ClimateTech & Deeptech
+
+
+3. Differentiation:-
+What Sets Us Apart
+•Well-Rounded Team
+⚬Experienced investors with a track record of strong picks
+⚬Operating experience across growth and scale-up stages
+•Strong Deal Sourcing
+⚬Proprietary network of partners
+•Portfolio Management & Support
+⚬Active, hands-on mentoring and guidance - true ‘smart money’
+•Clear Eye on Exits
+⚬Leveraging technology to understand exit probabilities
+
+4. Investment thesis
+
+Too much detailing is done. This is proprietary and USP of the fund and not for the public. Something needs to be with us and not publicly out there...
+
+a. Remove investment criteria from each segment
+
+b. AI first - Developer platforms & tooling, Horizontal & Enterprise AI, Vertical AI, Consumer AI applications 
+•Consumer Tech: Fintech, healthcare, consumer, commerce
+•Deep Tech: Advanced materials, quantum computing, robotics

@@ -6,23 +6,13 @@ import heroImage from "@assets/shutterstock_1858812901_1759928182771.jpg";
 const highlights = [
   {
     icon: Cpu,
-    title: "Deep-Tech Expertise",
-    description: "Specialized focus on AI, ML, and emerging technologies shaping the future"
-  },
-  {
-    icon: Target,
-    title: "Strategic Capital",
-    description: "Thesis-driven investments in category-defining companies at inflection points"
-  },
-  {
-    icon: Network,
-    title: "Operational Network",
-    description: "Access to global partnerships, talent networks, and go-to-market resources"
+    title: "Deep-tech Domain Expertise",
+    description: "Specialized focus on AI, ML, and emerging technologies shaping the next decade of India's story"
   },
   {
     icon: Award,
     title: "Exceptional Returns",
-    description: "Portfolio includes 5+ unicorns with $5B+ in aggregate value created"
+    description: "Track record of delivering value - ~5 unicorns with $5B+ in aggregate value created"
   }
 ];
 
@@ -54,8 +44,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg" data-testid="text-hero-subtitle">
-              Deep-tech venture capital for category-defining companies. 
-              Seed+ to Series A/B investments with <span className="text-foreground font-semibold">$5B+ portfolio value</span> created.
+              Early stage venture capital firm looking to back category defining founders
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -114,7 +103,7 @@ export default function Hero() {
       {/* Highlights Section - Below the hero */}
       <div className="bg-white/5 backdrop-blur-2xl border-t border-white/10">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {highlights.map((item, index) => {
               const Icon = item.icon;
               return (

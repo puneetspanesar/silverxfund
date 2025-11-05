@@ -1,4 +1,4 @@
-import { Briefcase, Target, Layers, GraduationCap, Quote } from "lucide-react";
+import { Briefcase, Target, Layers, GraduationCap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
 import dhirajPhoto from "@assets/Dhiraj_1760354703695.jpeg";
@@ -11,10 +11,9 @@ const partners = [
     title: "Founder & Managing Partner",
     subtitle: "22+ Years of Experience as Investor, Operator & Entrepreneur",
     image: ajayPhoto,
-    quote: "We back founders who are building the infrastructure for tomorrow's AI economy",
     experience: "Xseed Partners, T-Hub, CIE IIITH, Gray Matters Capital, Intel, AMD, Magnaquest",
-    keyFocusAreas: "Strategy, Business Development, GTM, Fundraising",
-    sectors: "Deep Tech, Semiconductors, GenAI, SaaS, FinTech, EdTech",
+    keyFocusAreas: "Sales/GTM, Deal Structuring, PM, Fund Raising",
+    sectors: "AI/ML, Edtech, Fintech, B2B SaaS & Deeptech",
     education: "ISB, The University of Arizona"
   },
   {
@@ -22,10 +21,9 @@ const partners = [
     title: "Managing Partner",
     subtitle: "25+ Years of Experience across VC & Large Corporate Houses",
     image: dhirajPhoto,
-    quote: "Sustainable innovation requires patient capital and strategic discipline",
     experience: "SucSEED Indovation, Air Costa, Max India, Vatika, PVP Group, LEPL Group",
-    keyFocusAreas: "Legal, Compliance, Finance, Strategy",
-    sectors: "EV, Sustainability, Deep Tech, Mobility",
+    keyFocusAreas: "M&A/Exits, Fund Ops & Management, Fund Raising",
+    sectors: "Edtech, EV, Mobility, Sustainability, ClimateTech & Deeptech",
     education: "Delhi University, CFA, The University of Edinburgh, ICSI"
   },
   {
@@ -33,10 +31,9 @@ const partners = [
     title: "Partner",
     subtitle: "10+ Years of Investment & Exit Experience across Early & Mature-Stage Investments",
     image: abishekPhoto,
-    quote: "Consumer businesses win when they combine scale with sustainable unit economics",
     experience: "Nirvana Ventures (VC), Xander Private Equity (PE), JM Financial (IB), Nomura International (IB)",
-    keyFocusAreas: "Growth Strategy, Fundraising, Deal Structuring",
-    sectors: "D2C, Consumer Internet, Real Estate, Hospitality",
+    keyFocusAreas: "Deal Sourcing, PM, Investment Management, Fund Raising",
+    sectors: "Consumer-tech, Healthcare, AI/ML, Deeptech, Real Estate/Hospitality",
     education: "SIBM Pune, PICT Pune"
   },
   {
@@ -44,7 +41,6 @@ const partners = [
     title: "Partner",
     subtitle: "25+ Years of Experience in Technology & 6+ Years in Healthtech",
     image: sanjayPhoto,
-    quote: "Healthcare AI will define the next decade of enterprise transformation",
     experience: "Innovaccer (Unicorn), Oracle, Expobeds, Evolco",
     keyFocusAreas: "Product Management & Sales, GTM, Growth Strategy, Planning & Execution",
     sectors: "Healthcare, AI, Deep Tech, B2B SaaS",
@@ -95,13 +91,6 @@ export default function Team() {
               </div>
 
               <CardContent className="p-6 space-y-4 bg-white/5 backdrop-blur-xl">
-                <div className="flex items-start gap-3 pb-4 border-b border-white/10">
-                  <Quote className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                  <p className="text-sm italic text-muted-foreground leading-relaxed" data-testid={`text-quote-${index}`}>
-                    "{partner.quote}"
-                  </p>
-                </div>
-
                 <div className="space-y-3">
                   <div className="flex items-start gap-3 p-3 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
                     <Briefcase className="h-4 w-4 text-primary flex-shrink-0 mt-1" />

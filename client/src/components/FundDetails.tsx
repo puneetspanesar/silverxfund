@@ -1,40 +1,33 @@
-import { Target, TrendingUp, Users, Award, Building2, Globe, ChevronRight, BarChart3, Shield, Rocket } from "lucide-react";
+import { Target, Users, Handshake, Eye } from "lucide-react";
 
 const whatSetsUsApart = [
   {
-    title: "Operator VC Model",
+    title: "Well-Rounded Team",
     icon: Users,
-    description: "Founders and partners with real-world scaling experience",
-    metrics: [
-      { icon: Award, value: "Real-world operators" },
-      { icon: Rocket, value: "Scaling expertise" }
+    points: [
+      "Experienced investors with a track record of strong picks",
+      "Operating experience across growth and scale-up stages"
     ]
   },
   {
-    title: "Deep Research Orientation",
+    title: "Strong Deal Sourcing",
     icon: Target,
-    description: "Constant monitoring of M&A patterns, founder behavior, and category evolution",
-    metrics: [
-      { icon: BarChart3, value: "M&A pattern analysis" },
-      { icon: TrendingUp, value: "Category evolution tracking" }
+    points: [
+      "Proprietary network of partners"
     ]
   },
   {
-    title: "Active Mentoring",
-    icon: Shield,
-    description: "Active mentoring and guidance to startups across GTM, hiring, compliances, and fund raise",
-    metrics: [
-      { icon: Users, value: "GTM & hiring support" },
-      { icon: Building2, value: "Compliance guidance" }
+    title: "Portfolio Management & Support",
+    icon: Handshake,
+    points: [
+      "Active, hands-on mentoring and guidance - true 'smart money'"
     ]
   },
   {
-    title: "Exit Strategy (4–6 Years)",
-    icon: TrendingUp,
-    description: "Targeting high-growth sectors with strong M&A appetite backed by research and transaction teams",
-    metrics: [
-      { icon: Target, value: "High-growth sectors" },
-      { icon: Award, value: "Transaction support" }
+    title: "Clear Eye on Exits",
+    icon: Eye,
+    points: [
+      "Leveraging technology to understand exit probabilities"
     ]
   }
 ];
@@ -50,55 +43,37 @@ export default function FundDetails() {
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-sets-apart-title">
             What Sets Us Apart
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            Our unique combination of operational expertise, research-driven insights, and hands-on support creates exceptional value for founders and investors alike.
-          </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {whatSetsUsApart.map((item, index) => {
             const Icon = item.icon;
             return (
               <div 
                 key={index}
-                className="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 transition-all duration-500 shadow-xl shadow-black/10"
+                className="group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 transition-all duration-500 shadow-xl shadow-black/10"
                 data-testid={`apart-card-${index}`}
               >
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-primary/20 blur-2xl rounded-full" />
-                      <div className="relative p-5 bg-primary/10 backdrop-blur-xl rounded-3xl border border-primary/30">
-                        <Icon className="h-10 w-10 text-primary" />
-                      </div>
+                    <div className="w-14 h-14 bg-primary/10 backdrop-blur-xl rounded-2xl border border-primary/30 flex items-center justify-center">
+                      <Icon className="h-7 w-7 text-primary" />
                     </div>
                   </div>
 
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <h3 className="text-2xl font-bold text-foreground" data-testid={`text-apart-title-${index}`}>
-                        {item.title}
-                      </h3>
-                      <div className="px-4 py-1 bg-primary/10 backdrop-blur-xl rounded-full border border-primary/20">
-                        <span className="text-xs font-bold text-primary tabular-nums">0{index + 1}</span>
-                      </div>
-                    </div>
+                    <h3 className="text-xl font-bold text-foreground mb-4" data-testid={`text-apart-title-${index}`}>
+                      {item.title}
+                    </h3>
                     
-                    <p className="text-foreground leading-relaxed mb-6">
-                      {item.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-3">
-                      {item.metrics.map((metric, idx) => {
-                        const MetricIcon = metric.icon;
-                        return (
-                          <div key={idx} className="flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-xl rounded-xl border border-white/10">
-                            <MetricIcon className="h-4 w-4 text-primary" />
-                            <span className="text-sm font-medium text-foreground">{metric.value}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
+                    <ul className="space-y-2">
+                      {item.points.map((point, idx) => (
+                        <li key={idx} className="text-sm text-foreground leading-relaxed flex items-start gap-2">
+                          <span className="text-primary mt-1.5">•</span>
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
