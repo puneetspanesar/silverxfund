@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowUp } from "lucide-react";
 import logo from "@assets/SilverX Fund Logo_1759929335279.png";
 
 const navItems = [
@@ -55,25 +55,33 @@ export default function Navigation() {
           </button>
           
           <div className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <button
-                key={item.href}
-                onClick={() => handleNavClick(item.href)}
-                className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors relative group uppercase tracking-wider"
-                data-testid={`link-${item.label.toLowerCase().replace(' ', '-')}`}
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
-              </button>
+            {navItems.map((item, index) => (
+              <div key={item.href} className="flex items-center gap-8">
+                <button
+                  onClick={() => handleNavClick(item.href)}
+                  className="text-sm font-medium text-foreground hover:text-primary transition-colors relative group uppercase tracking-wider"
+                  data-testid={`link-${item.label.toLowerCase().replace(' ', '-')}`}
+                >
+                  {item.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                </button>
+                {index < navItems.length - 1 && (
+                  <div className="h-6 w-px bg-border/30" />
+                )}
+              </div>
             ))}
-            <Button
-              size="default"
-              onClick={() => handleNavClick('#contact')}
-              className="ml-4"
-              data-testid="button-cta"
-            >
-              Get Started
-            </Button>
+            <div className="ml-4 group relative">
+              <button
+                onClick={() => handleNavClick('#contact')}
+                className="w-12 h-12 rounded-full bg-primary flex items-center justify-center transition-all duration-300 group-hover:w-auto group-hover:px-6"
+                data-testid="button-cta"
+              >
+                <ArrowUp className="h-5 w-5 text-white flex-shrink-0" />
+                <span className="overflow-hidden max-w-0 group-hover:max-w-xs transition-all duration-300 text-white font-medium text-sm whitespace-nowrap group-hover:ml-2">
+                  Explore
+                </span>
+              </button>
+            </div>
           </div>
           
           <div className="flex lg:hidden">
