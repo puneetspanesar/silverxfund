@@ -18,7 +18,7 @@ const highlights = [
 
 export default function Hero() {
   const handleViewThesis = () => {
-    console.log('View Investment Thesis clicked');
+    console.log('View What Excites Us clicked');
     document.getElementById('investment-thesis')?.scrollIntoView({ behavior: 'smooth' });
   };
 

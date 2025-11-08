@@ -69,7 +69,7 @@ export default function Footer() {
                     data-testid="link-footer-thesis"
                   >
                     <ArrowRight className="h-4 w-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <span>Investment Thesis</span>
+                    <span>What Excites Us</span>
                   </button>
                 </li>
                 <li>

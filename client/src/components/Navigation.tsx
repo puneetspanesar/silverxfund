@@ -4,7 +4,7 @@ import { Menu, X, ArrowUp } from "lucide-react";
 import logo from "@assets/SilverX Fund Logo_1759929335279.png";
 
 const navItems = [
-  { label: "Investment Thesis", href: "#investment-thesis" },
+  { label: "What Excites Us", href: "#investment-thesis" },
   { label: "Team", href: "#team" },
   { label: "Portfolio", href: "#portfolio" }
 ];

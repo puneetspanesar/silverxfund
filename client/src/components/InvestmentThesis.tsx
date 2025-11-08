@@ -3,18 +3,18 @@ import { Sparkles, ShoppingCart, Cpu } from "lucide-react";
 const segments = [
   {
     icon: Sparkles,
-    title: "AI First",
-    description: "Infrastructure powering the AI era"
-  },
-  {
-    icon: ShoppingCart,
-    title: "Consumer Tech",
-    description: "Platforms reimagining consumer experiences"
+    title: "AI Natives",
+    description: "Domain models/LLMs, tools, horizontal & vertical applications"
   },
   {
     icon: Cpu,
-    title: "Deep Tech",
-    description: "Innovations in compute and materials"
+    title: "Deep-tech",
+    description: "Infrastructure layer, Quantum computing, Verticalised solutions"
+  },
+  {
+    icon: ShoppingCart,
+    title: "Consumer-tech",
+    description: "Healthtech, fintech, platforms"
   }
 ];
 
@@ -27,10 +27,10 @@ export default function InvestmentThesis() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Strategy</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-thesis-title">
-            Investment Thesis
+            What Excites Us
           </h2>
           <p className="text-lg text-foreground leading-relaxed" data-testid="text-thesis-subtitle">
-            Backing exceptional founders at the intersection of technology and market opportunity
+            Investing in categories expected to dominate the Indian landscape over the next decade
           </p>
         </div>
         
