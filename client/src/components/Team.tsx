@@ -1,9 +1,9 @@
 import { Briefcase, Target, Layers, GraduationCap } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import ajayPhoto from "@assets/Ajay-3-2_1760348499668.png";
-import dhirajPhoto from "@assets/Dhiraj_1760354703695.jpeg";
-import abishekPhoto from "@assets/Abishek-3-2_1760348499666.png";
-import sanjayPhoto from "@assets/Sanjay-2-2_1760348499668.png";
+import ajayPhoto from "@assets/Ajay Jain_1762581579803.png";
+import dhirajPhoto from "@assets/Dhiraj Kumar Sinha_1762581579803.png";
+import abishekPhoto from "@assets/Abishek Balendran_1762581579802.png";
+import sanjayPhoto from "@assets/Sanjay Rastogi_1762581579803.png";
 
 const partners = [
   {
