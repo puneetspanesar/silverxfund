@@ -57,7 +57,7 @@ export default function Team() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Leadership</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground" data-testid="text-team-title">
-            Operators who've built, scaled, and exited
+            Operators Who've Built, Scaled, and Exited
           </h2>
           <p className="text-lg text-foreground leading-relaxed" data-testid="text-team-subtitle">
             Our partners bring decades of combined experience across venture capital, operating roles, and successful exits

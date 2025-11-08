@@ -8,12 +8,12 @@ const segments = [
   },
   {
     icon: Cpu,
-    title: "Deep-tech",
+    title: "Deep-Tech",
     description: "Infrastructure layer, Quantum computing, Verticalised solutions"
   },
   {
     icon: ShoppingCart,
-    title: "Consumer-tech",
+    title: "Consumer-Tech",
     description: "Healthtech, fintech, platforms"
   }
 ];

@@ -24,7 +24,7 @@ export default function Contact() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Get In Touch</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-foreground" data-testid="text-contact-title">
-            Let's build together
+            Let's Build Together
           </h2>
           <p className="text-lg text-foreground/70 leading-relaxed max-w-2xl mx-auto" data-testid="text-contact-subtitle">
             For founders and investors seeking exceptional returns

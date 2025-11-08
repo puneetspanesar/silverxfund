@@ -61,7 +61,7 @@ export default function TrackRecord() {
             <span className="text-xs uppercase tracking-[0.2em] font-semibold text-white/70">Track Record</span>
           </div>
           <h2 className="text-4xl lg:text-6xl font-bold mb-6 text-white" data-testid="text-track-record-title">
-            Proven execution since 2012
+            Proven Execution Since 2012
           </h2>
         </div>
 
