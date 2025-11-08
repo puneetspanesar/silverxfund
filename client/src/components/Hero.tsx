@@ -57,7 +57,7 @@ export default function Hero() {
               <div className="grid grid-cols-3 gap-8">
                 <div data-testid="stat-fund-size">
                   <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Fund Size</div>
-                  <div className="text-3xl font-bold tabular-nums text-primary">$100M</div>
+                  <div className="text-3xl font-bold tabular-nums text-primary">$90M</div>
                 </div>
                 <div data-testid="stat-stage">
                   <div className="text-foreground text-xs font-semibold mb-2 uppercase tracking-wider">Stage</div>
