@@ -111,7 +111,7 @@ export default function InvestmentReport() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                     <span className="text-sm text-foreground/80">Deglobalization reshaping supply chains</span>
@@ -142,7 +142,7 @@ export default function InvestmentReport() {
                 </div>
               </CardHeader>
               <CardContent>
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
                     <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     <span className="text-sm text-foreground/80">Build sovereign infrastructure for India</span>
