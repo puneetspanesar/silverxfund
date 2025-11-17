@@ -172,9 +172,9 @@ export default function InvestmentReport() {
                 <CardDescription>Creating a virtuous cycle from foundation to application layer</CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
                   {/* Foundation Layer */}
-                  <div className="relative">
+                  <div>
                     <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl border-2 border-primary/30">
                       <div className="flex items-center gap-2 mb-4">
                         <Database className="h-6 w-6 text-primary" />
@@ -191,9 +191,6 @@ export default function InvestmentReport() {
                         </div>
                       </div>
                     </div>
-                    <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
-                      <ArrowRight className="h-6 w-6 text-primary" />
-                    </div>
                   </div>
 
                   {/* Virtuous Cycle */}
@@ -208,10 +205,7 @@ export default function InvestmentReport() {
                   </div>
 
                   {/* Application Layer */}
-                  <div className="relative">
-                    <div className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 z-10">
-                      <ArrowRight className="h-6 w-6 text-primary rotate-180" />
-                    </div>
+                  <div>
                     <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl border-2 border-primary/30">
                       <div className="flex items-center gap-2 mb-4">
                         <Brain className="h-6 w-6 text-primary" />
@@ -228,6 +222,16 @@ export default function InvestmentReport() {
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  {/* Arrow between Foundation and Virtuous Cycle */}
+                  <div className="hidden md:block absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="h-6 w-6 text-primary" />
+                  </div>
+
+                  {/* Arrow between Virtuous Cycle and Application */}
+                  <div className="hidden md:block absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                    <ArrowRight className="h-6 w-6 text-primary" />
                   </div>
                 </div>
               </CardContent>
