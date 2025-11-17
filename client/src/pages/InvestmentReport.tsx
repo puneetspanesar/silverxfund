@@ -87,38 +87,189 @@ export default function InvestmentReport() {
       {/* Hero Section */}
       <section className="relative bg-primary/5 border-b border-primary/10">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16 py-16">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto mb-12">
             <div className="inline-block mb-6">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Investment Intelligence</span>
             </div>
             <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight text-foreground" data-testid="text-report-title">
               India's Next Wave: 5 Sectors Poised for Growth
             </h1>
-            <p className="text-lg text-foreground/80 leading-relaxed max-w-3xl mx-auto mb-8">
-              The world is moving at an unprecedented pace and the India growth story train chugs along as it navigates new challenges in AI, semiconductors, consumer, healthcare among others. Other macro challenges like deglobalization, further focus on technological sovereignty, tariffs blur the path ahead. It is thus, important as investors to find the right sectors to invest in and back the winning horses.
-            </p>
-            <p className="text-base text-foreground/70 leading-relaxed max-w-3xl mx-auto">
-              The winning startups will not just provide financial returns but also generate value that will help further build the nation. They will solve for sovereign infrastructure, build the artificial intelligence that powers our most critical sectors, and create the core intellectual property that underpins the entire technology stack, from data centers to semiconductor design. In doing so, they will not just build for India, but build for the world.
+            <p className="text-xl text-foreground/80 leading-relaxed max-w-3xl mx-auto">
+              Backing the winning horses that will build for India, and the world
             </p>
           </div>
 
-          {/* AI Bias Callout */}
-          <div className="mt-12 max-w-4xl mx-auto">
+          {/* Challenge & Opportunity Visual Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
+            <Card className="border-primary/20 bg-gradient-to-br from-red-50/50 to-white dark:from-red-950/20 dark:to-background">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <TrendingDown className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">The Challenge</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Deglobalization reshaping supply chains</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Technological sovereignty becoming critical</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Tariffs and trade barriers increasing</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Rapid pace of change in AI, semiconductors, healthcare</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-white dark:from-primary/10 dark:to-background">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">The Opportunity</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Build sovereign infrastructure for India</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Create core IP for the technology stack</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Power critical sectors with AI innovation</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Generate financial & nation-building value</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* AI Stack Visual - Foundation to Application */}
+          <div className="mb-12 max-w-5xl mx-auto">
             <Card className="border-primary/20 bg-white/50 dark:bg-background/50">
-              <CardContent className="pt-6">
-                <h3 className="text-xl font-bold mb-3 text-primary">A Strong Bias Towards AI</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">
-                  There is a strong bias towards AI in this selection from an application layer (lending) to a foundation layer (data centers and semiconductors). We believe AI will add significant value to the future with respect to these industries in the application layer and they will need the foundation layer, thus creating a virtuous cycle. Value is created in both layers and entrepreneurs should create value in both.
-                </p>
-                <p className="text-sm text-foreground/70 leading-relaxed mt-3">
-                  This is a diverse collection from the point of view of sectors chosen—ranging from fintech to healthtech—yet common themes emerge. A range of demographics have also been served from senior citizens in eldercare to Gen Z who expect consumer tech like AI and UX in their banking applications.
-                </p>
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl">A Strong Bias Towards AI</CardTitle>
+                <CardDescription>Creating a virtuous cycle from foundation to application layer</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  {/* Foundation Layer */}
+                  <div className="relative">
+                    <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl border-2 border-primary/30">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Database className="h-6 w-6 text-primary" />
+                        <h4 className="font-bold text-lg">Foundation Layer</h4>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <Cpu className="h-4 w-4 text-primary/70" />
+                          <span className="text-sm">EDA & Semiconductors</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Cloud className="h-4 w-4 text-primary/70" />
+                          <span className="text-sm">Data Centers</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 z-10">
+                      <ArrowRight className="h-6 w-6 text-primary" />
+                    </div>
+                  </div>
+
+                  {/* Virtuous Cycle */}
+                  <div className="flex items-center justify-center">
+                    <div className="p-6 bg-gradient-to-br from-primary/15 to-primary/5 rounded-xl border-2 border-primary/30 text-center">
+                      <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <TrendingUp className="h-8 w-8 text-primary" />
+                      </div>
+                      <h4 className="font-bold mb-2">Virtuous Cycle</h4>
+                      <p className="text-xs text-foreground/70">Value created at both layers</p>
+                    </div>
+                  </div>
+
+                  {/* Application Layer */}
+                  <div className="relative">
+                    <div className="hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 z-10">
+                      <ArrowRight className="h-6 w-6 text-primary rotate-180" />
+                    </div>
+                    <div className="p-6 bg-gradient-to-br from-primary/20 to-primary/10 rounded-xl border-2 border-primary/30">
+                      <div className="flex items-center gap-2 mb-4">
+                        <Brain className="h-6 w-6 text-primary" />
+                        <h4 className="font-bold text-lg">Application Layer</h4>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <DollarSign className="h-4 w-4 text-primary/70" />
+                          <span className="text-sm">AI Lending</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Heart className="h-4 w-4 text-primary/70" />
+                          <span className="text-sm">AI Diagnostics</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Demographic Range Visual */}
+          <div className="mb-12 max-w-5xl mx-auto">
+            <Card className="border-primary/20">
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl">Serving Diverse Demographics</CardTitle>
+                <CardDescription>From senior citizens to Gen Z, across multiple sectors</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center p-4 bg-gradient-to-br from-primary/10 to-white dark:from-primary/15 dark:to-background rounded-xl">
+                    <Users className="h-10 w-10 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold mb-2">Senior Citizens</h4>
+                    <p className="text-xs text-foreground/60">Eldercare tech solutions</p>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-primary/10 to-white dark:from-primary/15 dark:to-background rounded-xl">
+                    <Building2 className="h-10 w-10 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold mb-2">MSMEs</h4>
+                    <p className="text-xs text-foreground/60">AI-powered lending access</p>
+                  </div>
+                  <div className="text-center p-4 bg-gradient-to-br from-primary/10 to-white dark:from-primary/15 dark:to-background rounded-xl">
+                    <Smartphone className="h-10 w-10 text-primary mx-auto mb-3" />
+                    <h4 className="font-bold mb-2">Gen Z</h4>
+                    <p className="text-xs text-foreground/60">Consumer-tech UX expectations</p>
+                  </div>
+                </div>
+                <div className="mt-6 text-center">
+                  <p className="text-sm text-foreground/70">
+                    <span className="font-semibold">Sector diversity:</span> Fintech • Healthtech • Deep Tech • Consumer Tech
+                  </p>
+                </div>
               </CardContent>
             </Card>
           </div>
 
           {/* Key Sectors Overview Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {[
               { title: 'Eldercare Tech', icon: Users, subtitle: '$13B by 2030' },
               { title: 'Data Centers', icon: Activity, subtitle: '$21.8B by 2030' },
