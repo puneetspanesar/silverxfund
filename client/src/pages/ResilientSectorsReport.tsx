@@ -58,6 +58,15 @@ const agricultureSubsectorData = [
   { name: 'Post-Harvest Automation', value: 12 }
 ];
 
+const agriTechAdoptionData = [
+  { technology: 'AI-Driven Drones & Satellite Imagery', adoption: 55 },
+  { technology: 'Precision Sensors (Soil, Moisture, Climate)', adoption: 50 },
+  { technology: 'Predictive Analytics & Decision Support', adoption: 45 },
+  { technology: 'Blockchain Traceability Platforms', adoption: 17.5 },
+  { technology: 'AI Satellite Remote Sensing (Carbon)', adoption: 17.5 },
+  { technology: 'Autonomous Tractors & Robotics', adoption: 12.5 }
+];
+
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
@@ -214,6 +223,38 @@ export default function ResilientSectorsReport() {
                   <p className="text-xs text-foreground/60">Robotics in major agribusiness</p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* Projected Adoption of Agricultural Technology */}
+          <Card className="mb-12 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl">Projected Adoption of Agricultural Technology by 2025</CardTitle>
+              <CardDescription>Technology adoption rates across commercial farming operations</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={400}>
+                <BarChart data={agriTechAdoptionData} layout="vertical" margin={{ left: 20, right: 40 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" horizontal={true} vertical={false} />
+                  <XAxis type="number" stroke="#6B7280" domain={[0, 60]} tickFormatter={(value) => `${value}%`} />
+                  <YAxis 
+                    dataKey="technology" 
+                    type="category" 
+                    width={250} 
+                    stroke="#6B7280" 
+                    tick={{ fontSize: 12 }} 
+                  />
+                  <Tooltip 
+                    formatter={(value: number) => `${value}%`}
+                    contentStyle={{ backgroundColor: '#FFF', border: '1px solid #E5E7EB' }}
+                  />
+                  <Bar dataKey="adoption" radius={[0, 8, 8, 0]}>
+                    {agriTechAdoptionData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
             </CardContent>
           </Card>
 
