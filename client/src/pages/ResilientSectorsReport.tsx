@@ -856,6 +856,79 @@ export default function ResilientSectorsReport() {
             </div>
           </div>
 
+          {/* Mining Sector Overview Table */}
+          <Card className="mb-12 border-primary/20 overflow-hidden">
+            <CardHeader className="bg-primary text-primary-foreground">
+              <CardTitle className="text-2xl text-white">Mining and Basic Commodities Sector Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0">
+              <div className="divide-y divide-border">
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary text-white p-4 font-bold flex items-center">
+                    Sector Overview
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="text-foreground/80">
+                      Global revenues over <strong className="text-primary">$1.96 trillion</strong> as per 2024, with a <strong className="text-primary">CAGR of 4.6%</strong>.
+                    </p>
+                    <p className="text-foreground/70 text-sm mt-1">
+                      Overall GenAI penetration at 2–6% of sector activities, with industry being defined as at its early stage of automation maturity.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary/90 text-white p-4 font-bold flex items-center">
+                    Subsector Overview
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="font-bold text-foreground">Exploration/Resource Mapping:</p>
+                    <p className="text-foreground/70 text-sm">10-20% of programs adopt AI for geological modelling and remote sensing</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary/90 text-white p-4 font-bold flex items-center">
+                    Subsector Overview
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="font-bold text-foreground">Equipment Maintenance:</p>
+                    <p className="text-foreground/70 text-sm">50-55% of fixed assets covered by Predictive AI (Highest rate)</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary/90 text-white p-4 font-bold flex items-center">
+                    Subsector Overview
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="font-bold text-foreground">Safety/Monitoring:</p>
+                    <p className="text-foreground/70 text-sm">Up to 18% of companies use AI for real-time compliance analytics.</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary/90 text-white p-4 font-bold flex items-center">
+                    Subsector Overview
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="font-bold text-foreground">Processing & Extraction:</p>
+                    <p className="text-foreground/70 text-sm">Direct AI use is under 4% globally, limited by variability</p>
+                  </div>
+                </div>
+                <div className="flex">
+                  <div className="w-48 flex-shrink-0 bg-primary text-white p-4 font-bold flex items-center">
+                    Barriers to Penetration
+                  </div>
+                  <div className="flex-1 p-4">
+                    <p className="text-foreground/80">
+                      <strong>Physical & Geological:</strong> Harsh environments, high capital, and site variability
+                    </p>
+                    <p className="text-foreground/80 mt-1">
+                      <strong>Safety & Compliance:</strong> Requires human judgment and adaptation (no standardized automation)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           {/* AI Penetration Chart */}
           <Card className="mb-12 border-primary/20">
             <CardHeader>
