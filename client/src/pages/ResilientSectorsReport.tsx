@@ -67,6 +67,11 @@ const agriTechAdoptionData = [
   { technology: 'Autonomous Tractors & Robotics', adoption: 12.5 }
 ];
 
+const constructionMarketPieData = [
+  { name: 'Global Construction Market', value: 12000, displayValue: '$12 Trillion', color: '#6B7280' },
+  { name: 'AI in Construction (2025)', value: 4.7, displayValue: '$4.7 Billion', color: '#991B1B' }
+];
+
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
@@ -355,6 +360,92 @@ export default function ResilientSectorsReport() {
                 However, overall workflow penetration remains at approximately <strong>1.4%</strong>, among the lowest of all sectors tracked. The physical, fragmented nature of construction, diverse project settings, and regulatory oversight slow full automation.
               </p>
             </div>
+          </div>
+
+          {/* Construction Sector Overview */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Market Overview</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col items-center">
+                  <ResponsiveContainer width="100%" height={280}>
+                    <PieChart>
+                      <Pie
+                        data={constructionMarketPieData}
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={0}
+                        outerRadius={100}
+                        dataKey="value"
+                        labelLine={false}
+                      >
+                        {constructionMarketPieData.map((entry, index) => (
+                          <Cell key={`cell-${index}`} fill={entry.color} />
+                        ))}
+                      </Pie>
+                      <Tooltip formatter={(value: number, name: string) => {
+                        const item = constructionMarketPieData.find(d => d.name === name);
+                        return item?.displayValue || value;
+                      }} />
+                    </PieChart>
+                  </ResponsiveContainer>
+                  <div className="flex flex-wrap justify-center gap-6 mt-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded" style={{ backgroundColor: '#6B7280' }}></div>
+                      <span className="text-sm">Global Construction Market: <strong>$12 Trillion</strong></span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-4 h-4 rounded" style={{ backgroundColor: '#991B1B' }}></div>
+                      <span className="text-sm">AI in Construction (2025): <strong>$4.7 Billion</strong></span>
+                    </div>
+                  </div>
+                  <p className="text-xs text-foreground/60 mt-4 text-center">*AI in Construction Market projected to grow at 26-30% CAGR and reach ~$17 Billion by 2029</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Sector Landscape</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h4 className="font-bold text-primary mb-2">Overall Workflow Penetration</h4>
+                  <p className="text-sm text-foreground/80">Approximately <strong>1.4%</strong>, which is among the lowest of all tracked sectors.</p>
+                </div>
+                
+                <div>
+                  <h4 className="font-bold text-primary mb-2">Subsectors AI Might Penetrate</h4>
+                  <ul className="text-sm text-foreground/80 space-y-1">
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Design, Architecture, & Planning</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>On-site Automation & Robotics</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Safety & Regulatory</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-primary mb-2">Concentration</h4>
+                  <p className="text-sm text-foreground/70 mb-2">Practical AI deployment is limited and concentrated in:</p>
+                  <ul className="text-sm text-foreground/80 space-y-1">
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Larger firms</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Urban areas</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>New builds</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-bold text-primary mb-2">Resilience Factors</h4>
+                  <ul className="text-sm text-foreground/80 space-y-1">
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>The sector's physical nature</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Fragmented nature</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>High reliance on skilled manual labor</li>
+                    <li className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-primary rounded-full"></div>Human oversight slows full automation</li>
+                  </ul>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* AI Penetration by Subsector */}
