@@ -68,8 +68,8 @@ const agriTechAdoptionData = [
 ];
 
 const constructionMarketPieData = [
-  { name: 'Global Construction Market', value: 12000, displayValue: '$12 Trillion', color: '#6B7280' },
-  { name: 'AI in Construction (2025)', value: 4.7, displayValue: '$4.7 Billion', color: '#991B1B' }
+  { name: 'Global Construction Market', value: 85, displayValue: '$12 Trillion', color: '#6B7280' },
+  { name: 'AI in Construction (2025)', value: 15, displayValue: '$4.7 Billion', color: '#991B1B' }
 ];
 
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
