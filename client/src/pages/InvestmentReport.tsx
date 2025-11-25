@@ -278,8 +278,8 @@ export default function InvestmentReport() {
               { title: 'Eldercare Tech', icon: Users, subtitle: '$13B by 2030' },
               { title: 'Data Centers', icon: Activity, subtitle: '$21.8B by 2030' },
               { title: 'AI Lending', icon: DollarSign, subtitle: '$515B by 2030' },
-              { title: 'AI Diagnostics', icon: Target, subtitle: '$1T to economy' },
-              { title: 'EDA & IP', icon: Zap, subtitle: '$110B by 2030' }
+              { title: 'AI Diagnostics', icon: Target, subtitle: '$11.78B by 2025' },
+              { title: 'EDA & IP', icon: Zap, subtitle: '$22.34B by 2033' }
             ].map((sector, idx) => (
               <Card key={idx} className="text-center border-primary/20 hover-elevate" data-testid={`sector-card-${idx}`}>
                 <CardContent className="pt-6 pb-6">
@@ -409,23 +409,17 @@ export default function InvestmentReport() {
               </CardHeader>
               <CardContent>
                 <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={elderDemographicData}
-                      cx="50%"
-                      cy="50%"
-                      labelLine={false}
-                      label={({ segment, value }) => `${segment.split('(')[0]}: ${value}%`}
-                      outerRadius={100}
-                      fill="#8884d8"
-                      dataKey="value"
-                    >
+                  <BarChart data={elderDemographicData} layout="vertical">
+                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                    <XAxis type="number" stroke="#6B7280" domain={[0, 50]} tickFormatter={(value) => `${value}%`} />
+                    <YAxis dataKey="segment" type="category" width={150} stroke="#6B7280" tick={{ fontSize: 12 }} />
+                    <Tooltip formatter={(value: number) => `${value}%`} />
+                    <Bar dataKey="value" radius={[0, 8, 8, 0]}>
                       {elderDemographicData.map((entry, index) => (
                         <Cell key={`cell-${index}`} fill={entry.color} />
                       ))}
-                    </Pie>
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                  </PieChart>
+                    </Bar>
+                  </BarChart>
                 </ResponsiveContainer>
                 <p className="text-sm text-foreground/60 mt-4 text-center">Elderly population growing 5x faster than general population</p>
               </CardContent>
@@ -1508,8 +1502,8 @@ export default function InvestmentReport() {
               { name: 'Eldercare Tech', market: '$13B by 2030', growth: '40% pop growth', icon: Users },
               { name: 'Data Centers', market: '$21.8B by 2030', growth: '16.6% CAGR', icon: Activity },
               { name: 'AI Lending', market: '$515B by 2030', growth: '33%+ CAGR', icon: DollarSign },
-              { name: 'AI Diagnostics', market: '$1T to economy', growth: '109% inv growth', icon: Target },
-              { name: 'EDA & IP', market: '$110B by 2030', growth: '18% CAGR', icon: Zap }
+              { name: 'AI Diagnostics', market: '$11.78B by 2025', growth: '109% inv growth', icon: Target },
+              { name: 'EDA & IP', market: '$22.34B by 2033', growth: '18% CAGR', icon: Zap }
             ].map((sector, idx) => (
               <Card key={idx} className="text-center border-primary/20 hover-elevate">
                 <CardHeader className="pb-3">
