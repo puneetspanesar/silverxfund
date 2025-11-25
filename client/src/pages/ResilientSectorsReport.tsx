@@ -1247,59 +1247,154 @@ export default function ResilientSectorsReport() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {[
-              {
-                factor: 'Physical Dexterity & Adaptability',
-                description: 'Jobs demanding fine motor skills, on-the-spot adaptation, and interaction with unpredictable environments',
-                examples: 'Construction, hotel housekeeping, electricians, repair technicians'
-              },
-              {
-                factor: 'Emotional Intelligence & Empathy',
-                description: 'AI lacks authentic empathy essential in caregiving, counseling, teaching, and leadership',
-                examples: 'Nursing, childcare, therapy, teaching, social work'
-              },
-              {
-                factor: 'Judgment, Creativity & Innovation',
-                description: 'AI struggles with originality, strategic thinking, and creative decisions in ambiguous contexts',
-                examples: 'Artists, designers, strategists, creative directors, entrepreneurs'
-              },
-              {
-                factor: 'Manual Skill Dependence',
-                description: 'Tactile, sensory-based craftsmanship that AI cannot replicate at scale or nuance',
-                examples: 'Artisanal crafts, agriculture, culinary arts'
-              },
-              {
-                factor: 'Regulatory Barriers',
-                description: 'Strict legal, ethical, and compliance frameworks require certified human oversight',
-                examples: 'Healthcare, pharmaceuticals, food safety, legal services'
-              },
-              {
-                factor: 'Local Value Chains',
-                description: 'Industries tied to regional practices face challenges in standardizing AI',
-                examples: 'Construction, public utilities, regional manufacturing'
-              }
-            ].map((item, idx) => (
-              <Card key={idx} className="border-primary/20 hover-elevate">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-lg">{item.factor}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-foreground/70 mb-3">{item.description}</p>
-                  <p className="text-xs text-primary font-semibold">{item.examples}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Hammer className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Physical Dexterity & Adaptability</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">Jobs demanding fine motor skills, on-the-spot adaptation, and interaction with unpredictable environments</p>
+                <p className="text-xs text-primary font-semibold">Construction, electricians, repair technicians</p>
+              </CardContent>
+            </Card>
 
-          {/* Key Takeaway */}
-          <Card className="max-w-4xl mx-auto bg-white/80 dark:bg-background/80 border-primary/20">
-            <CardContent className="pt-8 pb-8">
-              <h3 className="text-xl font-bold mb-4 text-center text-primary">Key Takeaway</h3>
-              <p className="text-base text-foreground/80 leading-relaxed text-center">
-                While generative AI is transforming many industries, sectors relying on <strong>physical dexterity, emotional intelligence, creative judgment, manual skills, regulatory compliance, and local value chains</strong> demonstrate robust resistance. These industries offer unique investment opportunities focused on hybrid human-AI productivity, premium authenticity markets, and skill-building initiatives that capitalize on the irreplaceable value of human expertise.
-              </p>
-            </CardContent>
-          </Card>
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Heart className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Emotional Intelligence & Empathy</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">AI lacks authentic empathy essential in caregiving, counseling, teaching, and leadership</p>
+                <p className="text-xs text-primary font-semibold">Nursing, childcare, therapy, social work</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Palette className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Judgment, Creativity & Innovation</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">AI struggles with originality, strategic thinking, and creative decisions in ambiguous contexts</p>
+                <p className="text-xs text-primary font-semibold">Artists, designers, strategists, entrepreneurs</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Wheat className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Manual Skill Dependence</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">Tactile, sensory-based craftsmanship that AI cannot replicate at scale or nuance</p>
+                <p className="text-xs text-primary font-semibold">Artisanal crafts, agriculture, culinary arts</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Regulatory Barriers</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">Strict legal, ethical, and compliance frameworks require certified human oversight</p>
+                <p className="text-xs text-primary font-semibold">Healthcare, pharmaceuticals, legal services</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 hover-elevate">
+              <CardHeader className="pb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Building2 className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Local Value Chains</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-3">Industries tied to regional practices face challenges in standardizing AI</p>
+                <p className="text-xs text-primary font-semibold">Construction, public utilities, regional manufacturing</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Strategic Recommendation & Conclusion */}
+      <section className="py-16 bg-white dark:bg-background">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+          <h2 className="text-3xl lg:text-5xl font-bold mb-12 text-foreground">Strategic Recommendation</h2>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Users className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-primary mb-2">Invest in Human Capital</h3>
+                  <p className="text-foreground/80">Prioritize education and training in critical human skills: creativity, emotional intelligence, critical thinking, and complex problem-solving.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Zap className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-primary mb-2">Foster Hybrid Work Models</h3>
+                  <p className="text-foreground/80">Design workplaces that optimize collaboration between human experts and AI tools, enhancing productivity without replacing core human functions.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Shield className="h-6 w-6 text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-primary mb-2">Tailor Policy & Regulation</h3>
+                  <p className="text-foreground/80">Develop policies that support job creation in resilient sectors, incentivize reskilling, and ensure ethical AI integration without stifling innovation.</p>
+                </div>
+              </div>
+            </div>
+
+            <Card className="bg-primary text-white border-0">
+              <CardHeader>
+                <CardTitle className="text-2xl text-white text-center">Conclusion</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-white/90 leading-relaxed">
+                  The future of work is not a zero-sum game between humans and machines. It's a dynamic interplay where AI augments human potential, allowing us to focus on the unique capabilities that define us.
+                </p>
+                <p className="text-white/90 leading-relaxed">
+                  By understanding and investing in these AI-resilient sectors, we can build a more robust, equitable, and human-centric economy for 2035 and beyond.
+                </p>
+                <p className="text-white/90 leading-relaxed font-semibold">
+                  These sectors—Agriculture, Construction, Creative Industries, Personal Services, Mining, and Healthcare—will continue to be the bedrock of our economy, driven by an irreplaceable blend of ingenuity, empathy, and physical skill.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
     </div>
