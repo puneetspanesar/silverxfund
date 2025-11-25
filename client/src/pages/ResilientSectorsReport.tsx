@@ -80,6 +80,12 @@ const creativeSectorMarketData = [
   { year: '2029', marketSize: 3.5, ai: 0.9 }
 ];
 
+const socialWorkAIPenetrationData = [
+  { name: 'HR Administration', value: 61, color: '#6B7280' },
+  { name: 'Personal Services', value: 46, color: '#FCA5A5' },
+  { name: 'Social Care & Counselling', value: 8, color: '#991B1B' }
+];
+
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
@@ -687,6 +693,59 @@ export default function ResilientSectorsReport() {
               </p>
             </div>
           </div>
+
+          {/* AI Penetration Rate Pie Chart */}
+          <Card className="mb-12 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl">AI Penetration Rate Across Different Sectors</CardTitle>
+              <CardDescription>Projected workflow automation by 2025</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={socialWorkAIPenetrationData}
+                      cx="50%"
+                      cy="50%"
+                      innerRadius={0}
+                      outerRadius={110}
+                      dataKey="value"
+                      labelLine={false}
+                    >
+                      {socialWorkAIPenetrationData.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={entry.color} />
+                      ))}
+                    </Pie>
+                    <Tooltip formatter={(value: number) => `${value}%`} />
+                  </PieChart>
+                </ResponsiveContainer>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-5 h-5 rounded mt-1 flex-shrink-0" style={{ backgroundColor: '#6B7280' }}></div>
+                    <div>
+                      <p className="font-bold text-foreground">HR Gen AI Adoption Growth projected (2025):</p>
+                      <p className="text-2xl font-bold text-primary">61% of workflow Automation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-5 h-5 rounded mt-1 flex-shrink-0" style={{ backgroundColor: '#FCA5A5' }}></div>
+                    <div>
+                      <p className="font-bold text-foreground">Personal Services Gen AI Adoption Growth projected (2025):</p>
+                      <p className="text-2xl font-bold text-primary">46% of workflow Automation</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-5 h-5 rounded mt-1 flex-shrink-0" style={{ backgroundColor: '#991B1B' }}></div>
+                    <div>
+                      <p className="font-bold text-foreground">Social Care and Counselling Gen AI Adoption Growth projected (2025):</p>
+                      <p className="text-2xl font-bold text-primary">8% of workflow Automation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* HR AI Adoption Growth */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
