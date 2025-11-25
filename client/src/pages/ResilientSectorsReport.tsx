@@ -1,68 +1,37 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { BarChart, Bar, PieChart, Pie, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, ComposedChart } from "recharts";
-import { TrendingUp, Users, DollarSign, Target, Zap, Heart, Brain, Shield, Database, Lock, Hammer, Palette, Pickaxe, Stethoscope, Wheat, HandHeart, HardHat, Smile, IdCard, Gavel, MapPin, Fence, Building2 } from "lucide-react";
+import { BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
+import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, Smartphone, Building2, CheckCircle2, ArrowRight, Hammer, Palette, Pickaxe, Stethoscope, Wheat, HandHeart } from "lucide-react";
 
-const aiPenetrationBySector = [
-  { sector: 'Agriculture', penetration: 2, display: '1-3%', icon: 'wheat' },
-  { sector: 'Construction', penetration: 1.4, display: '1.4%', icon: 'hammer' },
-  { sector: 'Arts & Entertainment', penetration: 26, display: '26%', icon: 'palette' },
-  { sector: 'Social Work & HR', penetration: 8.5, display: '7-10%', icon: 'handheart' },
-  { sector: 'Mining', penetration: 4, display: '2-6%', icon: 'pickaxe' },
-  { sector: 'Healthcare', penetration: 20, display: '20%', icon: 'stethoscope' }
+const agricultureMarketData = [
+  { year: '2024', value: 12.12 },
+  { year: '2025', value: 12.97 },
+  { year: '2033', value: 28, label: 'India: $2.8T' }
 ];
 
-const agricultureMarketGrowth = [
-  { year: '2025', value: 100 },
-  { year: '2026', value: 111 },
-  { year: '2027', value: 124 },
-  { year: '2028', value: 138 },
-  { year: '2029', value: 154 },
-  { year: '2030', value: 171 },
-  { year: '2031', value: 191 },
-  { year: '2032', value: 212 },
-  { year: '2033', value: 236 }
+const constructionAIData = [
+  { category: 'Design & Planning (Large Firms)', value: 24 },
+  { category: 'Design & Planning (SMEs)', value: 8 },
+  { category: 'Safety Systems', value: 8 },
+  { category: 'Overall Workflow', value: 1.4 }
 ];
 
-const agricultureTechAdoption = [
-  { tech: 'AI-Driven Drones & Satellite Imagery Analysis', adoption: 55 },
-  { tech: 'Precision Sensors (Soil, Moisture, Climate)', adoption: 50 },
-  { tech: 'Predictive Analytics & Decision Support (AI Models)', adoption: 45 },
-  { tech: 'Autonomous Tractors, Harvesters & Robotics', adoption: 12.5 },
-  { tech: 'Blockchain-Enabled Traceability Platforms', adoption: 17.5 },
-  { tech: 'AI-Based Satellite Remote Sensing for Carbon Footprinting', adoption: 17.5 }
+const mediaEntertainmentData = [
+  { subsector: 'Film & Animation', aiUsage: 30, humanDriven: 70 },
+  { subsector: 'Music Production', aiUsage: 20, humanDriven: 80 },
+  { subsector: 'Publishing & Design', aiUsage: 28, humanDriven: 72 },
+  { subsector: 'Live Performance', aiUsage: 2, humanDriven: 98 }
 ];
 
-const constructionMarketPie = [
-  { name: 'Global Construction Market', value: 12000, color: '#6B7280' },
-  { name: 'AI in Construction', value: 4.7, color: '#991B1B' }
-];
-
-const creativeAIAdoptionPie = [
-  { name: 'Film & Animation', value: 30, color: '#991B1B' },
-  { name: 'Publishing & Design', value: 27.5, color: '#B91C1C' },
-  { name: 'Music Production', value: 20, color: '#FCA5A5' },
-  { name: 'Live Performance, Fine Arts, Events', value: 1, color: '#E5E7EB' }
-];
-
-const creativeMarketGrowth = [
-  { year: '2025', marketSize: 3.0, ai: 0.8 },
-  { year: '2026', marketSize: 3.1, ai: 0.8 },
-  { year: '2027', marketSize: 3.3, ai: 0.8 },
-  { year: '2028', marketSize: 3.4, ai: 0.9 },
-  { year: '2029', marketSize: 3.5, ai: 0.9 }
-];
-
-const hrSocialPie = [
-  { name: 'HR Gen AI Adoption', value: 61, color: '#6B7280' },
-  { name: 'Personal Services Gen AI', value: 46, color: '#FCA5A5' },
-  { name: 'Social Care & Counselling', value: 8, color: '#991B1B' }
+const hrAIAdoptionData = [
+  { year: '2023', adoption: 19 },
+  { year: '2025', adoption: 61 }
 ];
 
 const miningAIPenetrationData = [
-  { category: 'Exploration/Mapping', value: 15 },
-  { category: 'Equipment Maintenance', value: 52 },
-  { category: 'Safety Monitoring', value: 18 },
-  { category: 'Processing & Extraction', value: 4 }
+  { category: 'Exploration/Mapping', value: 15, color: '#991B1B' },
+  { category: 'Equipment Maintenance', value: 52, color: '#B91C1C' },
+  { category: 'Safety Monitoring', value: 18, color: '#DC2626' },
+  { category: 'Processing & Extraction', value: 4, color: '#EF4444' }
 ];
 
 const healthcareAIData = [
@@ -71,6 +40,22 @@ const healthcareAIData = [
   { subsector: 'Life Sciences', penetration: 14 },
   { subsector: 'Supply Chain', penetration: 23 },
   { subsector: 'Outpatient Care', penetration: 10 }
+];
+
+const sectorOverviewData = [
+  { sector: 'Agriculture', marketSize: 12.12, aiPenetration: 2, color: '#991B1B' },
+  { sector: 'Construction', marketSize: 12, aiPenetration: 1.4, color: '#B91C1C' },
+  { sector: 'Entertainment', marketSize: 3.5, aiPenetration: 15, color: '#DC2626' },
+  { sector: 'HR & Social Work', marketSize: 2, aiPenetration: 8, color: '#EF4444' },
+  { sector: 'Mining', marketSize: 1.96, aiPenetration: 4, color: '#F87171' },
+  { sector: 'Healthcare', marketSize: 11, aiPenetration: 20, color: '#FCA5A5' }
+];
+
+const agricultureSubsectorData = [
+  { name: 'Precision Farming (Large)', value: 50 },
+  { name: 'Precision Farming (Small)', value: 22 },
+  { name: 'Livestock AI', value: 11 },
+  { name: 'Post-Harvest Automation', value: 12 }
 ];
 
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
@@ -92,258 +77,285 @@ export default function ResilientSectorsReport() {
               Understanding the industries that remain resilient to AI transformation through 2035
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* AI Penetration Overview - Main Chart */}
-      <section className="py-16 bg-[#1a1f3c] text-white">
-        <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <h2 className="text-2xl lg:text-3xl font-bold mb-2 text-center text-[#c9a962] italic">
-            AI PENETRATION IN WORKFORCE ACROSS SECTORS (ESTIMATION)
-          </h2>
-          
-          <div className="mt-12">
-            <ResponsiveContainer width="100%" height={400}>
-              <BarChart data={aiPenetrationBySector} margin={{ top: 20, right: 30, left: 20, bottom: 80 }}>
-                <XAxis 
-                  dataKey="sector" 
-                  stroke="#FFF" 
-                  tick={{ fill: '#FFF', fontSize: 12 }}
-                  axisLine={{ stroke: '#c9a962' }}
-                  tickLine={false}
-                  interval={0}
-                  angle={0}
-                  textAnchor="middle"
-                  height={80}
-                />
-                <YAxis stroke="#FFF" tick={{ fill: '#FFF' }} domain={[0, 30]} tickFormatter={(v) => `${v}%`} />
-                <Tooltip 
-                  formatter={(value: number) => [`${value}%`, 'AI Penetration']}
-                  contentStyle={{ backgroundColor: '#1a1f3c', border: '1px solid #c9a962', color: '#FFF' }}
-                />
-                <Bar dataKey="penetration" fill="#F5E6C8" radius={[4, 4, 0, 0]}>
-                  {aiPenetrationBySector.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill="#F5E6C8" />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ResponsiveContainer>
+          {/* Key Insight Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-5xl mx-auto">
+            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-white dark:from-primary/10 dark:to-background">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <Shield className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Why Sectors Resist AI</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Physical dexterity requirements</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Emotional intelligence needs</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Regulatory barriers</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <span className="text-sm text-foreground/80">Local value chain dependencies</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-white dark:from-primary/10 dark:to-background">
+              <CardHeader>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                  </div>
+                  <CardTitle className="text-lg">Investment Opportunities</CardTitle>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Hybrid human-AI productivity</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Premium authenticity markets</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Rural development programs</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <CheckCircle2 className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-sm text-foreground/80">Skill-building initiatives</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Sector Icons Row */}
-          <div className="grid grid-cols-6 gap-4 mt-8">
+          {/* Sector Overview Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4">
             {[
-              { icon: Wheat, label: 'Agriculture' },
-              { icon: Building2, label: 'Construction' },
-              { icon: Palette, label: 'Arts & Entertainment' },
-              { icon: HandHeart, label: 'Social work & HR' },
-              { icon: Pickaxe, label: 'Mining' },
-              { icon: Stethoscope, label: 'Healthcare' }
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center">
-                <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-2">
-                  <item.icon className="w-8 h-8 text-white" />
-                </div>
-                <span className="text-xs text-center text-white/80">{item.label}</span>
-              </div>
+              { title: 'Agriculture', icon: Wheat, market: '$12.12T', aiPen: '1-3%' },
+              { title: 'Construction', icon: Hammer, market: '$12T+', aiPen: '~1.4%' },
+              { title: 'Entertainment', icon: Palette, market: '$3.5T', aiPen: '7-30%' },
+              { title: 'HR & Social', icon: HandHeart, market: 'Growing', aiPen: '7-10%' },
+              { title: 'Mining', icon: Pickaxe, market: '$1.96T', aiPen: '2-6%' },
+              { title: 'Healthcare', icon: Stethoscope, market: '$11T+', aiPen: '<20%' }
+            ].map((sector, idx) => (
+              <Card key={idx} className="text-center border-primary/20 hover-elevate" data-testid={`sector-card-${idx}`}>
+                <CardContent className="pt-6 pb-6">
+                  <sector.icon className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <h3 className="text-sm font-bold text-foreground mb-1">{sector.title}</h3>
+                  <p className="text-xs text-foreground/60">{sector.market}</p>
+                  <p className="text-xs text-primary font-semibold mt-1">AI: {sector.aiPen}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
-
-          <p className="text-sm text-white/60 mt-8 text-center italic">
-            *In Arts and Healthcare, the use of AI is mostly for assistance. It would not replace workforce.
-          </p>
         </div>
       </section>
 
       {/* Sector 1: Agriculture */}
       <section className="py-16 bg-white dark:bg-background">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 1</span>
             </div>
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Agricultural Sector Overview</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Agriculture</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                The global agriculture sector will grow from <strong>$12.12 trillion in 2024</strong> to <strong>$12.97 trillion in 2025</strong>, at a CAGR of 7%. In India, agriculture is projected to reach <strong>INR 236.6 trillion ($2.8 trillion) by 2033</strong>, at a CAGR of over 10%. Barriers to end-to-end automation are pronounced, driven by fragmented farm sizes, local climate, and physical unpredictability.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                AI applications (precision farming, crop health monitoring, yield prediction) are growing rapidly, with the AI in agriculture market expected to reach <strong>$5 billion globally in 2025</strong>. However, this remains a small fraction (<strong>less than 0.1%</strong>) of total global agriculture revenue, especially in smallholder-dominated regions where adoption is slow.
+              </p>
+            </div>
           </div>
 
-          {/* Market Overview + AI Adoption Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Market Overview */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">MARKET OVERVIEW</CardTitle>
-                <CardDescription className="text-center">India Agricultural Market (Amount in Trillion INR)</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={350}>
-                  <BarChart data={agricultureMarketGrowth}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                    <XAxis dataKey="year" stroke="#6B7280" tick={{ fontSize: 11 }} />
-                    <YAxis stroke="#6B7280" domain={[0, 250]} />
-                    <Tooltip formatter={(value: number) => [`${value}T INR`, 'Market Size']} />
-                    <Bar dataKey="value" fill="#991B1B" radius={[4, 4, 0, 0]} />
-                  </BarChart>
-                </ResponsiveContainer>
-                <div className="text-center mt-2">
-                  <span className="inline-flex items-center gap-2 text-primary font-semibold">
-                    <TrendingUp className="w-4 h-4" /> CAGR: 10.08%
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Projected AI Adoption */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">PROJECTED ADOPTION OF AI</CardTitle>
-                <CardDescription className="text-center">Technology adoption rates by 2025</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={350}>
-                  <BarChart data={agricultureTechAdoption} layout="vertical" margin={{ left: 20, right: 40 }}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                    <XAxis type="number" domain={[0, 60]} stroke="#6B7280" tickFormatter={(v) => `${v}%`} />
-                    <YAxis 
-                      dataKey="tech" 
-                      type="category" 
-                      width={220} 
-                      stroke="#6B7280" 
-                      tick={{ fontSize: 10 }}
-                    />
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                    <Bar dataKey="adoption" fill="#991B1B" radius={[0, 4, 4, 0]} />
-                  </BarChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Resilient Factors */}
-          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+          {/* Subsector AI Penetration */}
+          <Card className="mb-12 border-primary/20">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">RESILIENT FACTORS</CardTitle>
+              <CardTitle className="text-2xl">AI Penetration by Subsector</CardTitle>
+              <CardDescription>Adoption rates vary significantly across farm types and operations</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="flex items-start gap-3 p-4 bg-white/50 dark:bg-background/50 rounded-lg">
-                  <div className="text-primary font-bold text-lg">›</div>
-                  <p className="text-sm text-foreground/80">Requires manual labor, contextual decisions, and real-time adaptation.</p>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">50%+</div>
+                  <h4 className="font-bold mb-2">Precision Farming</h4>
+                  <p className="text-xs text-foreground/60">Large commercial farms in developed markets</p>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white/50 dark:bg-background/50 rounded-lg">
-                  <div className="text-primary font-bold text-lg">›</div>
-                  <p className="text-sm text-foreground/80">Cost and the digital divide impede AI adoption.</p>
+                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">20-25%</div>
+                  <h4 className="font-bold mb-2">Small/Medium Farms</h4>
+                  <p className="text-xs text-foreground/60">Rising but lagging; manual labor crucial</p>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white/50 dark:bg-background/50 rounded-lg">
-                  <div className="text-primary font-bold text-lg">›</div>
-                  <p className="text-sm text-foreground/80">Local knowledge and skills are irreplaceable, despite AI.</p>
+                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">8-14%</div>
+                  <h4 className="font-bold mb-2">Livestock & Dairy</h4>
+                  <p className="text-xs text-foreground/60">AI monitoring in large facilities only</p>
+                </div>
+                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
+                  <div className="text-3xl font-bold text-primary mb-2">10-15%</div>
+                  <h4 className="font-bold mb-2">Post-Harvest</h4>
+                  <p className="text-xs text-foreground/60">Robotics in major agribusiness</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Text Content */}
-          <div className="mt-12 prose prose-lg max-w-none">
-            <p className="text-base text-foreground/80 leading-relaxed mb-4">
-              The global agriculture sector will grow from <strong>$12.12 trillion in 2024</strong> to <strong>$12.97 trillion in 2025</strong>, at a CAGR of 7%. In India, agriculture is projected to reach <strong>INR 236.6 trillion ($2.8 trillion) by 2033</strong>, at a CAGR of over 10%. Barriers to end-to-end automation are pronounced, driven by fragmented farm sizes, local climate, and physical unpredictability.
-            </p>
-            <p className="text-base text-foreground/80 leading-relaxed">
-              AI applications are growing rapidly with the market expected to reach <strong>$5 billion globally in 2025</strong>. However, this remains less than <strong>0.1%</strong> of total global agriculture revenue, especially in smallholder-dominated regions. Overall AI-driven activities account for only <strong>1-3% of daily workflows</strong>.
-            </p>
+          {/* Market Charts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">AI in Agriculture Market Growth ($B)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={[
+                    { year: '2023', value: 2 },
+                    { year: '2025', value: 5 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                    <XAxis dataKey="year" stroke="#6B7280" />
+                    <YAxis stroke="#6B7280" />
+                    <Tooltip 
+                      contentStyle={{ backgroundColor: '#FFF', border: '1px solid #E5E7EB' }}
+                      formatter={(value: number) => `$${value}B`}
+                    />
+                    <Bar dataKey="value" fill="#991B1B" radius={[8, 8, 0, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+                <p className="text-sm text-foreground/60 mt-4 text-center">20%+ CAGR but still &lt;0.1% of total agriculture revenue</p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">Overall AI Workflow Penetration</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-col items-center justify-center h-[300px]">
+                  <div className="text-7xl font-bold text-primary mb-4">1-3%</div>
+                  <p className="text-lg text-foreground/70 text-center">of daily agricultural workflows</p>
+                  <p className="text-sm text-foreground/50 mt-2 text-center">Gartner 2025 forecast</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* Resilience Factors */}
+          <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl">Resilience Factors</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Users className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Manual Labor Dependence</h4>
+                    <p className="text-sm text-foreground/70">Context-specific decision-making and real-time adaptation to weather, pests, terrain</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <DollarSign className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Capital Constraints</h4>
+                    <p className="text-sm text-foreground/70">Digital divide in rural areas impedes rapid, uniform AI adoption</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-primary/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Brain className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold mb-1">Localized Knowledge</h4>
+                    <p className="text-sm text-foreground/70">Hands-on skills remain irreplaceable even as AI supports efficiency</p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Sector 2: Construction */}
       <section className="py-16 bg-gray-50/50 dark:bg-background/50">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 2</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Construction</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                The global construction sector exceeds <strong>$12 trillion</strong> in value and is growing as economies urbanize. AI is being piloted in planning (design automation), logistics, and quality control. The AI in construction market is projected to reach approximately <strong>$17 billion by 2029</strong> at a CAGR of 26-33%.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                However, overall workflow penetration remains at approximately <strong>1.4%</strong>, among the lowest of all sectors tracked. The physical, fragmented nature of construction, diverse project settings, and regulatory oversight slow full automation.
+              </p>
+            </div>
           </div>
 
-          {/* Market Overview Pie Chart */}
+          {/* AI Penetration by Subsector */}
           <Card className="mb-12 border-primary/20">
             <CardHeader>
-              <CardTitle className="text-2xl text-center">MARKET OVERVIEW</CardTitle>
+              <CardTitle className="text-2xl">AI Adoption by Subsector</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
-                <div className="relative">
-                  <ResponsiveContainer width={350} height={350}>
-                    <PieChart>
-                      <Pie
-                        data={[
-                          { name: 'Global Construction Market', value: 96 },
-                          { name: 'AI in Construction', value: 4 }
-                        ]}
-                        cx="50%"
-                        cy="50%"
-                        innerRadius={0}
-                        outerRadius={140}
-                        dataKey="value"
-                        startAngle={90}
-                        endAngle={-270}
-                      >
-                        <Cell fill="#6B7280" />
-                        <Cell fill="#991B1B" />
-                      </Pie>
-                    </PieChart>
-                  </ResponsiveContainer>
-                </div>
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-4 h-4 bg-[#6B7280] rounded mt-1"></div>
-                    <div>
-                      <p className="text-lg font-semibold">Global Construction Market Size (2025):</p>
-                      <p className="text-3xl font-bold text-primary">$12 Trillion</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-4 h-4 bg-[#991B1B] rounded mt-1"></div>
-                    <div>
-                      <p className="text-lg font-semibold">AI in Construction Market Projected (2025):</p>
-                      <p className="text-3xl font-bold text-primary">$4.7 Billion</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p className="text-sm text-primary mt-8 text-center italic">
-                *AI in construction Market is projected to grow at 26-30% CAGR and reach approximately $17 Billion by 2029
-              </p>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={constructionAIData} layout="vertical">
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                  <XAxis type="number" stroke="#6B7280" domain={[0, 30]} tickFormatter={(value) => `${value}%`} />
+                  <YAxis dataKey="category" type="category" width={180} stroke="#6B7280" tick={{ fontSize: 12 }} />
+                  <Tooltip formatter={(value: number) => `${value}%`} />
+                  <Bar dataKey="value" fill="#991B1B" radius={[0, 8, 8, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+              <p className="text-sm text-foreground/60 mt-4 text-center">Large firms lead adoption; SMEs and on-site operations lag significantly</p>
             </CardContent>
           </Card>
 
-          {/* AI Adoption by Subsector */}
-          <Card className="mb-12 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-xl">AI Adoption by Subsector</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">20-28%</div>
-                  <h4 className="font-bold mb-2">Design & Planning</h4>
-                  <p className="text-xs text-foreground/60">Large engineering firms; SMEs below 8%</p>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">~25%</div>
-                  <h4 className="font-bold mb-2">On-site Robotics</h4>
-                  <p className="text-xs text-foreground/60">Error reduction in flagship projects</p>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">~8%</div>
-                  <h4 className="font-bold mb-2">Safety Systems</h4>
-                  <p className="text-xs text-foreground/60">AI-powered compliance monitoring</p>
-                </div>
-                <div className="p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">~1.4%</div>
-                  <h4 className="font-bold mb-2">Overall Workflow</h4>
-                  <p className="text-xs text-foreground/60">Among lowest of all sectors</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Key Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <Card className="border-primary/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">$17B</div>
+                <div className="text-sm text-foreground/70">AI in Construction Market by 2029</div>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">26-33%</div>
+                <div className="text-sm text-foreground/70">Projected CAGR</div>
+              </CardContent>
+            </Card>
+            <Card className="border-primary/20">
+              <CardContent className="pt-6 text-center">
+                <div className="text-4xl font-bold text-primary mb-2">~1.4%</div>
+                <div className="text-sm text-foreground/70">Current Workflow Penetration</div>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Resilience Factors */}
           <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
@@ -388,74 +400,43 @@ export default function ResilientSectorsReport() {
       {/* Sector 3: Arts, Entertainment & Creative Industries */}
       <section className="py-16 bg-white dark:bg-background">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 3</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Arts, Entertainment & Creative Industries</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                The global media and entertainment industry is projected to reach <strong>$3.5 trillion by 2029</strong> at a 3.7% CAGR. The core value remains rooted in human creativity, original performance, and audience connection—generative AI's role is mainly enhancing productivity rather than replacing creative leadership.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                Up to <strong>26% of tasks</strong> in creative sectors may be automated by 2025 (scriptwriting, soundtrack generation, animation support). However, genuine demand remains for artisanal works, live performance, curation, and original artistry.
+              </p>
+            </div>
           </div>
 
-          {/* Two Charts Side by Side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* AI Adoption Pie Chart */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">AI ADOPTION RATE ACROSS DIFFERENT SECTORS</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <PieChart>
-                    <Pie
-                      data={creativeAIAdoptionPie}
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={100}
-                      dataKey="value"
-                      label={({ name, value }) => `${value}%`}
-                      labelLine={true}
-                    >
-                      {creativeAIAdoptionPie.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={entry.color} />
-                      ))}
-                    </Pie>
-                    <Tooltip formatter={(value: number) => `${value}%`} />
-                    <Legend 
-                      layout="vertical" 
-                      align="right" 
-                      verticalAlign="middle"
-                      formatter={(value, entry: any) => `${value}: ${entry.payload.value}%`}
-                    />
-                  </PieChart>
-                </ResponsiveContainer>
-              </CardContent>
-            </Card>
+          {/* Subsector Breakdown */}
+          <Card className="mb-12 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl">AI Usage vs Human-Driven Work by Subsector</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={350}>
+                <BarChart data={mediaEntertainmentData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                  <XAxis dataKey="subsector" stroke="#6B7280" tick={{ fontSize: 11 }} />
+                  <YAxis stroke="#6B7280" tickFormatter={(value) => `${value}%`} />
+                  <Tooltip formatter={(value: number) => `${value}%`} />
+                  <Legend />
+                  <Bar dataKey="aiUsage" name="AI-Assisted" fill="#991B1B" radius={[8, 8, 0, 0]} />
+                  <Bar dataKey="humanDriven" name="Human-Driven" fill="#FCA5A5" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
 
-            {/* Market Size Stacked Bar */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">EXPECTED MARKET SIZE OF CREATIVE SECTOR</CardTitle>
-                <CardDescription className="text-center">Market size in Trillion $</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ResponsiveContainer width="100%" height={300}>
-                  <BarChart data={creativeMarketGrowth}>
-                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                    <XAxis dataKey="year" stroke="#6B7280" />
-                    <YAxis stroke="#6B7280" domain={[0, 5]} />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey="marketSize" name="Market Size" stackId="a" fill="#991B1B" />
-                    <Bar dataKey="ai" name="AI" stackId="a" fill="#6B7280" />
-                  </BarChart>
-                </ResponsiveContainer>
-                <p className="text-xs text-foreground/60 mt-4 text-center italic">
-                  *AI is expected to automate only 26% of the total market by 2029.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Key Stats */}
+          {/* Key Stats Grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <Card className="border-primary/20">
               <CardContent className="pt-6 text-center">
@@ -466,21 +447,21 @@ export default function ResilientSectorsReport() {
             </Card>
             <Card className="border-primary/20">
               <CardContent className="pt-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">20%</div>
+                <div className="text-3xl font-bold text-primary mb-2">15-25%</div>
                 <div className="text-sm text-foreground/70">Music Production AI</div>
                 <div className="text-xs text-foreground/50 mt-1">Live performance nearly 0%</div>
               </CardContent>
             </Card>
             <Card className="border-primary/20">
               <CardContent className="pt-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">27.5%</div>
+                <div className="text-3xl font-bold text-primary mb-2">20-35%</div>
                 <div className="text-sm text-foreground/70">Publishing & Design</div>
                 <div className="text-xs text-foreground/50 mt-1">Final judgment remains human</div>
               </CardContent>
             </Card>
             <Card className="border-primary/20">
               <CardContent className="pt-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-2">1%</div>
+                <div className="text-3xl font-bold text-primary mb-2">&lt;2%</div>
                 <div className="text-sm text-foreground/70">Live Performance & Fine Arts</div>
                 <div className="text-xs text-foreground/50 mt-1">Human skill valued</div>
               </CardContent>
@@ -518,7 +499,7 @@ export default function ResilientSectorsReport() {
                   </div>
                   <div>
                     <h4 className="font-bold mb-1">Experiential Value</h4>
-                    <p className="text-sm text-foreground/70">Talent-driven branding and live experiences resist platformization</p>
+                    <p className="text-sm text-foreground/70">Talent-driven branding and live experiences (shows, gallery events) resist platformization</p>
                   </div>
                 </div>
               </div>
@@ -530,72 +511,70 @@ export default function ResilientSectorsReport() {
       {/* Sector 4: Social Work, Personal Services & HR */}
       <section className="py-16 bg-gray-50/50 dark:bg-background/50">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 4</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Social Work, Personal Services & Human Resources</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                Personal care, social work, and HR occupy a significant and growing share of both public and private sector employment. Adoption of automation in this arena remains under <strong>10% of tasks</strong> due to the high-touch, individualized nature of the services.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                While back-end HR and some administrative elements are automated, the core service—<strong>person-to-person support, empathy, counseling, and care delivery</strong>—remains labor-intensive. AI may augment but not replace these human-driven functions.
+              </p>
+            </div>
           </div>
 
-          {/* AI Penetration Pie Chart */}
-          <Card className="mb-12 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center">AI PENETRATION RATE ACROSS DIFFERENT SECTORS</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
-                <ResponsiveContainer width={350} height={350}>
-                  <PieChart>
-                    <Pie
-                      data={[
-                        { name: 'HR Gen AI Adoption', value: 61, color: '#6B7280' },
-                        { name: 'Personal Services', value: 46, color: '#FCA5A5' },
-                        { name: 'Social Care & Counselling', value: 8, color: '#991B1B' }
-                      ]}
-                      cx="50%"
-                      cy="50%"
-                      outerRadius={130}
-                      dataKey="value"
-                    >
-                      <Cell fill="#6B7280" />
-                      <Cell fill="#FCA5A5" />
-                      <Cell fill="#991B1B" />
-                    </Pie>
-                  </PieChart>
+          {/* HR AI Adoption Growth */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-xl">GenAI Adoption in HR</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={hrAIAdoptionData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                    <XAxis dataKey="year" stroke="#6B7280" />
+                    <YAxis stroke="#6B7280" domain={[0, 70]} tickFormatter={(value) => `${value}%`} />
+                    <Tooltip formatter={(value: number) => `${value}%`} />
+                    <Bar dataKey="adoption" fill="#991B1B" radius={[8, 8, 0, 0]} />
+                  </BarChart>
                 </ResponsiveContainer>
+                <p className="text-sm text-foreground/60 mt-4 text-center">Projected jump from 19% (2023) to 61% (2025) — but mostly workflow automation</p>
+              </CardContent>
+            </Card>
 
-                <div className="space-y-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-4 h-4 bg-[#6B7280] rounded mt-1"></div>
-                    <div>
-                      <p className="text-sm font-semibold">HR Gen AI Adoption Growth projected (2025):</p>
-                      <p className="text-2xl font-bold text-primary">61% of workflow Automation</p>
-                    </div>
+            <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-xl">Subsector Breakdown</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-semibold">HR Administration</span>
+                    <span className="text-lg font-bold text-primary">61%</span>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-4 h-4 bg-[#FCA5A5] rounded mt-1"></div>
-                    <div>
-                      <p className="text-sm font-semibold">Personal Services Gen AI Adoption Growth projected (2025):</p>
-                      <p className="text-2xl font-bold text-primary">46% of workflow Automation</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-4 h-4 bg-[#991B1B] rounded mt-1"></div>
-                    <div>
-                      <p className="text-sm font-semibold">Social Care and Counselling Gen AI Adoption Growth projected (2025):</p>
-                      <p className="text-2xl font-bold text-primary">8% of workflow Automation</p>
-                    </div>
-                  </div>
+                  <p className="text-xs text-foreground/60">Workflow automation (recruitment, screening, analytics)</p>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Text Content */}
-          <div className="prose prose-lg max-w-none mb-8">
-            <p className="text-base text-foreground/80 leading-relaxed">
-              Personal care, social work, and HR occupy a significant share of employment. Adoption of automation remains under <strong>10% of tasks</strong> due to the high-touch nature of services. While HR administration sees rapid GenAI adoption (from 19% in 2023 to projected 61% in 2025), most is workflow automation—recruitment, screening, analytics—rather than empathy, negotiation, or final selection. Core services remain labor-intensive; AI may augment but not replace human-driven functions.
-            </p>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-semibold">Social Care & Counseling</span>
+                    <span className="text-lg font-bold text-primary">&lt;8%</span>
+                  </div>
+                  <p className="text-xs text-foreground/60">AI mainly for appointments, records, triage</p>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-semibold">Personal Services</span>
+                    <span className="text-lg font-bold text-primary">26%</span>
+                  </div>
+                  <p className="text-xs text-foreground/60">Scheduling and logistics only; core delivery human</p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Resilience Factors */}
@@ -641,11 +620,20 @@ export default function ResilientSectorsReport() {
       {/* Sector 5: Mining */}
       <section className="py-16 bg-white dark:bg-background">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 5</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Mining, Basic Commodities & Raw Materials Extraction</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                Mining and basic commodities extraction remain capital- and labor-intensive, with global revenues over <strong>$1.96 trillion as of 2024</strong>, with a CAGR of 4.6%. Global mining and natural resources are at an "early stage of automation maturity," with high barriers to standardized AI deployment due to geological, regulatory, and safety variability.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                Overall AI penetration is at <strong>2-6% of sector activities</strong>, mostly among large, technologically progressive operators, primarily focused on logistics, safety monitoring, and predictive maintenance.
+              </p>
+            </div>
           </div>
 
           {/* AI Penetration Chart */}
@@ -660,7 +648,11 @@ export default function ResilientSectorsReport() {
                   <XAxis dataKey="category" stroke="#6B7280" tick={{ fontSize: 11 }} />
                   <YAxis stroke="#6B7280" domain={[0, 60]} tickFormatter={(value) => `${value}%`} />
                   <Tooltip formatter={(value: number) => `${value}%`} />
-                  <Bar dataKey="value" fill="#991B1B" radius={[8, 8, 0, 0]} />
+                  <Bar dataKey="value" radius={[8, 8, 0, 0]}>
+                    {miningAIPenetrationData.map((entry, index) => (
+                      <Cell key={`cell-${index}`} fill={entry.color} />
+                    ))}
+                  </Bar>
                 </BarChart>
               </ResponsiveContainer>
               <p className="text-sm text-foreground/60 mt-4 text-center">Equipment maintenance leads at 50-55% in Tier 1 operators; field operations &lt;12%</p>
@@ -738,11 +730,20 @@ export default function ResilientSectorsReport() {
       {/* Sector 6: Healthcare */}
       <section className="py-16 bg-gray-50/50 dark:bg-background/50">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="mb-8">
+          <div className="mb-12">
             <div className="inline-block mb-4">
               <span className="text-xs uppercase tracking-[0.2em] font-semibold text-primary">Sector 6</span>
             </div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Healthcare</h2>
+            
+            <div className="prose prose-lg max-w-none">
+              <p className="text-base text-foreground/80 leading-relaxed mb-4">
+                The global healthcare industry is valued at over <strong>$11 trillion</strong>, encompassing hospitals, ambulatory care, primary care, diagnostics, pharma, and life sciences. Despite strong industry interest, many healthcare subsectors remain highly resilient to generative AI disruption due to regulatory oversight, clinical complexity, the irreplaceability of human empathy and clinical judgment.
+              </p>
+              <p className="text-base text-foreground/80 leading-relaxed">
+                Across most patient-facing healthcare subsectors, generative AI shapes <strong>less than 20%</strong> of day-to-day operations. The fastest adopted use cases are administrative/documentation AI and supply chain logistics, not direct clinical triage or treatment.
+              </p>
+            </div>
           </div>
 
           {/* Healthcare AI Penetration */}
@@ -871,88 +872,17 @@ export default function ResilientSectorsReport() {
         </div>
       </section>
 
-      {/* Why These Sectors Resist AI - Visual Infographic */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10">
+      {/* Summary: Why Sectors Resist AI */}
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Why These Sectors Resist Disruption</h2>
+            <h2 className="text-3xl lg:text-5xl font-bold mb-6 text-foreground">Why These Sectors Resist AI Disruption</h2>
             <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
               Six key factors explain why certain industries continue to rely on human skills despite AI advances
             </p>
           </div>
 
-          {/* Star Infographic Layout */}
-          <div className="flex justify-center mb-12">
-            <div className="relative w-[500px] h-[500px]">
-              {/* Center Text */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-white dark:bg-background rounded-full border-2 border-primary flex items-center justify-center z-10">
-                <p className="text-center text-primary font-bold text-sm leading-tight px-4">
-                  WHY THESE<br/>SECTORS RESIST<br/>DISRUPTION
-                </p>
-              </div>
-
-              {/* Physical Dexterity - Top */}
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <HardHat className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Physical Dexterity</p>
-              </div>
-
-              {/* Emotional Intelligence - Top Right */}
-              <div className="absolute top-[15%] right-[10%] flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <Smile className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Emotional Intelligence</p>
-              </div>
-
-              {/* Manual Skills - Top Left */}
-              <div className="absolute top-[15%] left-[10%] flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <IdCard className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Manual Skill Dependence</p>
-              </div>
-
-              {/* Regulatory Barriers - Bottom Right */}
-              <div className="absolute bottom-[15%] right-[10%] flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <Gavel className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Regulatory Barriers</p>
-              </div>
-
-              {/* Local Value Chains - Bottom Left */}
-              <div className="absolute bottom-[15%] left-[10%] flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <MapPin className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Local Value Chains</p>
-              </div>
-
-              {/* Judgment & Creativity - Bottom */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full border-2 border-primary flex items-center justify-center mb-2">
-                  <Brain className="w-8 h-8 text-primary" />
-                </div>
-                <p className="text-xs text-center font-semibold max-w-[100px]">Judgment & Creativity</p>
-              </div>
-
-              {/* Connecting Lines */}
-              <svg className="absolute inset-0 w-full h-full" style={{ zIndex: 0 }}>
-                <line x1="250" y1="80" x2="250" y2="180" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-                <line x1="400" y1="130" x2="320" y2="200" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-                <line x1="100" y1="130" x2="180" y2="200" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-                <line x1="400" y1="370" x2="320" y2="300" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-                <line x1="100" y1="370" x2="180" y2="300" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-                <line x1="250" y1="420" x2="250" y2="320" stroke="#991B1B" strokeWidth="2" strokeDasharray="4" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Factor Details Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {[
               {
                 factor: 'Physical Dexterity & Adaptability',
@@ -998,7 +928,7 @@ export default function ResilientSectorsReport() {
           </div>
 
           {/* Key Takeaway */}
-          <Card className="max-w-4xl mx-auto mt-12 bg-white/80 dark:bg-background/80 border-primary/20">
+          <Card className="max-w-4xl mx-auto bg-white/80 dark:bg-background/80 border-primary/20">
             <CardContent className="pt-8 pb-8">
               <h3 className="text-xl font-bold mb-4 text-center text-primary">Key Takeaway</h3>
               <p className="text-base text-foreground/80 leading-relaxed text-center">
