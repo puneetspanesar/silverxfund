@@ -1110,25 +1110,6 @@ export default function ResilientSectorsReport() {
             </Card>
           </div>
 
-          {/* Healthcare AI Penetration */}
-          <Card className="mb-12 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-2xl">AI Penetration by Healthcare Subsector</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ResponsiveContainer width="100%" height={300}>
-                <BarChart data={healthcareAIData}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
-                  <XAxis dataKey="subsector" stroke="#6B7280" tick={{ fontSize: 11 }} />
-                  <YAxis stroke="#6B7280" domain={[0, 30]} tickFormatter={(value) => `${value}%`} />
-                  <Tooltip formatter={(value: number) => `${value}%`} />
-                  <Bar dataKey="penetration" fill="#991B1B" radius={[8, 8, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-              <p className="text-sm text-foreground/60 mt-4 text-center">Clinical Care leads at ~25% but mostly documentation; direct patient interventions remain human-led</p>
-            </CardContent>
-          </Card>
-
           {/* Subsector Details */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             <Card className="border-primary/20">
