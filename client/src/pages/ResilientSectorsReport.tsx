@@ -86,6 +86,14 @@ const socialWorkAIPenetrationData = [
   { name: 'Social Care & Counselling', value: 8, color: '#991B1B' }
 ];
 
+const healthcareProjectedAIData = [
+  { subsector: 'Clinical Care (Workflows)', adoption: 25 },
+  { subsector: 'Pharmacy Services (Automation)', adoption: 21 },
+  { subsector: 'Life Sciences & Research (Projects)', adoption: 14 },
+  { subsector: 'Healthcare Supply Chain & Logistics', adoption: 25 },
+  { subsector: 'Outpatient & Ambulatory Care (Visits)', adoption: 10 }
+];
+
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
@@ -1037,6 +1045,69 @@ export default function ResilientSectorsReport() {
                 Across most patient-facing healthcare subsectors, generative AI shapes <strong>less than 20%</strong> of day-to-day operations. The fastest adopted use cases are administrative/documentation AI and supply chain logistics, not direct clinical triage or treatment.
               </p>
             </div>
+          </div>
+
+          {/* Healthcare Sector Overview */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Projected Adoption of AI</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ResponsiveContainer width="100%" height={320}>
+                  <BarChart data={healthcareProjectedAIData} layout="vertical" margin={{ left: 20, right: 30 }}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" horizontal={true} vertical={false} />
+                    <XAxis type="number" stroke="#6B7280" domain={[0, 30]} tickFormatter={(value) => `${value}%`} />
+                    <YAxis 
+                      dataKey="subsector" 
+                      type="category" 
+                      width={220} 
+                      stroke="#6B7280" 
+                      tick={{ fontSize: 11 }} 
+                    />
+                    <Tooltip formatter={(value: number) => `${value}%`} />
+                    <Bar dataKey="adoption" fill="#991B1B" radius={[0, 8, 8, 0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-2xl">Sector Landscape</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <div>
+                  <p className="text-foreground/80">
+                    <strong className="text-primary">$11+ Trillion</strong> global sector which is said to be highly resilient to the GenAI penetration
+                  </p>
+                </div>
+                
+                <div>
+                  <h4 className="font-bold text-primary mb-2">Why AI Penetration Stalls at the 20% Mark</h4>
+                  <ul className="space-y-3 text-sm text-foreground/80">
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">*</span>
+                      <span><strong>Focus on Administration:</strong> AI excels in back-end tasks (supply chain, billing, scheduling) and documentation (e.g., ambient notes).</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">*</span>
+                      <span><strong>Human Essentials Protected:</strong> Core clinical processes require Empathy, Trust, and Intuition—factors AI cannot replicate.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-primary font-bold">*</span>
+                      <span><strong>Regulatory Barrier:</strong> Clinical judgment and final diagnosis are heavily bound by safety standards and accreditation, mandating human sign-off.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="pt-2 border-t border-border">
+                  <p className="text-sm text-foreground/80">
+                    <strong className="text-primary">The AI Role:</strong> Augmentation, not Replacement. AI is a powerful assistant that takes over repetitive tasks, freeing up clinicians for direct patient care.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Healthcare AI Penetration */}
