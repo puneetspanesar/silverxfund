@@ -72,6 +72,14 @@ const constructionMarketPieData = [
   { name: 'AI in Construction (2025)', value: 15, displayValue: '$4.7 Billion', color: '#991B1B' }
 ];
 
+const creativeSectorMarketData = [
+  { year: '2025', marketSize: 3.0, ai: 0.8 },
+  { year: '2026', marketSize: 3.1, ai: 0.8 },
+  { year: '2027', marketSize: 3.3, ai: 0.8 },
+  { year: '2028', marketSize: 3.4, ai: 0.9 },
+  { year: '2029', marketSize: 3.5, ai: 0.9 }
+];
+
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
@@ -547,6 +555,27 @@ export default function ResilientSectorsReport() {
               </p>
             </div>
           </div>
+
+          {/* Expected Market Size Chart */}
+          <Card className="mb-12 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-2xl">Expected Market Size of Creative Sector</CardTitle>
+              <CardDescription>Market size in Trillion $. AI is expected to automate only 26% of the total market by 2029.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ResponsiveContainer width="100%" height={350}>
+                <BarChart data={creativeSectorMarketData}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+                  <XAxis dataKey="year" stroke="#6B7280" />
+                  <YAxis stroke="#6B7280" domain={[0, 5]} tickFormatter={(value) => `$${value}T`} />
+                  <Tooltip formatter={(value: number) => `$${value}T`} />
+                  <Legend />
+                  <Bar dataKey="marketSize" name="Market Size" stackId="a" fill="#991B1B" radius={[0, 0, 0, 0]} />
+                  <Bar dataKey="ai" name="AI" stackId="a" fill="#6B7280" radius={[8, 8, 0, 0]} />
+                </BarChart>
+              </ResponsiveContainer>
+            </CardContent>
+          </Card>
 
           {/* Subsector Breakdown */}
           <Card className="mb-12 border-primary/20">
