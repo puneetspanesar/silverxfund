@@ -1536,23 +1536,12 @@ export default function InvestmentReport() {
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="text-white">
-              <h3 className="text-2xl font-bold mb-4">Report Credits</h3>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="flex -space-x-3">
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
-                    <Users className="h-5 w-5 text-white" />
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
-                    <Users className="h-5 w-5 text-white" />
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
-                    <Users className="h-5 w-5 text-white" />
-                  </div>
-                </div>
-                <div>
-                  <p className="text-white/90 font-semibold">Haaziq Mohamed</p>
-                  <p className="text-white/70 text-sm">with inputs from Ajay Jain & Sirish P.</p>
-                </div>
+              <h3 className="text-2xl font-bold mb-6">Report Credits</h3>
+              <div className="mb-6">
+                <p className="text-white text-lg mb-1">Report created by</p>
+                <p className="text-2xl font-bold text-white mb-4">Haaziq Mohamed</p>
+                <p className="text-white text-lg mb-1">with inputs from</p>
+                <p className="text-xl font-semibold text-white">Ajay Jain & Sirish P.</p>
               </div>
               <p className="text-white/80 text-sm leading-relaxed">
                 Are you a startup using deeper technology to disrupt sectors? We'd love to hear from you.
