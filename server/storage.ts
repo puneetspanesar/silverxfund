@@ -1,5 +1,10 @@
-import { type User, type InsertUser, type Subscriber, type InsertSubscriber } from "@shared/schema";
-import { randomUUID } from "crypto";
+import { type User, type InsertUser, type Subscriber, type InsertSubscriber, users, subscribers } from "@shared/schema";
+import { drizzle } from "drizzle-orm/neon-serverless";
+import { eq } from "drizzle-orm";
+import { Pool, neonConfig } from "@neondatabase/serverless";
+import ws from "ws";
+
+neonConfig.webSocketConstructor = ws;
 
 export interface IStorage {
   getUser(id: string): Promise<User | undefined>;
@@ -10,55 +15,44 @@ export interface IStorage {
   getAllSubscribers(): Promise<Subscriber[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<string, User>;
-  private subscribers: Map<string, Subscriber>;
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const db = drizzle(pool);
 
-  constructor() {
-    this.users = new Map();
-    this.subscribers = new Map();
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: string): Promise<User | undefined> {
-    return this.users.get(id);
+    const result = await db.select().from(users).where(eq(users.id, id));
+    return result[0];
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const result = await db.select().from(users).where(eq(users.username, username));
+    return result[0];
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = randomUUID();
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
+    const result = await db.insert(users).values(insertUser).returning();
+    return result[0];
   }
 
   async createSubscriber(insertSubscriber: InsertSubscriber): Promise<Subscriber> {
-    const id = randomUUID();
-    const subscriber: Subscriber = { 
-      id,
+    const result = await db.insert(subscribers).values({
       name: insertSubscriber.name,
       email: insertSubscriber.email,
       company: insertSubscriber.company ?? null,
       role: insertSubscriber.role ?? null,
       message: insertSubscriber.message ?? null
-    };
-    this.subscribers.set(id, subscriber);
-    return subscriber;
+    }).returning();
+    return result[0];
   }
 
   async getSubscriberByEmail(email: string): Promise<Subscriber | undefined> {
-    return Array.from(this.subscribers.values()).find(
-      (subscriber) => subscriber.email === email,
-    );
+    const result = await db.select().from(subscribers).where(eq(subscribers.email, email));
+    return result[0];
   }
 
   async getAllSubscribers(): Promise<Subscriber[]> {
-    return Array.from(this.subscribers.values());
+    return await db.select().from(subscribers);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
