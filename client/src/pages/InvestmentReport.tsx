@@ -1528,6 +1528,25 @@ export default function InvestmentReport() {
           </Card>
         </div>
       </section>
+
+      {/* Report Credits Footer */}
+      <section className="py-12 bg-white dark:bg-background border-t border-border">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+          <div className="text-center space-y-4">
+            <p className="text-sm text-foreground/70">
+              Report created by <strong className="text-foreground">Haaziq Mohamed</strong>, with inputs from <strong className="text-foreground">Ajay Jain</strong> & <strong className="text-foreground">Sirish P.</strong>
+            </p>
+            <p className="text-sm text-foreground/70">
+              For further such reports please subscribe to us by filling{' '}
+              <a href="#" className="text-primary font-semibold hover:underline">this form</a>.
+            </p>
+            <p className="text-sm text-foreground/70">
+              In case you are a startup which is using deeper technology to disrupt sectors do reach out to us at{' '}
+              <a href="mailto:info@silverx.vc" className="text-primary font-semibold hover:underline">info@silverx.vc</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
