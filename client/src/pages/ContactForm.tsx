@@ -6,16 +6,18 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
-import { ArrowLeft, Send, Mail, Building2, User, FileText } from 'lucide-react';
+import { ArrowLeft, Send, Mail, Building2, User, FileText, CheckCircle } from 'lucide-react';
+import { apiRequest } from '@/lib/queryClient';
 
 export default function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    subject: '',
+    role: '',
     message: ''
   });
 
@@ -23,15 +25,34 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Subscription Successful",
-      description: "Thank you for subscribing! You'll receive our latest reports and insights.",
-    });
-    
-    setFormData({ name: '', email: '', company: '', subject: '', message: '' });
-    setIsSubmitting(false);
+    try {
+      await apiRequest('POST', '/api/subscribe', {
+        name: formData.name,
+        email: formData.email,
+        company: formData.company || null,
+        role: formData.role || null,
+        message: formData.message || null
+      });
+      
+      setIsSuccess(true);
+      toast({
+        title: "Subscription Successful",
+        description: "Thank you for subscribing! You'll receive our latest reports and insights.",
+      });
+      
+      setFormData({ name: '', email: '', company: '', role: '', message: '' });
+    } catch (error: any) {
+      const errorMessage = error?.message || "Failed to subscribe. Please try again.";
+      toast({
+        title: "Subscription Failed",
+        description: errorMessage.includes("already subscribed") 
+          ? "This email is already subscribed to our reports." 
+          : errorMessage,
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -81,6 +102,36 @@ export default function ContactForm() {
           </Card>
         </div>
 
+        {isSuccess ? (
+          <Card className="border-primary/20">
+            <CardContent className="pt-12 pb-12">
+              <div className="text-center">
+                <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle className="h-10 w-10 text-primary" />
+                </div>
+                <h2 className="text-2xl font-bold text-foreground mb-4">You're Subscribed!</h2>
+                <p className="text-foreground/70 mb-8 max-w-md mx-auto">
+                  Thank you for subscribing to SilverX Fund reports. You'll receive our latest research, sector analyses, and investment insights directly in your inbox.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/reports/indias-next-wave-5-sectors">
+                    <Button data-testid="button-view-report">
+                      <FileText className="h-4 w-4 mr-2" />
+                      View Latest Report
+                    </Button>
+                  </Link>
+                  <Button 
+                    variant="outline" 
+                    onClick={() => setIsSuccess(false)}
+                    data-testid="button-subscribe-another"
+                  >
+                    Subscribe Another Email
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ) : (
         <Card className="border-primary/20">
           <CardHeader>
             <CardTitle className="text-2xl text-center">Join Our Mailing List</CardTitle>
@@ -134,13 +185,13 @@ export default function ContactForm() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="subject">I am a...</Label>
+                  <Label htmlFor="role">I am a...</Label>
                   <Input
-                    id="subject"
+                    id="role"
                     placeholder="Investor / Founder / Analyst / Other"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    data-testid="input-subject"
+                    value={formData.role}
+                    onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                    data-testid="input-role"
                   />
                 </div>
               </div>
@@ -175,6 +226,7 @@ export default function ContactForm() {
             </form>
           </CardContent>
         </Card>
+        )}
 
         <div className="mt-12 text-center">
           <p className="text-sm text-foreground/60 mb-2">
