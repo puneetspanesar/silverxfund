@@ -1,6 +1,8 @@
+import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
-import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, TrendingDown, Smartphone, Building2, LineChart as LineChartIcon, CheckCircle2, ArrowRight } from "lucide-react";
+import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, TrendingDown, Smartphone, Building2, LineChart as LineChartIcon, CheckCircle2, ArrowRight, Mail, FileText, Send } from "lucide-react";
 
 // Data for charts
 const eldercareMarketData = [
@@ -1530,20 +1532,59 @@ export default function InvestmentReport() {
       </section>
 
       {/* Report Credits Footer */}
-      <section className="py-12 bg-white dark:bg-background border-t border-border">
+      <section className="py-16 bg-gradient-to-br from-primary to-primary/80">
         <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
-          <div className="text-center space-y-4">
-            <p className="text-sm text-foreground/70">
-              Report created by <strong className="text-foreground">Haaziq Mohamed</strong>, with inputs from <strong className="text-foreground">Ajay Jain</strong> & <strong className="text-foreground">Sirish P.</strong>
-            </p>
-            <p className="text-sm text-foreground/70">
-              For further such reports please subscribe to us by filling{' '}
-              <a href="#" className="text-primary font-semibold hover:underline">this form</a>.
-            </p>
-            <p className="text-sm text-foreground/70">
-              In case you are a startup which is using deeper technology to disrupt sectors do reach out to us at{' '}
-              <a href="mailto:info@silverx.vc" className="text-primary font-semibold hover:underline">info@silverx.vc</a>
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <h3 className="text-2xl font-bold mb-4">Report Credits</h3>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex -space-x-3">
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
+                    <Users className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
+                    <Users className="h-5 w-5 text-white" />
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center border-2 border-white/30">
+                    <Users className="h-5 w-5 text-white" />
+                  </div>
+                </div>
+                <div>
+                  <p className="text-white/90 font-semibold">Haaziq Mohamed</p>
+                  <p className="text-white/70 text-sm">with inputs from Ajay Jain & Sirish P.</p>
+                </div>
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed">
+                Are you a startup using deeper technology to disrupt sectors? We'd love to hear from you.
+              </p>
+              <a 
+                href="mailto:info@silverx.vc" 
+                className="inline-flex items-center gap-2 mt-4 text-white font-semibold hover:underline"
+              >
+                <Mail className="h-4 w-4" />
+                info@silverx.vc
+              </a>
+            </div>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-2">Want More Reports?</h4>
+                  <p className="text-white/80 text-sm mb-6">
+                    Subscribe to receive our latest research, sector analyses, and investment insights.
+                  </p>
+                  <Link href="/subscribe">
+                    <Button variant="secondary" className="bg-white text-primary hover:bg-white/90" data-testid="button-subscribe-cta">
+                      <Send className="h-4 w-4 mr-2" />
+                      Subscribe Now
+                    </Button>
+                  </Link>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
