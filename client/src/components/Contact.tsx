@@ -1,8 +1,13 @@
 import { Button } from "@/components/ui/button";
-import { Mail, MapPin, Send } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
 export default function Contact() {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -10,10 +15,38 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Contact form submitted:', formData);
-    setFormData({ name: '', email: '', organization: '', message: '' });
+    setIsSubmitting(true);
+    
+    try {
+      await apiRequest('POST', '/api/subscribe', {
+        name: formData.name,
+        email: formData.email,
+        company: formData.organization || null,
+        role: null,
+        message: formData.message || null
+      });
+      
+      setIsSuccess(true);
+      toast({
+        title: "Message Sent",
+        description: "Thank you for reaching out! We'll get back to you soon.",
+      });
+      
+      setFormData({ name: '', email: '', organization: '', message: '' });
+    } catch (error: any) {
+      const errorMessage = error?.message || "Failed to send message. Please try again.";
+      toast({
+        title: "Error",
+        description: errorMessage.includes("already subscribed") 
+          ? "We already have your contact. We'll be in touch soon!" 
+          : errorMessage,
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -106,9 +139,26 @@ export default function Contact() {
           </div>
           
           <div className="pt-4">
-            <Button type="submit" size="lg" className="px-8 group" data-testid="button-submit">
-              Send Message
-              <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button 
+              type="submit" 
+              size="lg" 
+              className="px-8 group" 
+              disabled={isSubmitting}
+              data-testid="button-submit"
+            >
+              {isSubmitting ? (
+                'Sending...'
+              ) : isSuccess ? (
+                <>
+                  <CheckCircle className="mr-2 h-4 w-4" />
+                  Message Sent
+                </>
+              ) : (
+                <>
+                  Send Message
+                  <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </>
+              )}
             </Button>
           </div>
         </form>
