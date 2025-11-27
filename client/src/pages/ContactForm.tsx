@@ -6,10 +6,17 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { useToast } from '@/hooks/use-toast';
+import { useSEO } from '@/hooks/use-seo';
 import { ArrowLeft, Send, Mail, Building2, User, FileText, CheckCircle } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 
 export default function ContactForm() {
+  useSEO({
+    title: "Subscribe to Investment Reports",
+    description: "Subscribe to SilverX Fund (Silver X) investment reports. Get exclusive access to deep-tech sector analyses, market insights, and investment opportunities in India.",
+    keywords: "SilverX Fund subscribe, Silver X reports, SilverX newsletter, deep tech research, venture capital insights, India startup reports",
+    canonical: "https://silverx.vc/subscribe"
+  });
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);

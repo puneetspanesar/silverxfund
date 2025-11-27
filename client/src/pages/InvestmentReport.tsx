@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Button } from "@/components/ui/button";
 import { BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
 import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, TrendingDown, Smartphone, Building2, LineChart as LineChartIcon, CheckCircle2, ArrowRight, Mail, FileText, Send } from "lucide-react";
+import { useSEO } from "@/hooks/use-seo";
 
 // Data for charts
 const eldercareMarketData = [
@@ -84,6 +85,13 @@ const evChipValueData = [
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function InvestmentReport() {
+  useSEO({
+    title: "India's Next Wave: 5 Sectors Poised for Growth",
+    description: "SilverX Fund (Silver X) investment report analyzing 5 high-growth sectors in India: Eldercare Tech, Data Centers, AI Lending, AI Diagnostics, and EDA & IP. Deep-tech investment opportunities.",
+    keywords: "SilverX Fund report, Silver X research, SilverX investment, India tech sectors, eldercare tech India, data centers India, AI lending, AI diagnostics, semiconductor EDA, deep tech investment",
+    canonical: "https://silverx.vc/reports/indias-next-wave-5-sectors"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-background dark:to-background">
       {/* Hero Section */}

@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
 import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, Smartphone, Building2, CheckCircle2, ArrowRight, Hammer, Palette, Pickaxe, Stethoscope, Wheat, HandHeart } from "lucide-react";
+import { useSEO } from "@/hooks/use-seo";
 
 const agricultureMarketData = [
   { year: '2024', value: 12.12 },
@@ -97,6 +98,13 @@ const healthcareProjectedAIData = [
 const COLORS = ['#991B1B', '#B91C1C', '#DC2626', '#EF4444', '#F87171', '#FCA5A5'];
 
 export default function ResilientSectorsReport() {
+  useSEO({
+    title: "Resilient Sectors: Industries Minimally Disrupted by AI",
+    description: "SilverX Fund (Silver X) analysis of 6 AI-resistant sectors: Agriculture, Construction, Arts & Entertainment, Personal Services, Mining, and Healthcare. Investment insights for the AI era.",
+    keywords: "SilverX Fund AI report, Silver X research, SilverX sectors, AI resistant industries, agriculture investment, construction tech, healthcare investment, mining technology, AI disruption analysis",
+    canonical: "https://silverx.vc/reports/resilient-sectors"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50 dark:from-background dark:to-background">
       {/* Hero Section */}
