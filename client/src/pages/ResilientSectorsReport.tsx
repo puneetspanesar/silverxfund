@@ -1,7 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { BarChart, Bar, PieChart, Pie, Cell, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Area, AreaChart } from "recharts";
-import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, Smartphone, Building2, CheckCircle2, ArrowRight, Hammer, Palette, Pickaxe, Stethoscope, Wheat, HandHeart } from "lucide-react";
+import { TrendingUp, Users, DollarSign, Target, Zap, Activity, Home, Heart, Brain, Shield, Database, Cloud, Cpu, Lock, Smartphone, Building2, CheckCircle2, ArrowRight, Hammer, Palette, Pickaxe, Stethoscope, Wheat, HandHeart, Mail, Send, FileText } from "lucide-react";
 import { useSEO } from "@/hooks/use-seo";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 const agricultureMarketData = [
   { year: '2024', value: 12.12 },
@@ -1381,6 +1383,53 @@ export default function ResilientSectorsReport() {
                 <p className="text-white/90 leading-relaxed font-semibold">
                   These sectors—Agriculture, Construction, Creative Industries, Personal Services, Mining, and Healthcare—will continue to be the bedrock of our economy, driven by an irreplaceable blend of ingenuity, empathy, and physical skill.
                 </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Report Credits Footer */}
+      <section className="py-16 bg-gradient-to-br from-primary to-primary/80">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="text-white">
+              <h3 className="text-2xl font-bold mb-6">Report Credits</h3>
+              <div className="mb-6">
+                <p className="text-white text-lg mb-1">Report created by</p>
+                <p className="text-2xl font-bold text-white mb-4">Megha Jain</p>
+                <p className="text-white text-lg mb-1">with inputs from</p>
+                <p className="text-xl font-semibold text-white">Ajay Jain & Nanda Kodimyala</p>
+              </div>
+              <p className="text-white/80 text-sm leading-relaxed">
+                Are you a startup building in AI-resilient sectors? We'd love to hear from you.
+              </p>
+              <a 
+                href="mailto:info@silverx.vc" 
+                className="inline-flex items-center gap-2 mt-4 text-white font-semibold hover:underline"
+              >
+                <Mail className="h-4 w-4" />
+                info@silverx.vc
+              </a>
+            </div>
+
+            <Card className="bg-white/10 backdrop-blur-sm border-white/20">
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <FileText className="h-8 w-8 text-white" />
+                  </div>
+                  <h4 className="text-xl font-bold text-white mb-2">Want More Reports?</h4>
+                  <p className="text-white/80 text-sm mb-6">
+                    Subscribe to receive our latest research, sector analyses, and investment insights.
+                  </p>
+                  <Link href="/subscribe">
+                    <Button variant="secondary" className="bg-white text-primary hover:bg-white/90" data-testid="button-subscribe-cta">
+                      <Send className="h-4 w-4 mr-2" />
+                      Subscribe Now
+                    </Button>
+                  </Link>
+                </div>
               </CardContent>
             </Card>
           </div>
