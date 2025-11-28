@@ -2,8 +2,92 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertSubscriberSchema } from "@shared/schema";
+import fs from "fs";
+import path from "path";
+
+interface PageMeta {
+  title: string;
+  description: string;
+  url: string;
+  type?: string;
+}
+
+const pageMeta: Record<string, PageMeta> = {
+  "/reports/indias-next-wave-5-sectors": {
+    title: "India's Next Wave: 5 Sectors Poised for Growth | SilverX Fund Research",
+    description: "In-depth investment research analyzing 5 high-growth sectors in India: Eldercare, Fintech, AI & LLMs, EDA IP, and Semiconductors. Comprehensive market analysis with charts and data-driven insights from SilverX Fund.",
+    url: "https://silverx.vc/reports/indias-next-wave-5-sectors",
+    type: "article"
+  },
+  "/reports/resilient-sectors": {
+    title: "Resilient Sectors: Industries Minimally Disrupted by AI | SilverX Fund Research",
+    description: "Research report on industries with natural AI resistance: Agriculture, Construction, Healthcare, Mining, and more. Strategic investment analysis showing sectors where physical presence and human judgment remain essential.",
+    url: "https://silverx.vc/reports/resilient-sectors",
+    type: "article"
+  },
+  "/subscribe": {
+    title: "Subscribe to SilverX Fund Updates | Investor Newsletter",
+    description: "Stay informed on SilverX Fund's latest investments, portfolio updates, and deep-tech insights. Subscribe to our investor newsletter.",
+    url: "https://silverx.vc/subscribe"
+  }
+};
+
+function injectMetaTags(html: string, pagePath: string): string {
+  const meta = pageMeta[pagePath];
+  if (!meta) return html;
+
+  const ogType = meta.type || "website";
+  
+  let result = html;
+  
+  result = result.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+  result = result.replace(/<meta name="title" content="[^"]*"/, `<meta name="title" content="${meta.title}"`);
+  result = result.replace(/<meta name="description" content="[^"]*"/, `<meta name="description" content="${meta.description}"`);
+  result = result.replace(/<meta property="og:type" content="[^"]*"/, `<meta property="og:type" content="${ogType}"`);
+  result = result.replace(/<meta property="og:url" content="[^"]*"/, `<meta property="og:url" content="${meta.url}"`);
+  result = result.replace(/<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${meta.title}"`);
+  result = result.replace(/<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${meta.description}"`);
+  result = result.replace(/<meta property="twitter:url" content="[^"]*"/, `<meta property="twitter:url" content="${meta.url}"`);
+  result = result.replace(/<meta property="twitter:title" content="[^"]*"/, `<meta property="twitter:title" content="${meta.title}"`);
+  result = result.replace(/<meta property="twitter:description" content="[^"]*"/, `<meta property="twitter:description" content="${meta.description}"`);
+  result = result.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.url}"`);
+  
+  return result;
+}
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  
+  // Serve pages with injected meta tags for social media crawlers (production only)
+  // In development, Vite handles this. In production, we need to serve these pages
+  // with the correct meta tags before the static file handler catches them.
+  const metaRoutes = Object.keys(pageMeta);
+  
+  for (const route of metaRoutes) {
+    app.get(route, async (req, res, next) => {
+      // Only handle in production - in dev, let Vite handle it
+      if (app.get("env") === "development") {
+        return next();
+      }
+      
+      try {
+        const distPath = path.resolve(import.meta.dirname, "public");
+        const indexPath = path.resolve(distPath, "index.html");
+        
+        if (!fs.existsSync(indexPath)) {
+          return next();
+        }
+        
+        let html = fs.readFileSync(indexPath, "utf-8");
+        html = injectMetaTags(html, route);
+        
+        res.status(200).set({ "Content-Type": "text/html" }).end(html);
+      } catch (error) {
+        console.error("Error serving page with meta tags:", error);
+        next();
+      }
+    });
+  }
+
   app.post("/api/subscribe", async (req, res) => {
     try {
       const parsed = insertSubscriberSchema.safeParse(req.body);
