@@ -1491,6 +1491,54 @@ export default function InvestmentReport() {
               </div>
             </CardContent>
           </Card>
+
+          {/* Global Developments & India Watchlist */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+            <Card className="border-primary/20">
+              <CardHeader>
+                <CardTitle className="text-xl">Global AI Chip Race Heating Up</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm text-foreground/80"><strong>Google's AI Chips:</strong> Custom AI chip production begins in 2027, with chip rental available on Google Cloud starting next year</p>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-sm text-foreground/80"><strong>Meta's TPU Strategy:</strong> Meta planning to leverage Google's TPUs, signaling consolidation in AI infrastructure</p>
+                </div>
+                <div className="pt-3 border-t border-border">
+                  <p className="text-sm text-foreground/70 italic">The market is heating up significantly in the coming years as tech giants race to build custom silicon for AI workloads.</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-primary/10">
+              <CardHeader>
+                <CardTitle className="text-xl">India Companies Watchlist</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-foreground/70 mb-4">Key Indian players positioned to benefit from the semiconductor boom:</p>
+                <div className="grid grid-cols-2 gap-3">
+                  <div className="p-3 bg-white/50 dark:bg-background/50 rounded-lg text-center">
+                    <span className="font-bold text-primary">Dixon</span>
+                  </div>
+                  <div className="p-3 bg-white/50 dark:bg-background/50 rounded-lg text-center">
+                    <span className="font-bold text-primary">Moschip</span>
+                  </div>
+                  <div className="p-3 bg-white/50 dark:bg-background/50 rounded-lg text-center">
+                    <span className="font-bold text-primary">Kaynes</span>
+                  </div>
+                  <div className="p-3 bg-white/50 dark:bg-background/50 rounded-lg text-center">
+                    <span className="font-bold text-primary">BEL</span>
+                  </div>
+                  <div className="col-span-2 p-3 bg-white/50 dark:bg-background/50 rounded-lg text-center">
+                    <span className="font-bold text-primary">RRP</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </section>
 
