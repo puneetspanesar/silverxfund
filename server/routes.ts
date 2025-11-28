@@ -10,6 +10,7 @@ interface PageMeta {
   description: string;
   url: string;
   type?: string;
+  image?: string;
 }
 
 const pageMeta: Record<string, PageMeta> = {
@@ -17,7 +18,8 @@ const pageMeta: Record<string, PageMeta> = {
     title: "India's Next Wave: 5 Sectors Poised for Growth | SilverX Fund Research",
     description: "In-depth investment research analyzing 5 high-growth sectors in India: Eldercare, Fintech, AI & LLMs, EDA IP, and Semiconductors. Comprehensive market analysis with charts and data-driven insights from SilverX Fund.",
     url: "https://silverx.vc/reports/indias-next-wave-5-sectors",
-    type: "article"
+    type: "article",
+    image: "https://silverx.vc/report-5-sectors-preview.jpg"
   },
   "/reports/resilient-sectors": {
     title: "Resilient Sectors: Industries Minimally Disrupted by AI | SilverX Fund Research",
@@ -51,6 +53,20 @@ function injectMetaTags(html: string, pagePath: string): string {
   result = result.replace(/<meta property="twitter:title" content="[^"]*"/, `<meta property="twitter:title" content="${meta.title}"`);
   result = result.replace(/<meta property="twitter:description" content="[^"]*"/, `<meta property="twitter:description" content="${meta.description}"`);
   result = result.replace(/<link rel="canonical" href="[^"]*"/, `<link rel="canonical" href="${meta.url}"`);
+  
+  // Inject og:image and twitter:image if provided
+  if (meta.image) {
+    // Add og:image after og:description
+    result = result.replace(
+      /(<meta property="og:description" content="[^"]*" \/>)/,
+      `$1\n    <meta property="og:image" content="${meta.image}" />`
+    );
+    // Add twitter:image after twitter:description
+    result = result.replace(
+      /(<meta property="twitter:description" content="[^"]*" \/>)/,
+      `$1\n    <meta property="twitter:image" content="${meta.image}" />`
+    );
+  }
   
   return result;
 }
