@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { insertSubscriberSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
 import fs from "fs";
 import path from "path";
+import { addNewsletterSubscriberToSheet } from "./googleSheets";
 
 interface PageMeta {
   title: string;
@@ -149,6 +150,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const subscriber = await storage.createNewsletterSubscriber(parsed.data);
+      
+      // Also add to Google Sheet
+      await addNewsletterSubscriberToSheet(
+        parsed.data.name,
+        parsed.data.email,
+        parsed.data.phone
+      );
+      
       return res.status(201).json({ message: "Successfully subscribed to newsletter!", subscriber });
     } catch (error) {
       console.error("Newsletter subscription error:", error);
