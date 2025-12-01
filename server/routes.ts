@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertSubscriberSchema } from "@shared/schema";
+import { insertSubscriberSchema, insertNewsletterSubscriberSchema } from "@shared/schema";
 import fs from "fs";
 import path from "path";
 
@@ -31,6 +31,11 @@ const pageMeta: Record<string, PageMeta> = {
     title: "Subscribe to SilverX Fund Updates | Investor Newsletter",
     description: "Stay informed on SilverX Fund's latest investments, portfolio updates, and deep-tech insights. Subscribe to our investor newsletter.",
     url: "https://silverx.vc/subscribe"
+  },
+  "/newsletter": {
+    title: "Newsletter | SilverX Fund - Stay Updated on Deep Tech Investments",
+    description: "Subscribe to SilverX Fund newsletter for exclusive insights on AI-first venture capital, deep tech investments, and India's emerging startup ecosystem.",
+    url: "https://silverx.vc/newsletter"
   }
 };
 
@@ -132,6 +137,37 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error fetching subscribers:", error);
       return res.status(500).json({ error: "Failed to fetch subscribers" });
+    }
+  });
+
+  app.post("/api/newsletter", async (req, res) => {
+    try {
+      const parsed = insertNewsletterSubscriberSchema.safeParse(req.body);
+      
+      if (!parsed.success) {
+        return res.status(400).json({ error: "Invalid data", details: parsed.error.issues });
+      }
+
+      const existing = await storage.getNewsletterSubscriberByEmail(parsed.data.email);
+      if (existing) {
+        return res.status(409).json({ error: "This email is already subscribed to the newsletter" });
+      }
+
+      const subscriber = await storage.createNewsletterSubscriber(parsed.data);
+      return res.status(201).json({ message: "Successfully subscribed to newsletter!", subscriber });
+    } catch (error) {
+      console.error("Newsletter subscription error:", error);
+      return res.status(500).json({ error: "Failed to subscribe to newsletter" });
+    }
+  });
+
+  app.get("/api/newsletter", async (_req, res) => {
+    try {
+      const subscribers = await storage.getAllNewsletterSubscribers();
+      return res.json(subscribers);
+    } catch (error) {
+      console.error("Error fetching newsletter subscribers:", error);
+      return res.status(500).json({ error: "Failed to fetch newsletter subscribers" });
     }
   });
 

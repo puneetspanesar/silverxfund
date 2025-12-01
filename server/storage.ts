@@ -1,4 +1,4 @@
-import { type User, type InsertUser, type Subscriber, type InsertSubscriber, users, subscribers } from "@shared/schema";
+import { type User, type InsertUser, type Subscriber, type InsertSubscriber, type NewsletterSubscriber, type InsertNewsletterSubscriber, users, subscribers, newsletterSubscribers } from "@shared/schema";
 import { drizzle } from "drizzle-orm/neon-serverless";
 import { eq } from "drizzle-orm";
 import { Pool, neonConfig } from "@neondatabase/serverless";
@@ -13,6 +13,9 @@ export interface IStorage {
   createSubscriber(subscriber: InsertSubscriber): Promise<Subscriber>;
   getSubscriberByEmail(email: string): Promise<Subscriber | undefined>;
   getAllSubscribers(): Promise<Subscriber[]>;
+  createNewsletterSubscriber(subscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber>;
+  getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined>;
+  getAllNewsletterSubscribers(): Promise<NewsletterSubscriber[]>;
 }
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
@@ -52,6 +55,24 @@ export class DatabaseStorage implements IStorage {
 
   async getAllSubscribers(): Promise<Subscriber[]> {
     return await db.select().from(subscribers);
+  }
+
+  async createNewsletterSubscriber(insertSubscriber: InsertNewsletterSubscriber): Promise<NewsletterSubscriber> {
+    const result = await db.insert(newsletterSubscribers).values({
+      name: insertSubscriber.name,
+      email: insertSubscriber.email,
+      phone: insertSubscriber.phone
+    }).returning();
+    return result[0];
+  }
+
+  async getNewsletterSubscriberByEmail(email: string): Promise<NewsletterSubscriber | undefined> {
+    const result = await db.select().from(newsletterSubscribers).where(eq(newsletterSubscribers.email, email));
+    return result[0];
+  }
+
+  async getAllNewsletterSubscribers(): Promise<NewsletterSubscriber[]> {
+    return await db.select().from(newsletterSubscribers);
   }
 }
 
