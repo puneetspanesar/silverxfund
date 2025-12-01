@@ -28,7 +28,7 @@ export default function Newsletter() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
   useSEO({
-    title: "Newsletter | SilverX Fund - Stay Updated on Deep Tech Investments",
+    title: "Subscribe | SilverX Fund - Stay Updated on Deep Tech Investments",
     description: "Subscribe to SilverX Fund newsletter for exclusive insights on AI-first venture capital, deep tech investments, and India's emerging startup ecosystem."
   });
 
@@ -92,9 +92,9 @@ export default function Newsletter() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="mb-8">
+        <div className="mb-12">
           <Link href="/">
-            <img src={logoPath} alt="SilverX Fund" className="h-12 cursor-pointer" />
+            <img src={logoPath} alt="SilverX Fund" className="h-32 lg:h-40 cursor-pointer" />
           </Link>
         </div>
 

@@ -28,14 +28,9 @@ const pageMeta: Record<string, PageMeta> = {
     type: "article"
   },
   "/subscribe": {
-    title: "Subscribe to SilverX Fund Updates | Investor Newsletter",
-    description: "Stay informed on SilverX Fund's latest investments, portfolio updates, and deep-tech insights. Subscribe to our investor newsletter.",
-    url: "https://silverx.vc/subscribe"
-  },
-  "/newsletter": {
     title: "Newsletter | SilverX Fund - Stay Updated on Deep Tech Investments",
     description: "Subscribe to SilverX Fund newsletter for exclusive insights on AI-first venture capital, deep tech investments, and India's emerging startup ecosystem.",
-    url: "https://silverx.vc/newsletter"
+    url: "https://silverx.vc/subscribe"
   }
 };
 
