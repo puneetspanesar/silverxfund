@@ -5,7 +5,7 @@ import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { Calendar, MapPin, Users, TrendingUp, Target, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
 import logoPath from "@assets/SilverX Fund Logo_1759929335279.png";
-import heroImage from "@assets/GVW00285_1764655749882.jpg";
+import heroImage from "@assets/RKW59666_1764656152555.jpg";
 import teamImage from "@assets/GVW00454_1764655773571.jpg";
 import panel1Image from "@assets/RKW59078_1764655793333.jpg";
 import panel2Image from "@assets/RKW59281_1764655813980.jpg";
@@ -66,40 +66,41 @@ export default function Launch() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="SilverX Fund Launch" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl">
-            <Badge variant="secondary" className="mb-6">
-              <Calendar className="h-3 w-3 mr-1" />
-              November 21, 2024
-            </Badge>
-            
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-              SilverX Fund <span className="text-primary">Officially Launches</span>
-            </h1>
-            
-            <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
-              $90 Million Commitment to Back India's AI-First and Deep-Tech Startups
-            </p>
-            
-            <div className="flex items-center gap-4 text-foreground/70">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-primary" />
-                <span>T-Hub, Hyderabad</span>
+      <section className="pt-28 pb-16">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Badge variant="secondary" className="mb-6">
+                <Calendar className="h-3 w-3 mr-1" />
+                November 21, 2024
+              </Badge>
+              
+              <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+                SilverX Fund <span className="text-primary">Officially Launches</span>
+              </h1>
+              
+              <p className="text-xl text-foreground/80 mb-8 leading-relaxed">
+                $90 Million Commitment to Back India's AI-First and Deep-Tech Startups
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 text-foreground/70">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-4 w-4 text-primary" />
+                  <span>T-Hub, Hyderabad</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="h-4 w-4 text-primary" />
+                  <span>Founders, Investors & Industry Leaders</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-primary" />
-                <span>Founders, Investors & Industry Leaders</span>
-              </div>
+            </div>
+            
+            <div className="relative lg:translate-x-8 lg:translate-y-8">
+              <img 
+                src={heroImage} 
+                alt="SilverX Fund Launch Event" 
+                className="rounded-xl shadow-2xl w-full"
+              />
             </div>
           </div>
         </div>
