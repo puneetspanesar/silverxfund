@@ -22,10 +22,10 @@ export default function Launch() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link href="/">
-            <img src={logoPath} alt="SilverX Fund" className="h-12 cursor-pointer" />
+            <img src={logoPath} alt="SilverX Fund" className="h-16 cursor-pointer" />
           </Link>
           <Link href="/">
-            <Button variant="ghost" size="sm" data-testid="button-back-home">
+            <Button variant="outline" data-testid="button-back-home">
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Home
             </Button>
