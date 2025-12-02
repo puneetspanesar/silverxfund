@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { Calendar, MapPin, Users, TrendingUp, Target, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
 import logoPath from "@assets/SilverX Fund Logo_1759929335279.png";
 import heroImage from "@assets/RKW59666_1764656152555.jpg";
+import ajayImage from "@assets/GVW00285_1764655749882.jpg";
 import teamImage from "@assets/GVW00454_1764655773571.jpg";
 import panel1Image from "@assets/RKW59078_1764655793333.jpg";
 import panel2Image from "@assets/RKW59281_1764655813980.jpg";
@@ -71,7 +72,7 @@ export default function Launch() {
           <img 
             src={heroImage} 
             alt="SilverX Fund Launch" 
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover object-[center_30%]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
         </div>
@@ -140,8 +141,8 @@ export default function Launch() {
             </div>
             <div className="relative">
               <img 
-                src={teamImage} 
-                alt="SilverX Fund Team" 
+                src={ajayImage} 
+                alt="Ajay Jain, Founder & Managing Partner" 
                 className="rounded-xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-xl shadow-xl">
