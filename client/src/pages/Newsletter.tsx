@@ -10,7 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Mail, Phone, User, Send, CheckCircle2 } from "lucide-react";
 import { useSEO } from "@/hooks/use-seo";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logoPath from "@assets/SilverX Fund Logo_1759929335279.png";
 import { Link } from "wouter";
 
@@ -25,11 +25,6 @@ type NewsletterFormData = z.infer<typeof newsletterSchema>;
 export default function Newsletter() {
   const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [mounted, setMounted] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
   
   useSEO({
     title: "Subscribe | SilverX Fund - Stay Updated on Deep Tech Investments",
@@ -70,17 +65,9 @@ export default function Newsletter() {
     mutation.mutate(data);
   };
 
-  if (!mounted) {
-    return (
-      <div className="min-h-[100dvh] bg-background flex items-center justify-center">
-        <div className="animate-pulse text-foreground/50">Loading...</div>
-      </div>
-    );
-  }
-
   if (isSubmitted) {
     return (
-      <div className="min-h-[100dvh] bg-gradient-to-br from-background to-primary/5 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-background to-primary/5 flex items-center justify-center p-4">
         <Card className="w-full max-w-md border-primary/20">
           <CardContent className="pt-12 pb-12 text-center">
             <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -102,11 +89,11 @@ export default function Newsletter() {
   }
 
   return (
-    <div className="min-h-[100dvh] bg-gradient-to-br from-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
       <div className="max-w-6xl mx-auto px-6 py-12">
         <div className="mb-12">
           <Link href="/">
-            <img src={logoPath} alt="SilverX Fund" className="h-24 lg:h-40 cursor-pointer" />
+            <img src={logoPath} alt="SilverX Fund" className="h-32 lg:h-40 cursor-pointer" />
           </Link>
         </div>
 
