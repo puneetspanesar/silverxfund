@@ -34,7 +34,7 @@ export default function Launch() {
       </nav>
 
       {/* Article Content */}
-      <article className="pt-28 pb-20">
+      <article className="pt-36 pb-20">
         <div className="max-w-4xl mx-auto px-6">
           
           {/* Header */}
