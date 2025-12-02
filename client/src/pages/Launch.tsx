@@ -208,7 +208,7 @@ export default function Launch() {
             <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-foreground/80 my-8">
               "This is just the beginning. We're here to back the founders who aren't just participating in markets—they're defining them. The next decade belongs to India's AI-first and deep-tech innovators, and we're committed to being their long-term partners."
               <footer className="mt-4 not-italic font-semibold text-base">
-                — Ajay Jain, Founder & Managing Partner
+                — Abishek Balendran, Partner
               </footer>
             </blockquote>
 
