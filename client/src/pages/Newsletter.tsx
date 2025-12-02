@@ -18,7 +18,7 @@ import { Link } from "wouter";
 const newsletterSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
+  phone: z.string().optional(),
 });
 
 type NewsletterFormData = z.infer<typeof newsletterSchema>;
@@ -101,10 +101,10 @@ export default function Newsletter() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Stay Ahead of the <span className="text-primary">Deep Tech</span> Curve
+              Subscribe to <span className="text-primary">SilverX</span> Newsletter
             </h1>
             <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
-              Get exclusive insights on AI-first investments, emerging sectors, and India's next generation of unicorns delivered straight to your inbox.
+              Join our community of investors, founders, ecosystem players and innovators.
             </p>
             
             <div className="space-y-4">
@@ -142,12 +142,12 @@ export default function Newsletter() {
                     name="name"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Full Name</FormLabel>
+                        <FormLabel>Name</FormLabel>
                         <FormControl>
                           <div className="relative">
                             <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
-                              placeholder="Your name" 
+                              placeholder="Full name" 
                               className="pl-10" 
                               data-testid="input-newsletter-name"
                               {...field} 
@@ -187,13 +187,12 @@ export default function Newsletter() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
                         <FormControl>
                           <div className="relative">
                             <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type="tel" 
-                              placeholder="+91 9876543210" 
+                              placeholder="Phone (optional)" 
                               className="pl-10" 
                               data-testid="input-newsletter-phone"
                               {...field} 

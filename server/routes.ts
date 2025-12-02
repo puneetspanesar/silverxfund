@@ -155,7 +155,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       await addNewsletterSubscriberToSheet(
         parsed.data.name,
         parsed.data.email,
-        parsed.data.phone
+        parsed.data.phone || ""
       );
       
       return res.status(201).json({ message: "Successfully subscribed to newsletter!", subscriber });
