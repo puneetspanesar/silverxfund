@@ -7,6 +7,7 @@ import Home from "@/pages/Home";
 import InvestmentReport from "@/pages/InvestmentReport";
 import ResilientSectorsReport from "@/pages/ResilientSectorsReport";
 import Newsletter from "@/pages/Newsletter";
+import Launch from "@/pages/Launch";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/reports/indias-next-wave-5-sectors" component={InvestmentReport} />
       <Route path="/reports/resilient-sectors" component={ResilientSectorsReport} />
       <Route path="/subscribe" component={Newsletter} />
+      <Route path="/launch" component={Launch} />
       <Route component={NotFound} />
     </Switch>
   );
