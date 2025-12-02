@@ -4,7 +4,7 @@ import { useSEO } from "@/hooks/use-seo";
 import { Link } from "wouter";
 import { Calendar, MapPin, ArrowLeft } from "lucide-react";
 import logoPath from "@assets/SilverX Fund Logo_1759929335279.png";
-import heroImage from "@assets/RKW59666_1764656152555.jpg";
+import heroImage from "@assets/GVW00491_1764657031757.jpg";
 import ajayImage from "@assets/GVW00285_1764655749882.jpg";
 import teamImage from "@assets/GVW00454_1764655773571.jpg";
 import panel1Image from "@assets/RKW59078_1764655793333.jpg";
