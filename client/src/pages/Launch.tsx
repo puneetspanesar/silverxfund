@@ -72,7 +72,7 @@ export default function Launch() {
           <div className="prose prose-lg max-w-none">
             
             <p className="text-xl text-foreground/80 leading-relaxed mb-8">
-              SilverX Fund, the second fund from the team at Silverneedle Ventures, officially launched on November 21, 2024, at T-Hub, Hyderabad. The event brought together India's startup ecosystem—founders, investors, and industry leaders—to mark the beginning of a new chapter in deep-tech venture capital.
+              SilverX Fund, the second fund from the team at Silverneedle Ventures, officially launched on November 21, 2024, at T-Hub, Hyderabad. The event brought together India's startup ecosystem - founders, investors, and industry leaders - to mark the beginning of a new chapter in deep-tech venture capital.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">About SilverX Fund</h2>
@@ -88,7 +88,7 @@ export default function Launch() {
                   "SilverX Fund represents our evolution as investors. Building on the learnings from Fund 1, which achieved a 1.6x MOIC within two years, we're now positioned to make deeper, more concentrated bets on founders building the infrastructure and platforms that will define India's next decade."
                 </blockquote>
                 <p className="mt-4 font-semibold text-foreground pl-6">
-                  — Ajay Jain, Founder & Managing Partner
+                  - Ajay Jain, Founder & Managing Partner
                 </p>
               </div>
               <figure>
@@ -189,9 +189,9 @@ export default function Launch() {
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">Why Now: India's AI-First Decade</h2>
             
             <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-foreground/80 my-8">
-              "India is at a critical inflection point. As deglobalization reshapes supply chains and technological sovereignty becomes imperative, there's an unprecedented opportunity to build core IP and sovereign infrastructure. The five sectors we've identified—eldercare tech, data centers, AI lending, AI diagnostics, and EDA & semiconductors—represent a combined market opportunity exceeding $583 billion by 2033."
+              "India is at a critical inflection point. As deglobalization reshapes supply chains and technological sovereignty becomes imperative, there's an unprecedented opportunity to build core IP and sovereign infrastructure. The five sectors we've identified - eldercare tech, data centers, AI lending, AI diagnostics, and EDA & semiconductors - represent a combined market opportunity exceeding $583 billion by 2033."
               <footer className="mt-4 not-italic font-semibold text-base">
-                — Dhiraj Sinha, Managing Partner
+                - Dhiraj Sinha, Managing Partner
               </footer>
             </blockquote>
 
@@ -206,9 +206,9 @@ export default function Launch() {
             </p>
 
             <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-foreground/80 my-8">
-              "This is just the beginning. We're here to back the founders who aren't just participating in markets—they're defining them. The next decade belongs to India's AI-first and deep-tech innovators, and we're committed to being their long-term partners."
+              "This is just the beginning. We're here to back the founders who aren't just participating in markets - they're defining them. The next decade belongs to India's AI-first and deep-tech innovators, and we're committed to being their long-term partners."
               <footer className="mt-4 not-italic font-semibold text-base">
-                — Abishek Balendran, Partner
+                - Abishek Balendran, Partner
               </footer>
             </blockquote>
 
