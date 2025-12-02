@@ -78,14 +78,14 @@ export default function Launch() {
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">About SilverX Fund</h2>
             
             <p className="text-foreground/80 leading-relaxed mb-6">
-              SilverX Fund is raising $90 million (with a $23 million greenshoe option) to deploy high-conviction capital into AI-first, deep-tech, and consumer technology startups at the Seed+ to Series A/B stages. The fund aims to back approximately 20 category-defining companies over its investment period, with first cheque sizes ranging from $1-2 million and 60% of the corpus reserved for follow-on investments.
+              SilverX Fund is raising $90 million (with a $23 million greenshoe option) to deploy high-conviction capital into AI-first, deep-tech, and consumer technology startups at the Seed+ to Series A/B stages. The fund aims to back 18-20 category-defining companies over its investment period, with first cheque sizes ranging from $1-2 million and 60% of the corpus reserved for follow-on investments.
             </p>
 
             {/* Ajay Quote with Image */}
             <div className="my-12 grid md:grid-cols-3 gap-8 items-start">
               <div className="md:col-span-2">
                 <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-foreground/80">
-                  "SilverX Fund represents our evolution as investors. Building on the learnings from Fund 1, which achieved a 1.6x MOIC within two years, we're now positioned to make deeper, more concentrated bets on founders building the infrastructure and platforms that will define India's next decade."
+                  "SilverX Fund represents our evolution as investors. Building on the learnings from Fund 1, we're now positioned to make deeper, more concentrated bets on founders building the infrastructure and platforms that will define India's next decade."
                 </blockquote>
                 <p className="mt-4 font-semibold text-foreground pl-6">
                   - Ajay Jain, Founder & Managing Partner
@@ -159,7 +159,7 @@ export default function Launch() {
                   className="w-full rounded-lg"
                 />
                 <figcaption className="text-sm text-foreground/60 mt-3">
-                  <strong>Panel 1: "Startup Investments – Is It Worth It?"</strong><br />
+                  <strong>Panel 1: "Startup Investments - Is It Worth It?"</strong><br />
                   Moderated by Subramanian C. (Vrddhi Business Solutions), featuring Pranav Vempati, Anurag Garg, and Venkat Nalam
                 </figcaption>
               </figure>
@@ -170,8 +170,8 @@ export default function Launch() {
                   className="w-full rounded-lg"
                 />
                 <figcaption className="text-sm text-foreground/60 mt-3">
-                  <strong>Panel 2: "Unicorns & India – The Next 10 Years Story"</strong><br />
-                  Moderated by Prashanth Bandi (Anthrobyte), featuring Sanjay Nekkanti, Ranju Sigtia, and Dhiraj Sinha
+                  <strong>Panel 2: "Unicorns & India - The Next 10 Years Story"</strong><br />
+                  Moderated by Prashanth Bandi (Anthrobyte), featuring Sanjay Nekkanti, Ranju Sigtia, and Dhiraj Kumar Sinha
                 </figcaption>
               </figure>
             </div>
@@ -183,7 +183,7 @@ export default function Launch() {
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">Fund 1 Track Record</h2>
             
             <p className="text-foreground/80 leading-relaxed mb-6">
-              SilverX Fund builds on the success of Silverneedle Ventures' first fund, a SEBI-registered Category I AIF that deployed INR 76 crores within two years across 16 investments. The fund achieved a 1.6x MOIC and backed breakout companies including OnFinance (AI-native solutions), SuperK (consumer mass adoption), and Dhruva Space (deep-tech/space-tech).
+              SilverX Fund builds on the success of Silverneedle Ventures' first fund, a SEBI-registered Category I AIF with 16 investments across AI-native solutions, consumer technology, and deep-tech sectors. Portfolio companies include OnFinance (AI-native solutions), SuperK (consumer mass adoption), and Dhruva Space (deep-tech/space-tech).
             </p>
 
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">Why Now: India's AI-First Decade</h2>
@@ -191,7 +191,7 @@ export default function Launch() {
             <blockquote className="border-l-4 border-primary pl-6 italic text-xl text-foreground/80 my-8">
               "India is at a critical inflection point. As deglobalization reshapes supply chains and technological sovereignty becomes imperative, there's an unprecedented opportunity to build core IP and sovereign infrastructure. The five sectors we've identified - eldercare tech, data centers, AI lending, AI diagnostics, and EDA & semiconductors - represent a combined market opportunity exceeding $583 billion by 2033."
               <footer className="mt-4 not-italic font-semibold text-base">
-                - Dhiraj Sinha, Managing Partner
+                - Dhiraj Kumar Sinha, Managing Partner
               </footer>
             </blockquote>
 
