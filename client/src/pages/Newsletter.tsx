@@ -187,12 +187,13 @@ export default function Newsletter() {
                     name="phone"
                     render={({ field }) => (
                       <FormItem>
+                        <FormLabel>Phone Number (optional)</FormLabel>
                         <FormControl>
                           <div className="relative">
                             <Phone className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                             <Input 
                               type="tel" 
-                              placeholder="Phone (optional)" 
+                              placeholder="+91 9876543210" 
                               className="pl-10" 
                               data-testid="input-newsletter-phone"
                               {...field} 
