@@ -64,7 +64,7 @@ export default function Launch() {
               className="w-full rounded-lg"
             />
             <figcaption className="text-sm text-foreground/60 mt-3 text-center">
-              The SilverX Fund team presenting at the launch event at T-Hub, Hyderabad
+              The SilverX Fund team at the launch event, T-Hub, Hyderabad
             </figcaption>
           </figure>
 
