@@ -91,9 +91,9 @@ export default function Newsletter() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="mb-12 pt-8">
+        <div className="mb-4">
           <Link href="/">
-            <img src={logoPath} alt="SilverX Fund" className="h-32 lg:h-40 cursor-pointer" />
+            <img src={logoPath} alt="SilverX Fund" className="h-32 lg:h-40 cursor-pointer mt-8" />
           </Link>
         </div>
 
