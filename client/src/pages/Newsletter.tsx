@@ -124,8 +124,7 @@ export default function Newsletter() {
 
           <Card className="border-primary/20 shadow-xl">
             <CardHeader className="pb-4">
-              <CardTitle className="text-2xl">Subscribe</CardTitle>
-              <CardDescription>Fill in the details below to get started</CardDescription>
+              <CardDescription className="text-base">Fill in the details below to get started</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
