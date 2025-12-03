@@ -12,8 +12,8 @@ import panel2Image from "@assets/RKW59281_1764655813980.jpg";
 
 export default function Launch() {
   useSEO({
-    title: "Fund Launch | SilverX Fund - $90M AI-First Venture Capital",
-    description: "SilverX Fund officially launched with $90 million commitment to back India's AI-first and deep-tech startups. Learn about our investment thesis and team."
+    title: "Fund Announcement | SilverX Fund - $90M AI-First Venture Capital",
+    description: "SilverX Fund announced with $90 million commitment to back India's AI-first and deep-tech startups. Learn about our investment thesis and team."
   });
 
   return (
@@ -52,7 +52,7 @@ export default function Launch() {
             </div>
             
             <h1 className="text-3xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
-              SilverX Fund Officially Launches with $90 Million Commitment to Back India's AI-First and Deep-Tech Startups
+              SilverX Fund Announces $90 Million Commitment to Back India's AI-First and Deep-Tech Startups
             </h1>
           </header>
 
@@ -60,11 +60,11 @@ export default function Launch() {
           <figure className="mb-12">
             <img 
               src={heroImage} 
-              alt="SilverX Fund Launch Event at T-Hub" 
+              alt="SilverX Fund Event at T-Hub" 
               className="w-full rounded-lg"
             />
             <figcaption className="text-sm text-foreground/60 mt-3 text-center">
-              The SilverX Fund team at the launch event, T-Hub, Hyderabad
+              The SilverX Fund team at the event, T-Hub, Hyderabad
             </figcaption>
           </figure>
 
@@ -72,7 +72,7 @@ export default function Launch() {
           <div className="prose prose-lg max-w-none">
             
             <p className="text-xl text-foreground/80 leading-relaxed mb-8">
-              SilverX Fund, the second fund from the team at Silverneedle Ventures, officially launched on November 21, 2024, at T-Hub, Hyderabad. The event brought together India's startup ecosystem - founders, investors, and industry leaders - to mark the beginning of a new chapter in deep-tech venture capital.
+              SilverX Fund, the second fund from the team at Silverneedle Ventures, was announced on November 21, 2024, at T-Hub, Hyderabad. The event brought together India's startup ecosystem - founders, investors, and industry leaders - to mark the beginning of a new chapter in deep-tech venture capital.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">About SilverX Fund</h2>
@@ -94,7 +94,7 @@ export default function Launch() {
               <figure>
                 <img 
                   src={ajayImage} 
-                  alt="Ajay Jain speaking at the launch" 
+                  alt="Ajay Jain speaking at the event" 
                   className="rounded-lg w-full"
                 />
               </figure>
@@ -145,10 +145,10 @@ export default function Launch() {
               The team has collectively managed 150+ investments with a cumulative portfolio value exceeding $5 billion and 20 exits to date.
             </p>
 
-            <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">Launch Event Highlights</h2>
+            <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">Event Highlights</h2>
             
             <p className="text-foreground/80 leading-relaxed mb-6">
-              The launch event featured two compelling panel discussions that explored the future of India's startup ecosystem:
+              The event featured two compelling panel discussions that explored the future of India's startup ecosystem:
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 my-8">
