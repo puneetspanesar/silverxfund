@@ -100,7 +100,7 @@ export default function Newsletter() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Subscribe to <span className="text-primary">SilverX</span> Newsletter
+              Subscribe to <span className="text-primary">SilverX</span> Newsletter & Reports
             </h1>
             <p className="text-lg text-foreground/70 mb-8 leading-relaxed">
               Join our community of investors, founders, ecosystem players and innovators.
@@ -119,19 +119,13 @@ export default function Newsletter() {
                 </div>
                 <span className="text-foreground/80">Exclusive research reports on emerging sectors</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <CheckCircle2 className="h-5 w-5 text-primary" />
-                </div>
-                <span className="text-foreground/80">Early access to portfolio company announcements</span>
-              </div>
             </div>
           </div>
 
           <Card className="border-primary/20 shadow-xl">
             <CardHeader className="pb-4">
-              <CardTitle className="text-2xl">Subscribe to Newsletter</CardTitle>
-              <CardDescription>Join our community of investors and founders</CardDescription>
+              <CardTitle className="text-2xl">Subscribe</CardTitle>
+              <CardDescription>Fill in the details below to get started</CardDescription>
             </CardHeader>
             <CardContent>
               <Form {...form}>
