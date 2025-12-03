@@ -43,7 +43,7 @@ export default function Launch() {
               <Badge variant="outline">Press Release</Badge>
               <span className="flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5" />
-                November 22, 2024
+                November 22, 2025
               </span>
               <span className="flex items-center gap-1">
                 <MapPin className="h-3.5 w-3.5" />
@@ -72,13 +72,13 @@ export default function Launch() {
           <div className="prose prose-lg max-w-none">
             
             <p className="text-xl text-foreground/80 leading-relaxed mb-8">
-              SilverX Fund, the second fund from the team at Silverneedle Ventures, was announced on November 21, 2024, at T-Hub, Hyderabad. The event brought together India's startup ecosystem - founders, investors, and industry leaders - to mark the beginning of a new chapter in deep-tech venture capital.
+              SilverX Fund, the second fund from the team at Silverneedle Ventures, was announced on November 21, 2025, at T-Hub, Hyderabad. The event brought together India's startup ecosystem - founders, investors, and industry leaders - to mark the beginning of a new chapter in deep-tech venture capital.
             </p>
 
             <h2 className="text-2xl font-bold text-foreground mt-12 mb-4">About SilverX Fund</h2>
             
             <p className="text-foreground/80 leading-relaxed mb-6">
-              SilverX Fund is raising $90 million (with a $23 million greenshoe option) to deploy high-conviction capital into AI-first, deep-tech, and consumer technology startups at the Seed+ to Series A/B stages. The fund aims to back 18-20 category-defining companies over its investment period, with first cheque sizes ranging from $1-2 million and 60% of the corpus reserved for follow-on investments.
+              SilverX Fund is raising $90 million (with a $45 million greenshoe option) to deploy high-conviction capital into AI-first, deep-tech, and consumer technology startups at the Seed+ to Series A/B stages. The fund aims to back 18-20 category-defining companies over its investment period, with first cheque sizes ranging from $1-2 million and 60% of the corpus reserved for follow-on investments.
             </p>
 
             {/* Ajay Quote with Image */}
